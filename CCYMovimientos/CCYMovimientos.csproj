@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
@@ -51,8 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\Clientes\DBClientes.cs" />
+    <Compile Include="Modelos\DataCenter.cs" />
+    <Compile Include="Modelos\Sessiones\Sesion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Clientes\Cliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\Clientes\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Creditos\controlDeCreditos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,11 +81,23 @@
     <Compile Include="Vistas\Menu\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Clientes\ControlDeUsuarios.cs">
+    <Compile Include="Vistas\Clientes\ControlDeClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Vistas\Clientes\ControlDeUsuarios.Designer.cs">
-      <DependentUpon>ControlDeUsuarios.cs</DependentUpon>
+    <Compile Include="Vistas\Clientes\ControlDeClientes.Designer.cs">
+      <DependentUpon>ControlDeClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Notificaciones\Alertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Notificaciones\Alertas.Designer.cs">
+      <DependentUpon>Alertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Sesiones\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Sesiones\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Ventas\Ventas.cs">
       <SubType>UserControl</SubType>
@@ -92,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\Clientes\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Creditos\controlDeCreditos.resx">
       <DependentUpon>controlDeCreditos.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,8 +126,14 @@
     <EmbeddedResource Include="Vistas\Menu\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Clientes\ControlDeUsuarios.resx">
-      <DependentUpon>ControlDeUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Clientes\ControlDeClientes.resx">
+      <DependentUpon>ControlDeClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Notificaciones\Alertas.resx">
+      <DependentUpon>Alertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Sesiones\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -122,8 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controladores\" />
-    <Folder Include="Modelos\" />
-    <Folder Include="Vistas\Sesiones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

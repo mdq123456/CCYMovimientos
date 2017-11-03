@@ -1,4 +1,6 @@
-﻿using CCYMovimientos.Vistas.Menu;
+﻿using CCYMovimientos.Modelos;
+using CCYMovimientos.Vistas.Menu;
+using CCYMovimientos.Vistas.Sesiones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +17,21 @@ namespace CCYMovimientos
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipal());
+
+            Login frmLogin = new Login();
+            
+            frmLogin.ShowDialog();
+
+            if (frmLogin.getStatus())
+            {
+                Application.Run(new MenuPrincipal(frmLogin.getSesion()));
+            }
+            
+            Application.Exit();
+
         }
     }
 }

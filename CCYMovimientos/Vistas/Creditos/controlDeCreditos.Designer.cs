@@ -162,7 +162,7 @@
             this.bunifuTileButton1.ImagePosition = 20;
             this.bunifuTileButton1.ImageZoom = 50;
             this.bunifuTileButton1.LabelPosition = 41;
-            this.bunifuTileButton1.LabelText = "Cliente";
+            this.bunifuTileButton1.LabelText = "";
             this.bunifuTileButton1.Location = new System.Drawing.Point(27, 26);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton1.Name = "bunifuTileButton1";

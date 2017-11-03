@@ -48,11 +48,12 @@
             this.btnMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuFondo = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.panelesAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.Cliente = new CCYMovimientos.Vistas.Clientes.Cliente();
             this.ventas = new CCYMovimientos.Vistas.Ventas.Ventas();
             this.controlDeCreditos = new CCYMovimientos.Vistas.Creditos.controlDeCreditos();
             this.caja = new CCYMovimientos.Vistas.Fondos.Caja();
-            this.controlDeUsuarios = new CCYMovimientos.Vistas.Clientes.ControlDeUsuarios();
+            this.controlDeClientes = new CCYMovimientos.Vistas.Clientes.ControlDeClientes();
+            this.panelesAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.menuLeft.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -319,7 +320,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(234, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(457, 60);
+            this.panel1.Size = new System.Drawing.Size(466, 60);
             this.panel1.TabIndex = 3;
             // 
             // panel3
@@ -328,7 +329,7 @@
             this.panelesAnimator.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.menuLeftAnimator.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(369, 0);
+            this.panel3.Location = new System.Drawing.Point(378, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(44, 60);
             this.panel3.TabIndex = 4;
@@ -355,7 +356,7 @@
             this.panelesAnimator.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.menuLeftAnimator.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(413, 0);
+            this.panel2.Location = new System.Drawing.Point(422, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(44, 60);
             this.panel2.TabIndex = 3;
@@ -365,46 +366,35 @@
             this.menuFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.menuFondo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuFondo.BackgroundImage")));
             this.menuFondo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuFondo.Controls.Add(this.Cliente);
             this.menuFondo.Controls.Add(this.ventas);
             this.menuFondo.Controls.Add(this.controlDeCreditos);
             this.menuFondo.Controls.Add(this.caja);
-            this.menuFondo.Controls.Add(this.controlDeUsuarios);
+            this.menuFondo.Controls.Add(this.controlDeClientes);
             this.panelesAnimator.SetDecoration(this.menuFondo, BunifuAnimatorNS.DecorationType.None);
             this.menuLeftAnimator.SetDecoration(this.menuFondo, BunifuAnimatorNS.DecorationType.None);
-            this.menuFondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuFondo.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.menuFondo.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.menuFondo.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.menuFondo.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.menuFondo.Location = new System.Drawing.Point(234, 60);
+            this.menuFondo.Location = new System.Drawing.Point(238, 63);
             this.menuFondo.Name = "menuFondo";
             this.menuFondo.Quality = 10;
-            this.menuFondo.Size = new System.Drawing.Size(457, 356);
+            this.menuFondo.Size = new System.Drawing.Size(456, 344);
             this.menuFondo.TabIndex = 6;
             this.menuFondo.Visible = false;
             // 
-            // panelesAnimator
+            // Cliente
             // 
-            this.panelesAnimator.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
-            this.panelesAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 20;
-            animation2.Padding = new System.Windows.Forms.Padding(30);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.panelesAnimator.DefaultAnimation = animation2;
-            this.panelesAnimator.Interval = 0;
-            this.panelesAnimator.TimeStep = 0.1F;
+            this.Cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.menuLeftAnimator.SetDecoration(this.Cliente, BunifuAnimatorNS.DecorationType.None);
+            this.panelesAnimator.SetDecoration(this.Cliente, BunifuAnimatorNS.DecorationType.None);
+            this.Cliente.Location = new System.Drawing.Point(16, 266);
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Size = new System.Drawing.Size(72, 56);
+            this.Cliente.TabIndex = 8;
+            this.Cliente.Visible = false;
+            this.Cliente.VisibleChanged += new System.EventHandler(this.Cliente_VisibleChanged);
             // 
             // ventas
             // 
@@ -439,16 +429,40 @@
             this.caja.TabIndex = 5;
             this.caja.Visible = false;
             // 
-            // controlDeUsuarios
+            // controlDeClientes
             // 
-            this.controlDeUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.menuLeftAnimator.SetDecoration(this.controlDeUsuarios, BunifuAnimatorNS.DecorationType.None);
-            this.panelesAnimator.SetDecoration(this.controlDeUsuarios, BunifuAnimatorNS.DecorationType.None);
-            this.controlDeUsuarios.Location = new System.Drawing.Point(16, 18);
-            this.controlDeUsuarios.Name = "controlDeUsuarios";
-            this.controlDeUsuarios.Size = new System.Drawing.Size(72, 56);
-            this.controlDeUsuarios.TabIndex = 4;
-            this.controlDeUsuarios.Visible = false;
+            this.controlDeClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.menuLeftAnimator.SetDecoration(this.controlDeClientes, BunifuAnimatorNS.DecorationType.None);
+            this.panelesAnimator.SetDecoration(this.controlDeClientes, BunifuAnimatorNS.DecorationType.None);
+            this.controlDeClientes.Location = new System.Drawing.Point(16, 18);
+            this.controlDeClientes.Name = "controlDeClientes";
+            this.controlDeClientes.Size = new System.Drawing.Size(72, 56);
+            this.controlDeClientes.TabIndex = 4;
+            this.controlDeClientes.Visible = false;
+            this.controlDeClientes.VisibleChanged += new System.EventHandler(this.controlDeClientes_VisibleChanged);
+            // 
+            // panelesAnimator
+            // 
+            this.panelesAnimator.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
+            this.panelesAnimator.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 1F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.panelesAnimator.DefaultAnimation = animation2;
+            this.panelesAnimator.Interval = 0;
+            this.panelesAnimator.TimeStep = 0.1F;
             // 
             // MenuPrincipal
             // 
@@ -457,7 +471,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(691, 416);
+            this.ClientSize = new System.Drawing.Size(700, 416);
             this.Controls.Add(this.menuFondo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuLeft);
@@ -497,7 +511,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btnMin;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private Clientes.ControlDeUsuarios controlDeUsuarios;
+        private Clientes.ControlDeClientes controlDeClientes;
         private Fondos.Caja caja;
         private BunifuAnimatorNS.BunifuTransition panelesAnimator;
         private Bunifu.Framework.UI.BunifuGradientPanel menuFondo;
@@ -505,5 +519,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btnMenu;
         private Creditos.controlDeCreditos controlDeCreditos;
         private Ventas.Ventas ventas;
+        private Clientes.Cliente Cliente;
     }
 }
