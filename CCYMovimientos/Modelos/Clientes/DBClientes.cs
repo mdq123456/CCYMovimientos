@@ -46,77 +46,113 @@ namespace CCYMovimientos.Modelos.Clientes
 
         public DataTable TraerClientes(bool tipoCliente)
         {
-            DataCenter.abrirConexion();
-            DataTable tabla = DataCenter.TraerClientes(tipoCliente);
-            DataCenter.cerrarConexion();
+            try
+            {
+                DataCenter objDC = new DataCenter();
+                DataTable tabla = objDC.TraerClientes(tipoCliente);
+                objDC.cerrarConexion();
 
-            return tabla;
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+            
         }
 
         public DataTable TraerClientesTipos()
         {
-            DataCenter.abrirConexion();
-            DataTable tabla = DataCenter.TraerClientesTipos();
-            DataCenter.cerrarConexion();
+            try { 
+            DataCenter objDC = new DataCenter();
+            DataTable tabla = objDC.TraerClientesTipos();
+            objDC.cerrarConexion();
 
             return tabla;
-
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
         }
 
         public DataTable TraerClientesProvincias()
         {
-            DataCenter.abrirConexion();
-            DataTable tabla = DataCenter.TraerClientesProvincias();
-            DataCenter.cerrarConexion();
+            try { 
+            DataCenter objDC = new DataCenter();
+            DataTable tabla = objDC.TraerClientesProvincias();
+            objDC.cerrarConexion();
 
             return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
         }
         public DataTable TraerClientesLocalidades(int codProvincia)
         {
-            DataCenter.abrirConexion();
-            DataTable tabla = DataCenter.TraerClientesLocalidades(codProvincia);
-            DataCenter.cerrarConexion();
+            try { 
+            DataCenter objDC = new DataCenter();
+            DataTable tabla = objDC.TraerClientesLocalidades(codProvincia);
+            objDC.cerrarConexion();
 
             return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
         }
 
         public bool CrearCliente()
         {
             bool varResultado;
-            DataCenter.abrirConexion();
+            try { 
+                DataCenter objDC = new DataCenter();
 
-            SqlDataReader resultado = DataCenter.CrearCliente(Apellidos,
-                                                              Nombres,
-                                                              CUIL,
-                                                              DNI,
-                                                              codTipoCliente,
-                                                              Telefono,
-                                                              Email,
-                                                              codProvincia,
-                                                              codLocalidad,
-                                                              Domicilio);
+                SqlDataReader resultado = objDC.CrearCliente(Apellidos,
+                                                                  Nombres,
+                                                                  CUIL,
+                                                                  DNI,
+                                                                  codTipoCliente,
+                                                                  Telefono,
+                                                                  Email,
+                                                                  codProvincia,
+                                                                  codLocalidad,
+                                                                  Domicilio);
             
-            if (resultado.HasRows)
-            {
-                resultado.Read();
-
-                if (resultado[0].ToString() == "1")
+                if (resultado.HasRows)
                 {
-                    varResultado = true;
+                    resultado.Read();
+
+                    if (resultado[0].ToString() == "1")
+                    {
+                        varResultado = true;
+                    }
+                    else
+                    {
+                        varResultado = false;
+                    }
                 }
                 else
                 {
                     varResultado = false;
                 }
+
+                objDC.cerrarConexion();
+
+                return varResultado;
             }
-            else
+            catch (Exception ex)
             {
-                varResultado = false;
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
             }
-
-            DataCenter.cerrarConexion();
-
-            return varResultado;
         }
     }
 }

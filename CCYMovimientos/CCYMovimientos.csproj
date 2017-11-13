@@ -54,14 +54,21 @@
   <ItemGroup>
     <Compile Include="Modelos\Clientes\DBClientes.cs" />
     <Compile Include="Modelos\DataCenter.cs" />
+    <Compile Include="Modelos\Fondos\DBFondos.cs" />
     <Compile Include="Modelos\Sessiones\Sesion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vistas\Clientes\Cliente.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Vistas\Clientes\ClienteABM.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Clientes\Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <Compile Include="Vistas\Clientes\ClienteABM.Designer.cs">
+      <DependentUpon>ClienteABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Clientes\ClienteNewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Clientes\ClienteNewEdit.Designer.cs">
+      <DependentUpon>ClienteNewEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Creditos\controlDeCreditos.cs">
       <SubType>UserControl</SubType>
@@ -69,11 +76,11 @@
     <Compile Include="Vistas\Creditos\controlDeCreditos.Designer.cs">
       <DependentUpon>controlDeCreditos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Fondos\Caja.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Vistas\Fondos\FondosCaja.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Fondos\Caja.Designer.cs">
-      <DependentUpon>Caja.cs</DependentUpon>
+    <Compile Include="Vistas\Fondos\FondosCaja.Designer.cs">
+      <DependentUpon>FondosCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Menu\MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -81,17 +88,17 @@
     <Compile Include="Vistas\Menu\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Clientes\ControlDeClientes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Vistas\Clientes\ControlDeClientes.Designer.cs">
-      <DependentUpon>ControlDeClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\Notificaciones\Alertas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Notificaciones\Alertas.Designer.cs">
       <DependentUpon>Alertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Notificaciones\IngresoDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Notificaciones\IngresoDatos.Designer.cs">
+      <DependentUpon>IngresoDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Sesiones\Login.cs">
       <SubType>Form</SubType>
@@ -114,23 +121,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vistas\Clientes\Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Clientes\ClienteABM.resx">
+      <DependentUpon>ClienteABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Clientes\ClienteNewEdit.resx">
+      <DependentUpon>ClienteNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Creditos\controlDeCreditos.resx">
       <DependentUpon>controlDeCreditos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Fondos\Caja.resx">
-      <DependentUpon>Caja.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Fondos\FondosCaja.resx">
+      <DependentUpon>FondosCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Menu\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Clientes\ControlDeClientes.resx">
-      <DependentUpon>ControlDeClientes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Notificaciones\Alertas.resx">
       <DependentUpon>Alertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Notificaciones\IngresoDatos.resx">
+      <DependentUpon>IngresoDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Sesiones\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -153,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controladores\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuFondo.BackgroundImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

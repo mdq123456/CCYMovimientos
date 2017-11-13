@@ -1,83 +1,32 @@
-﻿using System;
+﻿using CCYMovimientos.Modelos.Clientes;
+using CCYMovimientos.Vistas.Notificaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CCYMovimientos.Modelos;
-using System.Data.SqlClient;
-using CCYMovimientos.Modelos.Clientes;
-using CCYMovimientos.Vistas.Notificaciones;
 
 namespace CCYMovimientos.Vistas.Clientes
 {
-    public partial class Cliente : UserControl
+    public partial class ClienteNewEdit : Form
     {
-        // Status:
-        // P: pendiente; N: Nuevo; E: Edicion
-        private string status { set; get; }
-        public string getStatus() { return this.status; }
-        public void cambiarStatus(string p_status)
-        {
-            this.status = p_status;
-        }
-
-        public Cliente()
+        public ClienteNewEdit()
         {
             InitializeComponent();
-            this.status = "N";
         }
 
-        //METODOS
-        private void OcultarFormulario(string p_status)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            this.status = p_status;
-            this.Hide();
+            this.Close();
         }
 
-        //EVENTOS
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void ClienteNewEdit_Load(object sender, EventArgs e)
         {
-            if (ControlarDatos())
-            {
-                CrearCliente();
-                OcultarFormulario("G");
-            }
-            else
-            {
-                Alertas alert = new Alertas("Debe completar los datos para ingresar al nuevo cliente.", "");
-                alert.Show();
-            } 
-        }
-
-        private void CrearCliente()
-        {
-            string CUIL = TxtCUILIzq.Text + "-" + TxtCUIL.Text + "-" + TxtCUILDer.Text;
-            DBClientes objCliente = new DBClientes(TxtApellidos.Text,
-                                                   TxtNombres.Text,
-                                                   CUIL,
-                                                   TxtDNI.Text,
-                                                   cboTipoCliente.SelectedValue.ToString(),
-                                                   TxtTel.Text,
-                                                   TxtEmail.Text,
-                                                   cboProvincia.SelectedValue.ToString(),
-                                                   cboLocalidad.SelectedValue.ToString(),
-                                                   TxtDireccion.Text);
-            if (objCliente.CrearCliente())
-            {
-                Alertas alert = new Alertas("Operacion finalizada con éxito !", "");
-                alert.Show();
-            }
-            else
-            {
-                Alertas alert = new Alertas("No pudo realizarse la operacion, comuniquese con su administrador.", "");
-                alert.Show();
-            }
-            
-
+            cargarComponentes();
         }
 
         private bool ControlarDatos()
@@ -90,22 +39,7 @@ namespace CCYMovimientos.Vistas.Clientes
             }
 
             return true;
-            
-        }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            OcultarFormulario("P");
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            OcultarFormulario("P");
-        }
-
-        private void Cliente_Load(object sender, EventArgs e)
-        {
-            cargarComponentes();
         }
 
         private void cargarComponentes()
@@ -145,10 +79,10 @@ namespace CCYMovimientos.Vistas.Clientes
             }
             catch (Exception e)
             {
-                //throw ;
+                MessageBox.Show(e.ToString());
+                throw;
             }
-            
-            
+
         }
 
         private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -177,5 +111,52 @@ namespace CCYMovimientos.Vistas.Clientes
                 TxtDNI.LineMouseHoverColor = Color.FromArgb(0, 7, 67);
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (ControlarDatos())
+            {
+                CrearCliente();
+                this.Close();
+            }
+            else
+            {
+                Alertas alert = new Alertas("Debe completar los datos para ingresar al nuevo cliente.", "");
+                alert.Show();
+            }
+        }
+
+        private void CrearCliente()
+        {
+            string CUIL = TxtCUILIzq.Text + "-" + TxtCUIL.Text + "-" + TxtCUILDer.Text;
+            DBClientes objCliente = new DBClientes(TxtApellidos.Text,
+                                                   TxtNombres.Text,
+                                                   CUIL,
+                                                   TxtDNI.Text,
+                                                   cboTipoCliente.SelectedValue.ToString(),
+                                                   TxtTel.Text,
+                                                   TxtEmail.Text,
+                                                   cboProvincia.SelectedValue.ToString(),
+                                                   cboLocalidad.SelectedValue.ToString(),
+                                                   TxtDireccion.Text);
+            if (objCliente.CrearCliente())
+            {
+                Alertas alert = new Alertas("Operacion finalizada con éxito !", "");
+                alert.Show();
+            }
+            else
+            {
+                Alertas alert = new Alertas("No pudo realizarse la operacion, comuniquese con su administrador.", "");
+                alert.Show();
+            }
+
+
+        }
+        
     }
 }

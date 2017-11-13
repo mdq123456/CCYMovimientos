@@ -84,7 +84,8 @@ namespace CCYMovimientos.Vistas.Sesiones
                 this.txtUsuario.Text.Trim().Length <= 20 &&
                 this.txtPass.Text.Trim().Length <= 20)
             {
-                if (DataCenter.abrirConexion(1) != System.Data.ConnectionState.Open)
+                DataCenter objDC = new DataCenter();
+                if (objDC.abrirConexion(1) != System.Data.ConnectionState.Open)
                 {
                     MessageBox.Show("No se logró conectar a la base de datos, consulte con su administrador.", "CCYMovimientos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Application.Exit();

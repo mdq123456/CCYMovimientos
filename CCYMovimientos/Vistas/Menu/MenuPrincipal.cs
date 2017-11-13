@@ -1,4 +1,6 @@
 ﻿using CCYMovimientos.Modelos.Sessiones;
+using CCYMovimientos.Vistas.Fondos;
+using CCYMovimientos.Vistas.Clientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,8 @@ namespace CCYMovimientos.Vistas.Menu
     public partial class MenuPrincipal : Form
     {
         private Sesion objSesion;
+        private ClienteABM clienteForm;
+        private FondosCaja fondosForm;
         public MenuPrincipal(Sesion pobjSesion)
         {
             this.objSesion = pobjSesion;
@@ -23,23 +27,23 @@ namespace CCYMovimientos.Vistas.Menu
         //METODOS
         private void EsconderPaneles()
         {
-            this.menuFondo.Visible = true;
-            this.controlDeClientes.Hide();
-            this.caja.Hide();
-            this.controlDeCreditos.Hide();
-            this.ventas.Hide();
-            this.Cliente.Hide();
+            this.panelMenu.Visible = true;
+            if (this.clienteForm != null)
+            {
+                this.clienteForm.Hide();
+            }
+            if (this.fondosForm != null)
+            {
+                this.fondosForm.Hide();
+            }
+
+
         }
 
         //EVENTOS
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            this.menuFondo.Dock = DockStyle.Fill;
-            this.controlDeClientes.Dock = DockStyle.Fill;
-            this.caja.Dock = DockStyle.Fill;
-            this.controlDeCreditos.Dock = DockStyle.Fill;
-            this.ventas.Dock = DockStyle.Fill;
-            this.Cliente.Dock = DockStyle.Fill;
+            this.panelMenu.Dock = DockStyle.Fill;
         }
 
         private void btnMin_Click(object sender, EventArgs e)
@@ -85,52 +89,66 @@ namespace CCYMovimientos.Vistas.Menu
         private void btnClientes_Click(object sender, EventArgs e)
         {
             this.EsconderPaneles();
-            this.controlDeClientes.Visible = true;
+            if (clienteForm == null)
+            {
+                this.clienteForm = new ClienteABM(this.panelMenu.Location,
+                                               this.panelMenu.Size);
+                clienteForm.MdiParent = this;
+                this.panelMenu.Controls.Add(clienteForm);
+                clienteForm.Dock = DockStyle.Fill;
+            }
+            clienteForm.Show();
         }
 
         private void btnFondo_Click(object sender, EventArgs e)
         {
             this.EsconderPaneles();
-            this.caja.Visible = true;
+            if (fondosForm == null)
+            {
+                fondosForm = new FondosCaja(this.panelMenu.Location,
+                                               this.panelMenu.Size);
+                fondosForm.MdiParent = this;
+                this.panelMenu.Controls.Add(fondosForm);
+                fondosForm.Dock = DockStyle.Fill;
+            }
+            fondosForm.Show();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
             this.EsconderPaneles();
-            this.ventas.Visible = true;
         }
 
         private void btnCreditos_Click(object sender, EventArgs e)
         {
             this.EsconderPaneles();
-            this.controlDeCreditos.Visible = true;
         }
 
         private void controlDeClientes_VisibleChanged(object sender, EventArgs e)
         {
-            if (this.controlDeClientes.getStatus() != "V")
-            {
-                this.Cliente.cambiarStatus(this.controlDeClientes.getStatus());
-                this.panelesAnimator.ShowSync(this.Cliente);
-            }
+            //if (this.controlDeClientes.getStatus() != "V")
+            //{
+            //    this.Cliente.cambiarStatus(this.controlDeClientes.getStatus());
+            //    this.panelesAnimator.ShowSync(this.Cliente);
+            //}
         }
 
         private void Cliente_VisibleChanged(object sender, EventArgs e)
         {
-            if (this.controlDeClientes.getStatus() == "N"
-                && !this.Cliente.Visible)
-            {
-                this.controlDeClientes.cambiarStatus("V");
-                if (this.Cliente.getStatus() == "P")
-                {
-                    this.panelesAnimator.ShowSync(this.controlDeClientes);
-                }
-                else if (this.Cliente.getStatus() == "G")
-                {
-                    controlDeClientes.CargarClientes();
-                    this.panelesAnimator.ShowSync(this.controlDeClientes);
-                }
-            }
+            //if (this.controlDeClientes.getStatus() == "N"
+            //    && !this.Cliente.Visible)
+            //{
+            //    this.controlDeClientes.cambiarStatus("V");
+            //    if (this.Cliente.getStatus() == "P")
+            //    {
+            //        this.panelesAnimator.ShowSync(this.controlDeClientes);
+            //    }
+            //    else if (this.Cliente.getStatus() == "G")
+            //    {
+            //        //controlDeClientes.CargarClientes();
+            //        this.panelesAnimator.ShowSync(this.controlDeClientes);
+            //    }
+            //}
         }
 
     }

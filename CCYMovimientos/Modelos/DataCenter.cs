@@ -9,30 +9,60 @@ using System.Threading.Tasks;
 
 namespace CCYMovimientos.Modelos
 {
-    public static class DataCenter
+    public class DataCenter
     {
-        private static SqlDataReader unDataReader;
-        private static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
-        private static SqlCommand cmd;
-        public static void abrirConexion()
+        private SqlDataReader unDataReader;
+        private SqlConnection con;
+        private SqlCommand cmd;
+
+        public DataCenter()
         {
-            con.Open();
-        
-            return;
+            this.con = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
         }
-        public static System.Data.ConnectionState abrirConexion(int bandera)
+
+        public  void abrirConexion()
         {
-            con.Open();
-            return con.State;   
-        }
-        public static void cerrarConexion()
-        {
-            con.Close();
-        }
-        public static SqlDataReader Ingresar(string pUsuario, string pPass)
-        {
+            try
+            {
+                this.con.Open();
+                return;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
             
-            //cmd.Cancel();
+        }
+        public  System.Data.ConnectionState abrirConexion(int bandera)
+        {
+            try
+            {
+                this.con.Open();
+                return con.State;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+              
+        }
+        public  void cerrarConexion()
+        {
+            try
+            {
+                this.con.Close();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+        public  SqlDataReader Ingresar(string pUsuario, string pPass)
+        {
+            abrirConexion();
             cmd = new SqlCommand("SP_SESIONES_Ingresar", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -50,15 +80,14 @@ namespace CCYMovimientos.Modelos
             //return paramCodRetorno.Value.ToString();
             unDataReader = cmd.ExecuteReader();
             return unDataReader;
-
         }
 
 
 
         //Clientes***********************************************
-        public static DataTable TraerClientes(bool tipoCliente,string codCliente = "0")
+        public  DataTable TraerClientes(bool tipoCliente,string codCliente = "0")
         {
-
+            abrirConexion();
             cmd = new SqlCommand("SP_CLIENTE_Traer", con);
             cmd.Parameters.Add("@codCliente", SqlDbType.Int).Value = Convert.ToInt32(codCliente);
             cmd.Parameters.Add("@tipoCliente", SqlDbType.Bit).Value = tipoCliente;
@@ -73,8 +102,9 @@ namespace CCYMovimientos.Modelos
 
         }
 
-        public static DataTable TraerClientesTipos()
+        public  DataTable TraerClientesTipos()
         {
+            abrirConexion();
             cmd = new SqlCommand("SP_CLIENTE_Traer_Tipos", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -86,9 +116,9 @@ namespace CCYMovimientos.Modelos
 
         }
 
-        public static DataTable TraerClientesLocalidades(int codProvincia)
+        public  DataTable TraerClientesLocalidades(int codProvincia)
         {
-            
+            abrirConexion();
             cmd = new SqlCommand("SP_CLIENTE_Traer_Localidades", con);
             cmd.Parameters.Add("@CodProvincia", SqlDbType.Int).Value = codProvincia;
 
@@ -101,9 +131,9 @@ namespace CCYMovimientos.Modelos
             return dt;
         }
 
-        public static DataTable TraerClientesProvincias()
+        public  DataTable TraerClientesProvincias()
         {
-            
+            abrirConexion();
             cmd = new SqlCommand("SP_CLIENTE_Traer_Provincias", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -114,13 +144,13 @@ namespace CCYMovimientos.Modelos
             return dt;
         }
 
-        public static SqlDataReader CrearCliente(string pApellidos, string pNombres,
+        public  SqlDataReader CrearCliente(string pApellidos, string pNombres,
                                               string pCUIL, string pDNI, string pcodTipoCliente,
                                               string pTelefono, string pEmail, string pcodProvincia,
                                               string pCodLocalidad, string pDomicilio)
         {
-            
-            cmd = new SqlCommand("SP_CLIENTE_Nuevo", con);
+            abrirConexion();
+            cmd = new SqlCommand("SP_CLIENTE_Nuevo_Editar", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.Add("@Apellidos", SqlDbType.VarChar, 150).Value = pApellidos;
@@ -140,5 +170,48 @@ namespace CCYMovimientos.Modelos
 
         //Clientes***********************************************
 
+
+        //Fondos*************************************************
+        public SqlDataReader AbrirCaja()
+        {
+            abrirConexion();
+            cmd = new SqlCommand("SP_FONDOS_Abrir_Caja", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader unDataReader = cmd.ExecuteReader();
+
+            return unDataReader;
+
+        }
+
+        public SqlDataReader CerrarCaja(decimal pImporte)
+        {
+            abrirConexion();
+            cmd = new SqlCommand("SP_FONDOS_Cerrar_Caja", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@importe", SqlDbType.Decimal).Value = pImporte;
+
+            SqlDataReader unDataReader = cmd.ExecuteReader();
+
+            return unDataReader;
+
+        }
+
+        public DataTable TraerMovmientos(DateTime fechaMov)
+        {
+            abrirConexion();
+            cmd = new SqlCommand("SP_FONDOS_Traer_Movimientos", con);
+            cmd.Parameters.Add("@fechaMov", SqlDbType.SmallDateTime).Value = fechaMov;
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("FondosMovimientos");
+            adapter.Fill(dt);
+
+            return dt;
+        }
+        //Fondos*************************************************
     }
 }

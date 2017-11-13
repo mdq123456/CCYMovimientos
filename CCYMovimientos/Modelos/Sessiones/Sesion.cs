@@ -29,8 +29,8 @@ namespace CCYMovimientos.Modelos.Sessiones
         
         public string Ingresar()
         {
-
-            SqlDataReader unDato = DataCenter.Ingresar(this.usuario, this.pass);
+            DataCenter objDC = new DataCenter();
+            SqlDataReader unDato = objDC.Ingresar(this.usuario, this.pass);
             if (unDato.HasRows)
             {
                 unDato.Read();
@@ -40,16 +40,13 @@ namespace CCYMovimientos.Modelos.Sessiones
                 this.setUsuario(unDato["Usuario"].ToString());
                 this.setCodRol(Convert.ToInt32(unDato["codRol"].ToString()));
                 this.setPass("");
-
-                DataCenter.cerrarConexion();
+                objDC.cerrarConexion();
                 return this.msj;
 
             }
-
-            DataCenter.cerrarConexion();
+            objDC.cerrarConexion();
             return "Usuario y/o contraseña NO válidos !";
             
-
         }
 
         
