@@ -53,9 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelos\Clientes\DBClientes.cs" />
+    <Compile Include="Modelos\Creditos\DBCreditos.cs" />
     <Compile Include="Modelos\DataCenter.cs" />
     <Compile Include="Modelos\Fondos\DBFondos.cs" />
     <Compile Include="Modelos\Sessiones\Sesion.cs" />
+    <Compile Include="Modelos\Ventas\DBVentas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vistas\Clientes\ClienteABM.cs">
@@ -64,17 +66,41 @@
     <Compile Include="Vistas\Clientes\ClienteABM.Designer.cs">
       <DependentUpon>ClienteABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Clientes\ClienteBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Clientes\ClienteBusqueda.Designer.cs">
+      <DependentUpon>ClienteBusqueda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Clientes\ClienteNewEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Clientes\ClienteNewEdit.Designer.cs">
       <DependentUpon>ClienteNewEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Clientes\ClientesLlamadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Clientes\ClientesLlamadas.Designer.cs">
+      <DependentUpon>ClientesLlamadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Creditos\controlDeCreditos.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Vistas\Creditos\controlDeCreditos.Designer.cs">
       <DependentUpon>controlDeCreditos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Creditos\PagosClientesCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Creditos\PagosClientesCreditos.Designer.cs">
+      <DependentUpon>PagosClientesCreditos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Fondos\AltaMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Fondos\AltaMovimientos.Designer.cs">
+      <DependentUpon>AltaMovimientos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Fondos\FondosCaja.cs">
       <SubType>Form</SubType>
@@ -106,11 +132,11 @@
     <Compile Include="Vistas\Sesiones\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Ventas\Ventas.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Vistas\Ventas\VentasABM.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Ventas\Ventas.Designer.cs">
-      <DependentUpon>Ventas.cs</DependentUpon>
+    <Compile Include="Vistas\Ventas\VentasABM.Designer.cs">
+      <DependentUpon>VentasABM.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,11 +150,23 @@
     <EmbeddedResource Include="Vistas\Clientes\ClienteABM.resx">
       <DependentUpon>ClienteABM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Clientes\ClienteBusqueda.resx">
+      <DependentUpon>ClienteBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Clientes\ClienteNewEdit.resx">
       <DependentUpon>ClienteNewEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Clientes\ClientesLlamadas.resx">
+      <DependentUpon>ClientesLlamadas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Creditos\controlDeCreditos.resx">
       <DependentUpon>controlDeCreditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Creditos\PagosClientesCreditos.resx">
+      <DependentUpon>PagosClientesCreditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Fondos\AltaMovimientos.resx">
+      <DependentUpon>AltaMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Fondos\FondosCaja.resx">
       <DependentUpon>FondosCaja.cs</DependentUpon>
@@ -145,8 +183,8 @@
     <EmbeddedResource Include="Vistas\Sesiones\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Ventas\Ventas.resx">
-      <DependentUpon>Ventas.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\Ventas\VentasABM.resx">
+      <DependentUpon>VentasABM.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

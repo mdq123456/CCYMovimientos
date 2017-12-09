@@ -46,12 +46,13 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ChEmpresas = new Bunifu.Framework.UI.BunifuCheckbox();
             this.btnEditCliente = new Bunifu.Framework.UI.BunifuFlatButton();
             this.DGClientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnNuevoCliente = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.TxtBuscar = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -114,6 +115,8 @@
             this.btnHistorialPago.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistorialPago.Textcolor = System.Drawing.Color.Silver;
             this.btnHistorialPago.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialPago.Visible = false;
+            this.btnHistorialPago.Click += new System.EventHandler(this.btnHistorialPago_Click);
             // 
             // btnContacto
             // 
@@ -150,6 +153,8 @@
             this.btnContacto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnContacto.Textcolor = System.Drawing.Color.Silver;
             this.btnContacto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContacto.Visible = false;
+            this.btnContacto.Click += new System.EventHandler(this.btnContacto_Click);
             // 
             // lblDireccion
             // 
@@ -272,17 +277,38 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bunifuCustomLabel6);
+            this.panel1.Controls.Add(this.TxtBuscar);
             this.panel1.Controls.Add(this.bunifuCustomLabel5);
             this.panel1.Controls.Add(this.ChEmpresas);
             this.panel1.Controls.Add(this.btnEditCliente);
             this.panel1.Controls.Add(this.DGClientes);
             this.panel1.Controls.Add(this.btnNuevoCliente);
-            this.panel1.Controls.Add(this.TxtBuscar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 249);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(789, 378);
             this.panel1.TabIndex = 14;
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(35, 25);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(108, 21);
+            this.bunifuCustomLabel6.TabIndex = 30;
+            this.bunifuCustomLabel6.Text = "Buscar Cliente";
+            // 
+            // TxtBuscar
+            // 
+            this.TxtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBuscar.Location = new System.Drawing.Point(39, 52);
+            this.TxtBuscar.Name = "TxtBuscar";
+            this.TxtBuscar.Size = new System.Drawing.Size(228, 29);
+            this.TxtBuscar.TabIndex = 14;
+            this.TxtBuscar.Click += new System.EventHandler(this.TxtBuscar_Click);
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_OnTextChange);
             // 
             // bunifuCustomLabel5
             // 
@@ -343,6 +369,7 @@
             this.btnEditCliente.Textcolor = System.Drawing.Color.Silver;
             this.btnEditCliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditCliente.Visible = false;
+            this.btnEditCliente.Click += new System.EventHandler(this.btnEditCliente_Click);
             // 
             // DGClientes
             // 
@@ -371,10 +398,10 @@
             this.DGClientes.HeaderForeColor = System.Drawing.Color.Gainsboro;
             this.DGClientes.Location = new System.Drawing.Point(39, 104);
             this.DGClientes.Name = "DGClientes";
-            this.DGClientes.ReadOnly = true;
             this.DGClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGClientes.Size = new System.Drawing.Size(713, 271);
             this.DGClientes.TabIndex = 11;
+            this.DGClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGClientes_CellClick);
             // 
             // btnNuevoCliente
             // 
@@ -412,19 +439,6 @@
             this.btnNuevoCliente.Textcolor = System.Drawing.Color.Silver;
             this.btnNuevoCliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
-            // 
-            // TxtBuscar
-            // 
-            this.TxtBuscar.BackColor = System.Drawing.Color.Silver;
-            this.TxtBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TxtBuscar.BackgroundImage")));
-            this.TxtBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TxtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.TxtBuscar.Icon = ((System.Drawing.Image)(resources.GetObject("TxtBuscar.Icon")));
-            this.TxtBuscar.Location = new System.Drawing.Point(39, 48);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(250, 42);
-            this.TxtBuscar.TabIndex = 1;
-            this.TxtBuscar.text = "";
             // 
             // panel3
             // 
@@ -480,7 +494,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnEditCliente;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DGClientes;
         private Bunifu.Framework.UI.BunifuFlatButton btnNuevoCliente;
-        private Bunifu.Framework.UI.BunifuTextbox TxtBuscar;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox TxtBuscar;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
     }
 }

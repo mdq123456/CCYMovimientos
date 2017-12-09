@@ -144,6 +144,7 @@
             this.btnCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreditos.Textcolor = System.Drawing.Color.Silver;
             this.btnCreditos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreditos.Visible = false;
             this.btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
             // 
             // btnVentas
@@ -407,7 +408,6 @@
             this.IsMdiContainer = true;
             this.Name = "MenuPrincipal";
             this.Text = "Clientes";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.Resize += new System.EventHandler(this.MenuPrincipal_Resize);
             this.menuLeft.ResumeLayout(false);

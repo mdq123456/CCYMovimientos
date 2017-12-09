@@ -14,9 +14,19 @@ namespace CCYMovimientos.Vistas.Clientes
 {
     public partial class ClienteNewEdit : Form
     {
+        string codCliente;
+        bool tipoCliente;
         public ClienteNewEdit()
         {
             InitializeComponent();
+            codCliente = "0";
+        }
+
+        public ClienteNewEdit(string pCodCliente, bool ptipoCliente)
+        {
+            InitializeComponent();
+            codCliente = pCodCliente;
+            tipoCliente = ptipoCliente;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -27,6 +37,71 @@ namespace CCYMovimientos.Vistas.Clientes
         private void ClienteNewEdit_Load(object sender, EventArgs e)
         {
             cargarComponentes();
+
+            panel4.Dock = DockStyle.Fill;
+
+            if (codCliente != "0")
+            {
+
+                cargarCliente();
+            }
+            
+        }
+
+        private void cargarCliente()
+        {
+            panel4.Visible = false;
+            panel5.Dock = DockStyle.Fill;
+            panel5.Visible = true;
+
+            DBClientes objCliente = new DBClientes();
+            DataTable tabla = objCliente.TraerClientes(tipoCliente,codCliente);
+
+            DataRow row = tabla.Rows[0];
+            cboTipoCliente.SelectedValue = Convert.ToInt32( row["CodClienteTipo"].ToString());
+            if (row["CodProvincia"].ToString() != "")
+            {
+                cboProvincia.SelectedValue = Convert.ToInt32(row["CodProvincia"].ToString());
+            }
+            if (row["CodLocalidad"].ToString() != "")
+            {
+                cboLocalidad.SelectedValue = Convert.ToInt32(row["CodLocalidad"].ToString());
+            }
+            
+            TxtNombres.Text = row["Nombres"].ToString();
+            TxtApellidos.Text = row["Apellidos"].ToString();
+            TxtDNI.Text = row["DNI"].ToString();
+            if (row["CUIL"].ToString() != "")
+            {
+                String value = row["CUIL"].ToString();
+                Char delimiter = '-';
+                String[] substrings = value.Split(delimiter);
+                int contar = 1;
+                foreach (var substring in substrings)
+                {
+                    switch (contar)
+                    {
+                        case 1:
+                            TxtCUILIzq.Text = substring;
+                            break;
+                        case 2:
+                            TxtCUIL.Text = substring;
+                            break;
+                        case 3:
+                            TxtCUILDer.Text = substring;
+                            break;
+                        default:
+                            break;
+                    }
+                    contar = contar + 1;
+                }
+                
+            }
+            
+            TxtTel.Text = row["TelCelular"].ToString();
+            TxtDireccion.Text = row["Domicilio"].ToString();
+            TxtEmail.Text = row["Email"].ToString();
+
         }
 
         private bool ControlarDatos()
@@ -46,20 +121,20 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             //Cargo combo Tipo Clientes
             DBClientes objCliente = new DBClientes();
-            this.cboTipoCliente.DataSource = objCliente.TraerClientesTipos();
             this.cboTipoCliente.DisplayMember = "TipoCliente";
             this.cboTipoCliente.ValueMember = "CodClienteTipo";
+            this.cboTipoCliente.DataSource = objCliente.TraerClientesTipos();
 
             //Cargo combo Provincias
-            this.cboProvincia.DataSource = objCliente.TraerClientesProvincias();
             this.cboProvincia.DisplayMember = "Provincia";
             this.cboProvincia.ValueMember = "CodProvincia";
+            this.cboProvincia.DataSource = objCliente.TraerClientesProvincias();
             this.cboProvincia.SelectedIndex = 7;
 
             //Cargo combo Localidades
-            this.cboLocalidad.DataSource = objCliente.TraerClientesLocalidades(Convert.ToInt32(this.cboProvincia.SelectedValue));
             this.cboLocalidad.DisplayMember = "Localidad";
             this.cboLocalidad.ValueMember = "CodLocalidad";
+            this.cboLocalidad.DataSource = objCliente.TraerClientesLocalidades(Convert.ToInt32(this.cboProvincia.SelectedValue));
             this.cboLocalidad.SelectedIndex = 5;
 
         }
@@ -68,14 +143,20 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             try
             {
-                if (Convert.ToInt32(this.cboProvincia.SelectedValue) > -1)
+                
+                if (Convert.ToInt32(this.cboProvincia.SelectedValue) > 0)
                 {
                     DBClientes objCliente = new DBClientes();
-                    this.cboLocalidad.DataSource = objCliente.TraerClientesLocalidades(Convert.ToInt32(this.cboProvincia.SelectedValue));
                     this.cboLocalidad.DisplayMember = "Localidad";
                     this.cboLocalidad.ValueMember = "CodLocalidad";
+                    DataTable dt = objCliente.TraerClientesLocalidades(Convert.ToInt32(this.cboProvincia.SelectedValue));
+                    
+                    this.cboLocalidad.DataSource = dt;
+                    
                     this.cboLocalidad.SelectedIndex = -1;
                 }
+                
+                
             }
             catch (Exception e)
             {
@@ -121,17 +202,17 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             if (ControlarDatos())
             {
-                CrearCliente();
+                GuardarCliente();
                 this.Close();
             }
             else
             {
-                Alertas alert = new Alertas("Debe completar los datos para ingresar al nuevo cliente.", "");
+                Alertas alert = new Alertas("Debe completar los datos para guardar el cliente.", "");
                 alert.Show();
             }
         }
 
-        private void CrearCliente()
+        private void GuardarCliente()
         {
             string CUIL = TxtCUILIzq.Text + "-" + TxtCUIL.Text + "-" + TxtCUILDer.Text;
             DBClientes objCliente = new DBClientes(TxtApellidos.Text,
@@ -143,8 +224,9 @@ namespace CCYMovimientos.Vistas.Clientes
                                                    TxtEmail.Text,
                                                    cboProvincia.SelectedValue.ToString(),
                                                    cboLocalidad.SelectedValue.ToString(),
-                                                   TxtDireccion.Text);
-            if (objCliente.CrearCliente())
+                                                   TxtDireccion.Text,
+                                                   codCliente.ToString());
+            if (objCliente.GuardarCliente())
             {
                 Alertas alert = new Alertas("Operacion finalizada con éxito !", "");
                 alert.Show();
@@ -157,6 +239,5 @@ namespace CCYMovimientos.Vistas.Clientes
 
 
         }
-        
     }
 }

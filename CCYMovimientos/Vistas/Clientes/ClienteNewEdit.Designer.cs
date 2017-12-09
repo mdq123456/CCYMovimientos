@@ -91,6 +91,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(339, 58);
             this.panel5.TabIndex = 78;
+            this.panel5.Visible = false;
             // 
             // bunifuCustomLabel12
             // 
@@ -102,7 +103,6 @@
             this.bunifuCustomLabel12.Size = new System.Drawing.Size(225, 47);
             this.bunifuCustomLabel12.TabIndex = 75;
             this.bunifuCustomLabel12.Text = "Editar Cliente";
-            this.bunifuCustomLabel12.Visible = false;
             // 
             // bunifuFlatButton1
             // 
@@ -137,7 +137,6 @@
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Visible = false;
             // 
             // panel4
             // 
@@ -272,6 +271,7 @@
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(204, 33);
             this.cboProvincia.TabIndex = 10;
+            this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
             // 
             // cboTipoCliente
             // 
@@ -284,6 +284,7 @@
             this.cboTipoCliente.Name = "cboTipoCliente";
             this.cboTipoCliente.Size = new System.Drawing.Size(204, 33);
             this.cboTipoCliente.TabIndex = 1;
+            this.cboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cboTipoCliente_SelectedIndexChanged);
             // 
             // btnCancelar
             // 
@@ -349,7 +350,7 @@
             // 
             this.TxtDireccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtDireccion.HintForeColor = System.Drawing.Color.Empty;
             this.TxtDireccion.HintText = "";
@@ -357,7 +358,7 @@
             this.TxtDireccion.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtDireccion.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtDireccion.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtDireccion.LineThickness = 3;
+            this.TxtDireccion.LineThickness = 4;
             this.TxtDireccion.Location = new System.Drawing.Point(235, 347);
             this.TxtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDireccion.Name = "TxtDireccion";
@@ -369,7 +370,7 @@
             // 
             this.TxtCUILDer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtCUILDer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtCUILDer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtCUILDer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCUILDer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtCUILDer.HintForeColor = System.Drawing.Color.Empty;
             this.TxtCUILDer.HintText = "";
@@ -377,7 +378,7 @@
             this.TxtCUILDer.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtCUILDer.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtCUILDer.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtCUILDer.LineThickness = 3;
+            this.TxtCUILDer.LineThickness = 4;
             this.TxtCUILDer.Location = new System.Drawing.Point(732, 180);
             this.TxtCUILDer.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCUILDer.Name = "TxtCUILDer";
@@ -389,7 +390,7 @@
             // 
             this.TxtCUILIzq.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtCUILIzq.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtCUILIzq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtCUILIzq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCUILIzq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtCUILIzq.HintForeColor = System.Drawing.Color.Empty;
             this.TxtCUILIzq.HintText = "";
@@ -397,7 +398,7 @@
             this.TxtCUILIzq.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtCUILIzq.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtCUILIzq.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtCUILIzq.LineThickness = 3;
+            this.TxtCUILIzq.LineThickness = 4;
             this.TxtCUILIzq.Location = new System.Drawing.Point(498, 180);
             this.TxtCUILIzq.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCUILIzq.Name = "TxtCUILIzq";
@@ -513,7 +514,7 @@
             // 
             this.TxtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtEmail.HintForeColor = System.Drawing.Color.Empty;
             this.TxtEmail.HintText = "";
@@ -521,7 +522,7 @@
             this.TxtEmail.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtEmail.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtEmail.LineThickness = 3;
+            this.TxtEmail.LineThickness = 4;
             this.TxtEmail.Location = new System.Drawing.Point(235, 262);
             this.TxtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEmail.Name = "TxtEmail";
@@ -533,7 +534,7 @@
             // 
             this.TxtTel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtTel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtTel.HintForeColor = System.Drawing.Color.Empty;
             this.TxtTel.HintText = "";
@@ -541,7 +542,7 @@
             this.TxtTel.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtTel.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtTel.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtTel.LineThickness = 3;
+            this.TxtTel.LineThickness = 4;
             this.TxtTel.Location = new System.Drawing.Point(235, 221);
             this.TxtTel.Margin = new System.Windows.Forms.Padding(4);
             this.TxtTel.Name = "TxtTel";
@@ -553,7 +554,7 @@
             // 
             this.TxtCUIL.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtCUIL.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtCUIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtCUIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCUIL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtCUIL.HintForeColor = System.Drawing.Color.Empty;
             this.TxtCUIL.HintText = "";
@@ -561,7 +562,7 @@
             this.TxtCUIL.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtCUIL.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtCUIL.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtCUIL.LineThickness = 3;
+            this.TxtCUIL.LineThickness = 4;
             this.TxtCUIL.Location = new System.Drawing.Point(554, 180);
             this.TxtCUIL.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCUIL.Name = "TxtCUIL";
@@ -573,7 +574,7 @@
             // 
             this.TxtDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtDNI.HintForeColor = System.Drawing.Color.Empty;
             this.TxtDNI.HintText = "";
@@ -581,7 +582,7 @@
             this.TxtDNI.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtDNI.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtDNI.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtDNI.LineThickness = 3;
+            this.TxtDNI.LineThickness = 4;
             this.TxtDNI.Location = new System.Drawing.Point(235, 180);
             this.TxtDNI.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDNI.Name = "TxtDNI";
@@ -593,7 +594,7 @@
             // 
             this.TxtApellidos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtApellidos.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtApellidos.HintForeColor = System.Drawing.Color.Empty;
             this.TxtApellidos.HintText = "";
@@ -601,7 +602,7 @@
             this.TxtApellidos.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtApellidos.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtApellidos.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtApellidos.LineThickness = 3;
+            this.TxtApellidos.LineThickness = 4;
             this.TxtApellidos.Location = new System.Drawing.Point(235, 139);
             this.TxtApellidos.Margin = new System.Windows.Forms.Padding(4);
             this.TxtApellidos.Name = "TxtApellidos";
@@ -613,7 +614,7 @@
             // 
             this.TxtNombres.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtNombres.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TxtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtNombres.HintForeColor = System.Drawing.Color.Empty;
             this.TxtNombres.HintText = "";
@@ -622,7 +623,7 @@
             this.TxtNombres.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtNombres.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtNombres.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtNombres.LineThickness = 3;
+            this.TxtNombres.LineThickness = 4;
             this.TxtNombres.Location = new System.Drawing.Point(235, 98);
             this.TxtNombres.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNombres.Name = "TxtNombres";

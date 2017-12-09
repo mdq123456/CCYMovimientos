@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCYMovimientos.Vistas.Ventas;
 
 namespace CCYMovimientos.Vistas.Menu
 {
@@ -18,6 +19,8 @@ namespace CCYMovimientos.Vistas.Menu
         private Sesion objSesion;
         private ClienteABM clienteForm;
         private FondosCaja fondosForm;
+        private VentasABM ventasForm;
+
         public MenuPrincipal(Sesion pobjSesion)
         {
             this.objSesion = pobjSesion;
@@ -36,6 +39,10 @@ namespace CCYMovimientos.Vistas.Menu
             {
                 this.fondosForm.Hide();
             }
+            if (this.ventasForm != null)
+            {
+                this.ventasForm.Hide();
+            }
 
 
         }
@@ -44,11 +51,15 @@ namespace CCYMovimientos.Vistas.Menu
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             this.panelMenu.Dock = DockStyle.Fill;
+            this.WindowState = FormWindowState.Maximized;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -81,7 +92,20 @@ namespace CCYMovimientos.Vistas.Menu
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    frm.WindowState = FormWindowState.Minimized;
+                    if (frm.Name == "MenuPrincipal")
+                    {
+                        frm.WindowState = FormWindowState.Minimized;
+                    }
+                }
+            }
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.Name == "MenuPrincipal")
+                    {
+                        frm.FormBorderStyle = FormBorderStyle.None;
+                    }
                 }
             }
         }
@@ -103,6 +127,7 @@ namespace CCYMovimientos.Vistas.Menu
         private void btnFondo_Click(object sender, EventArgs e)
         {
             this.EsconderPaneles();
+            
             if (fondosForm == null)
             {
                 fondosForm = new FondosCaja(this.panelMenu.Location,
@@ -111,12 +136,24 @@ namespace CCYMovimientos.Vistas.Menu
                 this.panelMenu.Controls.Add(fondosForm);
                 fondosForm.Dock = DockStyle.Fill;
             }
+
             fondosForm.Show();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
             this.EsconderPaneles();
+
+            if (ventasForm == null)
+            {
+                ventasForm = new VentasABM(this.panelMenu.Location,
+                                               this.panelMenu.Size);
+                ventasForm.MdiParent = this;
+                this.panelMenu.Controls.Add(ventasForm);
+                ventasForm.Dock = DockStyle.Fill;
+            }
+
+            ventasForm.Show();
         }
 
         private void btnCreditos_Click(object sender, EventArgs e)

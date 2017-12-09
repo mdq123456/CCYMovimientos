@@ -10,7 +10,7 @@ namespace CCYMovimientos.Modelos.Clientes
 {
     class DBClientes
     {
-        private int codCliente { set; get; }
+        private string codCliente { set; get; }
         private string Apellidos { set; get; }
         private string Nombres { set; get; }
         private string CUIL { set; get; }
@@ -30,7 +30,8 @@ namespace CCYMovimientos.Modelos.Clientes
         public DBClientes(string pApellidos, string pNombres,
                           string pCUIL, string pDNI, string pcodTipoCliente,
                           string pTelefono, string pEmail, string pcodProvincia,
-                          string pCodLocalidad, string pDomicilio)
+                          string pCodLocalidad, string pDomicilio,
+                          string pcodCliente)
         {
             Apellidos = pApellidos;
             Nombres = pNombres;
@@ -41,15 +42,56 @@ namespace CCYMovimientos.Modelos.Clientes
             Email = pEmail;
             codProvincia = pcodProvincia;
             codLocalidad = pCodLocalidad;
-            Domicilio = pDomicilio; 
+            Domicilio = pDomicilio;
+            codCliente = pcodCliente;
         }
 
-        public DataTable TraerClientes(bool tipoCliente)
+        public object TraerLlamadas(string pcodCliente)
         {
             try
             {
                 DataCenter objDC = new DataCenter();
-                DataTable tabla = objDC.TraerClientes(tipoCliente);
+                DataTable tabla = objDC.TraerLlamadas(pcodCliente);
+                objDC.cerrarConexion();
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public string GuardarLlamada(string pcodCliente, DateTime pFechaLlamada, string pConcepto)
+        {
+            string retorno = "";
+
+            DataCenter objDC = new DataCenter();
+            SqlDataReader unDato = objDC.GuardarLlamada(pcodCliente, pFechaLlamada,
+                                                      pConcepto);
+            if (unDato.HasRows)
+            {
+                unDato.Read();
+
+                retorno = unDato["Msj"].ToString();
+
+            }
+            else
+            {
+                retorno = "No se pudo realizar la operacion, comuniquese con su administrador.";
+            }
+
+            objDC.cerrarConexion();
+            return retorno;
+        }
+
+        public DataTable TraerClientes(bool tipoCliente, string codCliente = "0")
+        {
+            try
+            {
+                DataCenter objDC = new DataCenter();
+                DataTable tabla = objDC.TraerClientes(tipoCliente, codCliente);
                 objDC.cerrarConexion();
 
                 return tabla;
@@ -109,13 +151,13 @@ namespace CCYMovimientos.Modelos.Clientes
             }
         }
 
-        public bool CrearCliente()
+        public bool GuardarCliente()
         {
             bool varResultado;
             try { 
                 DataCenter objDC = new DataCenter();
 
-                SqlDataReader resultado = objDC.CrearCliente(Apellidos,
+                SqlDataReader resultado = objDC.GuardarCliente(Apellidos,
                                                                   Nombres,
                                                                   CUIL,
                                                                   DNI,
@@ -124,7 +166,8 @@ namespace CCYMovimientos.Modelos.Clientes
                                                                   Email,
                                                                   codProvincia,
                                                                   codLocalidad,
-                                                                  Domicilio);
+                                                                  Domicilio,
+                                                                  codCliente);
             
                 if (resultado.HasRows)
                 {

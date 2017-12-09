@@ -66,5 +66,39 @@ namespace CCYMovimientos.Vistas.Fondos
             }
             
         }
+
+        private void btnIngresos_Click(object sender, EventArgs e)
+        {
+            FormAltaMov("Ingreso");
+        }
+
+        private void btnEgresos_Click(object sender, EventArgs e)
+        {
+            FormAltaMov("Egreso");
+        }
+
+        private void FormAltaMov(string tipoMov)
+        {
+            AltaMovimientos AltaMovForm = new AltaMovimientos(tipoMov);
+            AltaMovForm.ShowDialog();
+
+            CargarMovimientos();
+
+            if (AltaMovForm.getMsj() != "")
+            {
+                Alertas alert = new Alertas(AltaMovForm.getMsj(), "");
+                alert.Show();
+            }
+        }
+
+        private void btnIzq_Click(object sender, EventArgs e)
+        {
+            cboFechaMov.Value = cboFechaMov.Value.AddDays(-1);
+        }
+
+        private void btnDer_Click(object sender, EventArgs e)
+        {
+            cboFechaMov.Value = cboFechaMov.Value.AddDays(1);
+        }
     }
 }
