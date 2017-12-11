@@ -31,14 +31,20 @@ namespace CCYMovimientos.Modelos.Ventas
 
         public string GuardarVenta(string pCodCliente, string pTotal,
                                     string pCuotas, string pCuota, string pAnticipo,
-                                    string pCodFormaPago, string pConcepto)
+                                    string pCodFormaPago, string pConcepto,
+                                    DateTime pfechaEmision, DateTime pfechaCobro,
+                                    string pnroCheque, string pbanco, string pcuenta,
+                                    string beneficiario)
         {
             string retorno = "";
 
             DataCenter objDC = new DataCenter();
             SqlDataReader unDato = objDC.GuardarVenta(pCodCliente,pTotal,
                                                       pCuotas,pCuota,pAnticipo,
-                                                      pCodFormaPago,pConcepto);
+                                                      pCodFormaPago,pConcepto,
+                                                      pfechaEmision, pfechaCobro,
+                                                      pnroCheque, pbanco, pcuenta,
+                                                      beneficiario);
             if (unDato.HasRows)
             {
                 unDato.Read();

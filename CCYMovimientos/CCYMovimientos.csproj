@@ -84,12 +84,6 @@
     <Compile Include="Vistas\Clientes\ClientesLlamadas.Designer.cs">
       <DependentUpon>ClientesLlamadas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Creditos\controlDeCreditos.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Vistas\Creditos\controlDeCreditos.Designer.cs">
-      <DependentUpon>controlDeCreditos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\Creditos\PagosClientesCreditos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Clientes\ClientesLlamadas.resx">
       <DependentUpon>ClientesLlamadas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Creditos\controlDeCreditos.resx">
-      <DependentUpon>controlDeCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Creditos\PagosClientesCreditos.resx">
       <DependentUpon>PagosClientesCreditos.cs</DependentUpon>

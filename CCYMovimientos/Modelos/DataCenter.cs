@@ -385,7 +385,7 @@ namespace CCYMovimientos.Modelos
         public SqlDataReader InsertarMov(string pConcepto, string ptipoMov, string pimporte,
                         DateTime pfechaEmision, DateTime pfechaCobro,
                         string pnroCheque, string pbanco, string pcuenta,
-                        int pcodVenta, int pcodAnticipo)
+                        int pcodVenta, int pcodAnticipo, string pbeneficiario)
         {
             try
             {
@@ -401,6 +401,7 @@ namespace CCYMovimientos.Modelos
                 cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar, 30).Value = pnroCheque;
                 cmd.Parameters.Add("@banco", SqlDbType.VarChar, 200).Value = pbanco;
                 cmd.Parameters.Add("@cuenta", SqlDbType.VarChar, 100).Value = pcuenta;
+                cmd.Parameters.Add("@beneficiario", SqlDbType.VarChar, 200).Value = pbeneficiario;
 
                 if (pcodVenta != 0)
                 {
@@ -448,7 +449,10 @@ namespace CCYMovimientos.Modelos
 
         public SqlDataReader GuardarVenta(string pCodCliente, string pTotal,
                                         string pCuotas, string pCuota, string pAnticipo,
-                                        string pCodFormaPago, string pConcepto)
+                                        string pCodFormaPago, string pConcepto,
+                                        DateTime pfechaEmision, DateTime pfechaCobro,
+                                        string pnroCheque, string pbanco, string pcuenta,
+                                        string pbeneficiario)
         {
             try
             {
@@ -468,7 +472,14 @@ namespace CCYMovimientos.Modelos
 
                 cmd.Parameters.Add("@codFormaPago", SqlDbType.Int).Value = Convert.ToInt32(pCodFormaPago); 
                 cmd.Parameters.Add("@Concepto", SqlDbType.VarChar, 300).Value = pConcepto;
-                
+
+                cmd.Parameters.Add("@fechaEmision", SqlDbType.SmallDateTime).Value = pfechaEmision;
+                cmd.Parameters.Add("@fechaCobro", SqlDbType.SmallDateTime).Value = pfechaCobro;
+                cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar, 30).Value = pnroCheque;
+                cmd.Parameters.Add("@banco", SqlDbType.VarChar, 200).Value = pbanco;
+                cmd.Parameters.Add("@cuenta", SqlDbType.VarChar, 100).Value = pcuenta;
+                cmd.Parameters.Add("@beneficiario", SqlDbType.VarChar, 200).Value = pbeneficiario;
+
                 unDataReader = cmd.ExecuteReader();
                 return unDataReader;
             }
@@ -506,7 +517,10 @@ namespace CCYMovimientos.Modelos
 
         public SqlDataReader InsertarPago(string pcodCliente, string pcodFormaPago, 
                                           string pimporte, string pstrCodPago,
-                                          string pNombreCliente)
+                                          string pNombreCliente,
+                                          DateTime pfechaEmision, DateTime pfechaCobro,
+                                        string pnroCheque, string pbanco, string pcuenta,
+                                        string pbeneficiario)
         {
             try
             {
@@ -519,6 +533,13 @@ namespace CCYMovimientos.Modelos
                 cmd.Parameters.Add("@importe", SqlDbType.Decimal).Value = Convert.ToDecimal(pimporte);
                 cmd.Parameters.Add("@strCodPago", SqlDbType.VarChar, 2000).Value = pstrCodPago;
                 cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 300).Value = pNombreCliente;
+
+                cmd.Parameters.Add("@fechaEmision", SqlDbType.SmallDateTime).Value = pfechaEmision;
+                cmd.Parameters.Add("@fechaCobro", SqlDbType.SmallDateTime).Value = pfechaCobro;
+                cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar, 30).Value = pnroCheque;
+                cmd.Parameters.Add("@banco", SqlDbType.VarChar, 200).Value = pbanco;
+                cmd.Parameters.Add("@cuenta", SqlDbType.VarChar, 100).Value = pcuenta;
+                cmd.Parameters.Add("@beneficiario", SqlDbType.VarChar, 200).Value = pbeneficiario;
 
                 SqlDataReader unDataReader = cmd.ExecuteReader();
 

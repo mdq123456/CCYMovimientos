@@ -15,19 +15,34 @@ namespace CCYMovimientos.Modelos.Creditos
         private string strCodPago { set; get; }
         private string importe { set; get; }
         private string codFormaPago { set; get; }
+        private DateTime fechaEmision { set; get; }
+        private DateTime fechaCobro { set; get; }
+        private string nroCheque { set; get; }
+        private string banco { set; get; }
+        private string cuenta { set; get; }
+        private string beneficiario { set; get; }
 
         public DBCreditos(string pCodCliente)
         {
             this.codCliente = pCodCliente;
         }
         public DBCreditos(string pCodCliente, string pstrCodPago,string pimporte,
-                            string pcodFormaPago, string pNombreCliente)
+                            string pcodFormaPago, string pNombreCliente,
+                            DateTime pfechaEmision, DateTime pfechaCobro,
+                            string pnroCheque, string pbanco, string pcuenta,
+                            string pbeneficiario)
         {
             this.codCliente = pCodCliente;
             this.strCodPago = pstrCodPago;
             this.importe = pimporte;
             this.codFormaPago = pcodFormaPago;
             this.NombreCliente = pNombreCliente;
+            this.fechaEmision = pfechaEmision;
+            this.fechaCobro = pfechaCobro;
+            this.nroCheque = pnroCheque;
+            this.banco = pbanco;
+            this.cuenta = pcuenta;
+            this.beneficiario = pbeneficiario;
         }
 
         public DataTable TraerCreditos()
@@ -55,7 +70,13 @@ namespace CCYMovimientos.Modelos.Creditos
                                                       this.codFormaPago,
                                                       this.importe,
                                                       this.strCodPago,
-                                                      this.NombreCliente);
+                                                      this.NombreCliente,
+                                                      this.fechaEmision,
+                                                        this.fechaCobro,
+                                                        this.nroCheque,
+                                                        this.banco,
+                                                        this.cuenta,
+                                                        this.beneficiario);
             if (unDato.HasRows)
             {
                 unDato.Read();

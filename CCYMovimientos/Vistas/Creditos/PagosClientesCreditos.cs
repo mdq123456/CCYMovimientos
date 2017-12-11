@@ -44,6 +44,9 @@ namespace CCYMovimientos.Vistas.Creditos
         {
             DBCreditos objCredito = new DBCreditos(this.codCliente);
             DGCreditos.DataSource = objCredito.TraerCreditos();
+
+            cboFecha1.Value = DateTime.Today;
+            cboFecha2.Value = cboFecha1.Value.AddDays(30);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -70,10 +73,13 @@ namespace CCYMovimientos.Vistas.Creditos
                     totalAPagar = totalAPagar + Convert.ToDecimal(row.Cells["Saldo_Cuota"].Value.ToString());
                 }
             }
-
-            this.strCodPago = this.strCodPago.Substring(1);
-            TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
-            TxtImporte.Text = TxtSaldoTotal.Text;
+            if (this.strCodPago != "")
+            {
+                this.strCodPago = this.strCodPago.Substring(1);
+                TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
+                TxtImporte.Text = TxtSaldoTotal.Text;
+            }
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -82,7 +88,13 @@ namespace CCYMovimientos.Vistas.Creditos
                                                    this.strCodPago,
                                                    TxtImporte.Text.Trim(),
                                                    cboFormaPago.SelectedValue.ToString(),
-                                                   TxtCliente.Text);
+                                                   TxtCliente.Text,
+                                                   cboFecha1.Value,
+                                                    cboFecha2.Value,
+                                                    TxtNroCheque.Text,
+                                                    Txt1.Text,
+                                                    Txt2.Text,
+                                                    Txt4.Text);
 
             this.Msj = objCredito.InsertarPago();
             this.Close();
@@ -110,7 +122,7 @@ namespace CCYMovimientos.Vistas.Creditos
                         Txt4.Visible = true;
                         cboFecha1.Visible = true;
                         cboFecha2.Visible = true;
-                        lbl5.Visible = true;
+                        lbl90.Visible = true;
                         TxtNroCheque.Visible = true;
                         break;
                     case 7:
@@ -120,6 +132,7 @@ namespace CCYMovimientos.Vistas.Creditos
                         Txt1.Visible = true;
                         lbl2.Text = "Nro Cuenta :";
                         lbl2.Visible = true;
+                        Txt2.Visible = true;
                         break;
                     default:
                         break;
@@ -133,8 +146,9 @@ namespace CCYMovimientos.Vistas.Creditos
             lbl2.Visible = false;
             lbl3.Visible = false;
             lbl4.Visible = false;
-            lbl5.Visible = false;
+            lbl90.Visible = false;
             Txt1.Visible = false;
+            Txt2.Visible = false;
             Txt4.Visible = false;
             TxtNroCheque.Visible = false;
 

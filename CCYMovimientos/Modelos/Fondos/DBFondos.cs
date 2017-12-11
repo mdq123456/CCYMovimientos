@@ -20,6 +20,7 @@ namespace CCYMovimientos.Modelos.Fondos
         private string cuenta { set; get; }
         private int codVenta { set; get; }
         private int codAnticipo { set; get; }
+        private string beneficiario { set; get; }
 
         private int codFondo { set; get; }
 
@@ -31,7 +32,8 @@ namespace CCYMovimientos.Modelos.Fondos
 
         public DBFondos(string pConcepto, string ptipoMov, string pimporte,
                         DateTime pfechaEmision, DateTime pfechaCobro,
-                        string pnroCheque, string pbanco, string pcuenta)
+                        string pnroCheque, string pbanco, string pcuenta,
+                        string pbeneficiario)
         {
             this.concepto = pConcepto;
             this.tipoMov = ptipoMov;
@@ -41,6 +43,7 @@ namespace CCYMovimientos.Modelos.Fondos
             this.nroCheque = pnroCheque;
             this.banco = pbanco;
             this.cuenta = pcuenta;
+            this.beneficiario = pbeneficiario;
         }
 
         public string AbrirCaja()
@@ -96,7 +99,8 @@ namespace CCYMovimientos.Modelos.Fondos
                                                      this.banco,
                                                      this.cuenta,
                                                      this.codVenta,
-                                                     this.codAnticipo);
+                                                     this.codAnticipo,
+                                                     this.beneficiario);
             if (unDato.HasRows)
             {
                 unDato.Read();

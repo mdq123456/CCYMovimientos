@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagosClientesCreditos));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TxtSaldoTotal = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtImporte = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.DGCreditos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
-            this.TxtSaldoTotal = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lbl5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lbl90 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Importe = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -49,8 +49,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.TxtNroCheque = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.Txt4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.lbl5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbl4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cboFecha2 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.cboFecha1 = new Bunifu.Framework.UI.BunifuDatepicker();
@@ -58,6 +57,8 @@
             this.lbl2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Txt1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lbl1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.Txt2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.Txt4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGCreditos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -69,10 +70,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.panel3.Controls.Add(this.TxtNroCheque);
-            this.panel3.Controls.Add(this.bunifuCustomLabel1);
-            this.panel3.Controls.Add(this.bunifuCustomLabel7);
-            this.panel3.Controls.Add(this.TxtSaldoTotal);
-            this.panel3.Controls.Add(this.Txt4);
+            this.panel3.Controls.Add(this.lbl5);
             this.panel3.Controls.Add(this.lbl4);
             this.panel3.Controls.Add(this.cboFecha2);
             this.panel3.Controls.Add(this.cboFecha1);
@@ -80,11 +78,15 @@
             this.panel3.Controls.Add(this.lbl2);
             this.panel3.Controls.Add(this.Txt1);
             this.panel3.Controls.Add(this.lbl1);
+            this.panel3.Controls.Add(this.Txt2);
+            this.panel3.Controls.Add(this.Txt4);
+            this.panel3.Controls.Add(this.bunifuCustomLabel7);
+            this.panel3.Controls.Add(this.TxtSaldoTotal);
             this.panel3.Controls.Add(this.TxtCliente);
             this.panel3.Controls.Add(this.TxtImporte);
             this.panel3.Controls.Add(this.DGCreditos);
             this.panel3.Controls.Add(this.cboFormaPago);
-            this.panel3.Controls.Add(this.lbl5);
+            this.panel3.Controls.Add(this.lbl90);
             this.panel3.Controls.Add(this.Importe);
             this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Controls.Add(this.btnCancelar);
@@ -93,6 +95,38 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(823, 613);
             this.panel3.TabIndex = 35;
+            // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(525, 260);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(136, 25);
+            this.bunifuCustomLabel7.TabIndex = 60;
+            this.bunifuCustomLabel7.Text = "Saldo Total $ :";
+            // 
+            // TxtSaldoTotal
+            // 
+            this.TxtSaldoTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtSaldoTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtSaldoTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSaldoTotal.ForeColor = System.Drawing.Color.Black;
+            this.TxtSaldoTotal.HintForeColor = System.Drawing.Color.Black;
+            this.TxtSaldoTotal.HintText = "";
+            this.TxtSaldoTotal.isPassword = false;
+            this.TxtSaldoTotal.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtSaldoTotal.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.TxtSaldoTotal.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtSaldoTotal.LineThickness = 4;
+            this.TxtSaldoTotal.Location = new System.Drawing.Point(663, 253);
+            this.TxtSaldoTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtSaldoTotal.Name = "TxtSaldoTotal";
+            this.TxtSaldoTotal.Size = new System.Drawing.Size(119, 41);
+            this.TxtSaldoTotal.TabIndex = 59;
+            this.TxtSaldoTotal.Text = "0";
+            this.TxtSaldoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TxtCliente
             // 
@@ -139,21 +173,21 @@
             // 
             this.DGCreditos.AllowUserToAddRows = false;
             this.DGCreditos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DGCreditos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DGCreditos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGCreditos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGCreditos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGCreditos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGCreditos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGCreditos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGCreditos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGCreditos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGCreditos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Chk});
@@ -161,10 +195,10 @@
             this.DGCreditos.EnableHeadersVisualStyles = false;
             this.DGCreditos.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.DGCreditos.HeaderForeColor = System.Drawing.Color.Gainsboro;
-            this.DGCreditos.Location = new System.Drawing.Point(44, 279);
+            this.DGCreditos.Location = new System.Drawing.Point(44, 302);
             this.DGCreditos.Name = "DGCreditos";
             this.DGCreditos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGCreditos.Size = new System.Drawing.Size(738, 271);
+            this.DGCreditos.Size = new System.Drawing.Size(738, 246);
             this.DGCreditos.TabIndex = 62;
             this.DGCreditos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGCreditos_CellContentClick);
             // 
@@ -187,47 +221,15 @@
             this.cboFormaPago.TabIndex = 61;
             this.cboFormaPago.SelectedValueChanged += new System.EventHandler(this.cboFormaPago_SelectedValueChanged);
             // 
-            // TxtSaldoTotal
+            // lbl90
             // 
-            this.TxtSaldoTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TxtSaldoTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtSaldoTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSaldoTotal.ForeColor = System.Drawing.Color.Black;
-            this.TxtSaldoTotal.HintForeColor = System.Drawing.Color.Black;
-            this.TxtSaldoTotal.HintText = "";
-            this.TxtSaldoTotal.isPassword = false;
-            this.TxtSaldoTotal.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtSaldoTotal.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.TxtSaldoTotal.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtSaldoTotal.LineThickness = 4;
-            this.TxtSaldoTotal.Location = new System.Drawing.Point(663, 229);
-            this.TxtSaldoTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtSaldoTotal.Name = "TxtSaldoTotal";
-            this.TxtSaldoTotal.Size = new System.Drawing.Size(119, 41);
-            this.TxtSaldoTotal.TabIndex = 59;
-            this.TxtSaldoTotal.Text = "0";
-            this.TxtSaldoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel7
-            // 
-            this.bunifuCustomLabel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(525, 236);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(136, 25);
-            this.bunifuCustomLabel7.TabIndex = 60;
-            this.bunifuCustomLabel7.Text = "Saldo Total $ :";
-            // 
-            // lbl5
-            // 
-            this.lbl5.AutoSize = true;
-            this.lbl5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(433, 59);
-            this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(121, 21);
-            this.lbl5.TabIndex = 48;
-            this.lbl5.Text = "Forma de Pago :";
+            this.lbl90.AutoSize = true;
+            this.lbl90.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl90.Location = new System.Drawing.Point(433, 59);
+            this.lbl90.Name = "lbl90";
+            this.lbl90.Size = new System.Drawing.Size(121, 21);
+            this.lbl90.TabIndex = 48;
+            this.lbl90.Text = "Forma de Pago :";
             // 
             // Importe
             // 
@@ -350,6 +352,7 @@
             // 
             // TxtNroCheque
             // 
+            this.TxtNroCheque.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtNroCheque.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtNroCheque.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNroCheque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -360,100 +363,94 @@
             this.TxtNroCheque.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtNroCheque.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtNroCheque.LineThickness = 4;
-            this.TxtNroCheque.Location = new System.Drawing.Point(584, 172);
+            this.TxtNroCheque.Location = new System.Drawing.Point(584, 183);
             this.TxtNroCheque.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNroCheque.Name = "TxtNroCheque";
-            this.TxtNroCheque.Size = new System.Drawing.Size(198, 33);
-            this.TxtNroCheque.TabIndex = 71;
+            this.TxtNroCheque.Size = new System.Drawing.Size(198, 41);
+            this.TxtNroCheque.TabIndex = 94;
             this.TxtNroCheque.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtNroCheque.Visible = false;
             // 
-            // bunifuCustomLabel1
+            // lbl5
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(460, 178);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(122, 21);
-            this.bunifuCustomLabel1.TabIndex = 77;
-            this.bunifuCustomLabel1.Text = "Nro de Cheque :";
-            // 
-            // Txt4
-            // 
-            this.Txt4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Txt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txt4.HintForeColor = System.Drawing.Color.Empty;
-            this.Txt4.HintText = "";
-            this.Txt4.isPassword = false;
-            this.Txt4.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.Txt4.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.Txt4.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.Txt4.LineThickness = 4;
-            this.Txt4.Location = new System.Drawing.Point(190, 172);
-            this.Txt4.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt4.Name = "Txt4";
-            this.Txt4.Size = new System.Drawing.Size(261, 33);
-            this.Txt4.TabIndex = 70;
-            this.Txt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lbl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl5.AutoSize = true;
+            this.lbl5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.Location = new System.Drawing.Point(460, 198);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(122, 21);
+            this.lbl5.TabIndex = 99;
+            this.lbl5.Text = "Nro de Cheque :";
+            this.lbl5.Visible = false;
             // 
             // lbl4
             // 
+            this.lbl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl4.AutoSize = true;
             this.lbl4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(40, 178);
+            this.lbl4.Location = new System.Drawing.Point(40, 198);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(98, 21);
-            this.lbl4.TabIndex = 76;
+            this.lbl4.TabIndex = 98;
             this.lbl4.Text = "Beneficiario :";
+            this.lbl4.Visible = false;
             // 
             // cboFecha2
             // 
+            this.cboFecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFecha2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.cboFecha2.BorderRadius = 0;
             this.cboFecha2.ForeColor = System.Drawing.Color.White;
             this.cboFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.cboFecha2.FormatCustom = null;
-            this.cboFecha2.Location = new System.Drawing.Point(560, 129);
+            this.cboFecha2.Location = new System.Drawing.Point(557, 142);
             this.cboFecha2.Name = "cboFecha2";
             this.cboFecha2.Size = new System.Drawing.Size(225, 36);
-            this.cboFecha2.TabIndex = 69;
+            this.cboFecha2.TabIndex = 92;
             this.cboFecha2.Value = new System.DateTime(2017, 11, 3, 17, 21, 40, 929);
+            this.cboFecha2.Visible = false;
             // 
             // cboFecha1
             // 
+            this.cboFecha1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFecha1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.cboFecha1.BorderRadius = 0;
             this.cboFecha1.ForeColor = System.Drawing.Color.White;
             this.cboFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.cboFecha1.FormatCustom = null;
-            this.cboFecha1.Location = new System.Drawing.Point(188, 129);
+            this.cboFecha1.Location = new System.Drawing.Point(188, 142);
             this.cboFecha1.Name = "cboFecha1";
-            this.cboFecha1.Size = new System.Drawing.Size(225, 36);
-            this.cboFecha1.TabIndex = 68;
+            this.cboFecha1.Size = new System.Drawing.Size(234, 36);
+            this.cboFecha1.TabIndex = 91;
             this.cboFecha1.Value = new System.DateTime(2017, 11, 3, 17, 21, 40, 929);
+            this.cboFecha1.Visible = false;
             // 
             // lbl3
             // 
+            this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(429, 139);
+            this.lbl3.Location = new System.Drawing.Point(429, 149);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(125, 21);
-            this.lbl3.TabIndex = 75;
+            this.lbl3.TabIndex = 97;
             this.lbl3.Text = "Fecha de Cobro :";
             // 
             // lbl2
             // 
+            this.lbl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(40, 138);
+            this.lbl2.Location = new System.Drawing.Point(40, 149);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(137, 21);
-            this.lbl2.TabIndex = 74;
+            this.lbl2.TabIndex = 96;
             this.lbl2.Text = "Fecha de Emision :";
+            this.lbl2.Visible = false;
             // 
             // Txt1
             // 
+            this.Txt1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Txt1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Txt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -464,22 +461,67 @@
             this.Txt1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.Txt1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.Txt1.LineThickness = 4;
-            this.Txt1.Location = new System.Drawing.Point(189, 89);
+            this.Txt1.Location = new System.Drawing.Point(188, 91);
             this.Txt1.Margin = new System.Windows.Forms.Padding(4);
             this.Txt1.Name = "Txt1";
-            this.Txt1.Size = new System.Drawing.Size(593, 33);
-            this.Txt1.TabIndex = 67;
+            this.Txt1.Size = new System.Drawing.Size(593, 41);
+            this.Txt1.TabIndex = 90;
             this.Txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Txt1.Visible = false;
             // 
             // lbl1
             // 
+            this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(40, 101);
+            this.lbl1.Location = new System.Drawing.Point(40, 106);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(59, 21);
-            this.lbl1.TabIndex = 73;
+            this.lbl1.TabIndex = 95;
             this.lbl1.Text = "Banco :";
+            this.lbl1.Visible = false;
+            // 
+            // Txt2
+            // 
+            this.Txt2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.Txt2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Txt2.HintForeColor = System.Drawing.Color.Empty;
+            this.Txt2.HintText = "";
+            this.Txt2.isPassword = false;
+            this.Txt2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.Txt2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.Txt2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.Txt2.LineThickness = 4;
+            this.Txt2.Location = new System.Drawing.Point(188, 137);
+            this.Txt2.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt2.Name = "Txt2";
+            this.Txt2.Size = new System.Drawing.Size(234, 41);
+            this.Txt2.TabIndex = 100;
+            this.Txt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Txt2.Visible = false;
+            // 
+            // Txt4
+            // 
+            this.Txt4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Txt4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Txt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Txt4.HintForeColor = System.Drawing.Color.Empty;
+            this.Txt4.HintText = "";
+            this.Txt4.isPassword = false;
+            this.Txt4.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.Txt4.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.Txt4.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.Txt4.LineThickness = 4;
+            this.Txt4.Location = new System.Drawing.Point(188, 182);
+            this.Txt4.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt4.Name = "Txt4";
+            this.Txt4.Size = new System.Drawing.Size(261, 41);
+            this.Txt4.TabIndex = 93;
+            this.Txt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Txt4.Visible = false;
             // 
             // PagosClientesCreditos
             // 
@@ -508,7 +550,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel lbl5;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbl90;
         private Bunifu.Framework.UI.BunifuCustomLabel Importe;
         private Bunifu.Framework.UI.BunifuThinButton2 btnGuardar;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCancelar;
@@ -525,8 +567,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtImporte;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Chk;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtNroCheque;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox Txt4;
+        private Bunifu.Framework.UI.BunifuCustomLabel lbl5;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl4;
         private Bunifu.Framework.UI.BunifuDatepicker cboFecha2;
         private Bunifu.Framework.UI.BunifuDatepicker cboFecha1;
@@ -534,5 +575,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lbl2;
         private Bunifu.Framework.UI.BunifuMaterialTextbox Txt1;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox Txt2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox Txt4;
     }
 }

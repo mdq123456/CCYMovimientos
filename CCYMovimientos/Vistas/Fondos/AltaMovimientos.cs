@@ -64,7 +64,8 @@ namespace CCYMovimientos.Vistas.Fondos
                                              cboFecha2.Value,
                                              TxtNroCheque.Text,
                                              Txt1.Text,
-                                             Txt2.Text);
+                                             Txt2.Text,
+                                             Txt4.Text);
 
             this.Msj = objFondo.InsertarMov();
             this.Close();
