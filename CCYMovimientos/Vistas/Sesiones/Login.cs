@@ -24,6 +24,7 @@ namespace CCYMovimientos.Vistas.Sesiones
         {
             InitializeComponent();
             this.status = false;
+            
         }
         public bool getStatus(){return this.status;}
         private void setSesion(Sesion pobjSesion) { this.objSesion = pobjSesion; }
@@ -31,7 +32,7 @@ namespace CCYMovimientos.Vistas.Sesiones
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

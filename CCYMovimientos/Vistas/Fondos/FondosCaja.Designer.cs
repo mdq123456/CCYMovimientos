@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FondosCaja));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrarCaja = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAbrirCaja = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEgresos = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -40,6 +40,18 @@
             this.DGMovimientos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnIzq = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnDer = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ChCheques = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.chEfectivo = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.chTrans = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lblIngresos = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblEgresos = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGMovimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDer)).BeginInit();
@@ -219,21 +231,21 @@
             // 
             this.DGMovimientos.AllowUserToAddRows = false;
             this.DGMovimientos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DGMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DGMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGMovimientos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGMovimientos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGMovimientos.DoubleBuffered = true;
             this.DGMovimientos.EnableHeadersVisualStyles = false;
@@ -243,7 +255,7 @@
             this.DGMovimientos.Name = "DGMovimientos";
             this.DGMovimientos.ReadOnly = true;
             this.DGMovimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGMovimientos.Size = new System.Drawing.Size(837, 313);
+            this.DGMovimientos.Size = new System.Drawing.Size(837, 275);
             this.DGMovimientos.TabIndex = 30;
             // 
             // btnIzq
@@ -274,6 +286,150 @@
             this.btnDer.Zoom = 10;
             this.btnDer.Click += new System.EventHandler(this.btnDer_Click);
             // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(613, 251);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(106, 25);
+            this.bunifuCustomLabel7.TabIndex = 60;
+            this.bunifuCustomLabel7.Text = "Egresos $ :";
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(605, 219);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(114, 25);
+            this.bunifuCustomLabel2.TabIndex = 62;
+            this.bunifuCustomLabel2.Text = "Ingresos $ :";
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(793, 637);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(69, 21);
+            this.bunifuCustomLabel5.TabIndex = 64;
+            this.bunifuCustomLabel5.Text = "Cheques";
+            // 
+            // ChCheques
+            // 
+            this.ChCheques.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChCheques.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.ChCheques.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ChCheques.Checked = true;
+            this.ChCheques.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.ChCheques.ForeColor = System.Drawing.Color.White;
+            this.ChCheques.Location = new System.Drawing.Point(771, 638);
+            this.ChCheques.Name = "ChCheques";
+            this.ChCheques.Size = new System.Drawing.Size(20, 20);
+            this.ChCheques.TabIndex = 63;
+            this.ChCheques.OnChange += new System.EventHandler(this.ChCheques_OnChange);
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(689, 638);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(64, 21);
+            this.bunifuCustomLabel3.TabIndex = 66;
+            this.bunifuCustomLabel3.Text = "Efectivo";
+            // 
+            // chEfectivo
+            // 
+            this.chEfectivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chEfectivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.chEfectivo.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chEfectivo.Checked = true;
+            this.chEfectivo.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.chEfectivo.ForeColor = System.Drawing.Color.White;
+            this.chEfectivo.Location = new System.Drawing.Point(667, 639);
+            this.chEfectivo.Name = "chEfectivo";
+            this.chEfectivo.Size = new System.Drawing.Size(20, 20);
+            this.chEfectivo.TabIndex = 65;
+            this.chEfectivo.OnChange += new System.EventHandler(this.chEfectivo_OnChange);
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(471, 639);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(182, 21);
+            this.bunifuCustomLabel4.TabIndex = 68;
+            this.bunifuCustomLabel4.Text = "Transferencias Bancarias";
+            // 
+            // chTrans
+            // 
+            this.chTrans.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.chTrans.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chTrans.Checked = true;
+            this.chTrans.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.chTrans.ForeColor = System.Drawing.Color.White;
+            this.chTrans.Location = new System.Drawing.Point(449, 640);
+            this.chTrans.Name = "chTrans";
+            this.chTrans.Size = new System.Drawing.Size(20, 20);
+            this.chTrans.TabIndex = 67;
+            this.chTrans.OnChange += new System.EventHandler(this.chTrans_OnChange);
+            // 
+            // lblIngresos
+            // 
+            this.lblIngresos.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblIngresos.AutoSize = true;
+            this.lblIngresos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresos.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblIngresos.Location = new System.Drawing.Point(725, 219);
+            this.lblIngresos.Name = "lblIngresos";
+            this.lblIngresos.Size = new System.Drawing.Size(23, 25);
+            this.lblIngresos.TabIndex = 69;
+            this.lblIngresos.Text = "0";
+            // 
+            // lblEgresos
+            // 
+            this.lblEgresos.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblEgresos.AutoSize = true;
+            this.lblEgresos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEgresos.ForeColor = System.Drawing.Color.Crimson;
+            this.lblEgresos.Location = new System.Drawing.Point(725, 251);
+            this.lblEgresos.Name = "lblEgresos";
+            this.lblEgresos.Size = new System.Drawing.Size(23, 25);
+            this.lblEgresos.TabIndex = 70;
+            this.lblEgresos.Text = "0";
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(569, 303);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(150, 25);
+            this.bunifuCustomLabel6.TabIndex = 71;
+            this.bunifuCustomLabel6.Text = "Total en Caja $ :";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.lblTotal.Location = new System.Drawing.Point(725, 303);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(23, 25);
+            this.lblTotal.TabIndex = 72;
+            this.lblTotal.Text = "0";
+            // 
             // FondosCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +437,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(890, 680);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.bunifuCustomLabel6);
+            this.Controls.Add(this.lblEgresos);
+            this.Controls.Add(this.lblIngresos);
+            this.Controls.Add(this.bunifuCustomLabel4);
+            this.Controls.Add(this.chTrans);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.chEfectivo);
+            this.Controls.Add(this.bunifuCustomLabel5);
+            this.Controls.Add(this.ChCheques);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.bunifuCustomLabel7);
             this.Controls.Add(this.btnDer);
             this.Controls.Add(this.btnIzq);
             this.Controls.Add(this.DGMovimientos);
@@ -313,5 +481,17 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid DGMovimientos;
         private Bunifu.Framework.UI.BunifuImageButton btnIzq;
         private Bunifu.Framework.UI.BunifuImageButton btnDer;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
+        private Bunifu.Framework.UI.BunifuCheckbox ChCheques;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCheckbox chEfectivo;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private Bunifu.Framework.UI.BunifuCheckbox chTrans;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblIngresos;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblEgresos;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblTotal;
     }
 }

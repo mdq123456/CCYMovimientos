@@ -156,6 +156,7 @@
             this.DGLlamadas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGLlamadas.Size = new System.Drawing.Size(884, 182);
             this.DGLlamadas.TabIndex = 53;
+            this.DGLlamadas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGLlamadas_CellClick);
             // 
             // cboFecha2
             // 

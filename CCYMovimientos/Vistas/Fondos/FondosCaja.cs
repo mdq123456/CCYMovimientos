@@ -36,7 +36,30 @@ namespace CCYMovimientos.Vistas.Fondos
         public void CargarMovimientos()
         {
             DBFondos objFondo = new DBFondos();
-            DGMovimientos.DataSource = objFondo.TraerMovimientos(cboFechaMov.Value);
+            DGMovimientos.DataSource = objFondo.TraerMovimientos(cboFechaMov.Value,
+                                                                 chEfectivo.Checked,
+                                                                 chTrans.Checked,
+                                                                 ChCheques.Checked);
+
+            decimal ingresos = 0;
+            decimal egresos = 0;
+            foreach (DataGridViewRow row in DGMovimientos.Rows)
+            {
+                if (row.Cells["Tipo_Movimiento"].Value.ToString().Substring(0,6).Trim() == "Ingres")
+                {
+                    ingresos = ingresos + Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
+                }
+                if (row.Cells["Tipo_Movimiento"].Value.ToString().Substring(0, 6).Trim() == "Egreso")
+                {
+                    egresos = egresos + Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
+                }
+
+            }
+
+            lblIngresos.Text = ingresos.ToString();
+            lblEgresos.Text = egresos.ToString();
+            lblTotal.Text = Convert.ToString(ingresos - egresos);
+
         }
 
         private void cboFechaMov_onValueChanged(object sender, EventArgs e)
@@ -99,6 +122,21 @@ namespace CCYMovimientos.Vistas.Fondos
         private void btnDer_Click(object sender, EventArgs e)
         {
             cboFechaMov.Value = cboFechaMov.Value.AddDays(1);
+        }
+
+        private void chEfectivo_OnChange(object sender, EventArgs e)
+        {
+            CargarMovimientos();
+        }
+
+        private void chTrans_OnChange(object sender, EventArgs e)
+        {
+            CargarMovimientos();
+        }
+
+        private void ChCheques_OnChange(object sender, EventArgs e)
+        {
+            CargarMovimientos();
         }
     }
 }

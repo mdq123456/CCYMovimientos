@@ -125,7 +125,7 @@
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(269, 41);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.TabIndex = 1;
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPass.OnValueChanged += new System.EventHandler(this.txtPass_OnValueChanged);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
@@ -196,7 +196,8 @@
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(269, 41);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Text = "ConstruccionesNEA";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUsuario.OnValueChanged += new System.EventHandler(this.txtUsuario_OnValueChanged);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);

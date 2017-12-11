@@ -79,5 +79,20 @@ namespace CCYMovimientos.Vistas.Clientes
             }
             return true;
         }
+
+        private void DGLlamadas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DGLlamadas.CurrentCell = null;
+            foreach (DataGridViewRow row in DGLlamadas.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
+                    TxtConcepto.Text = row.Cells["Conversacion"].Value.ToString();
+                    cboFecha2.Value = Convert.ToDateTime(row.Cells["FechaLlamada"].Value.ToString());
+
+                    return;
+                }
+            }
+        }
     }
 }

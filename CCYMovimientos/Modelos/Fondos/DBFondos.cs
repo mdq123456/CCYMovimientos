@@ -74,10 +74,12 @@ namespace CCYMovimientos.Modelos.Fondos
             return tabla;
         }
 
-        public DataTable TraerMovimientos(DateTime fechaMov)
+        public DataTable TraerMovimientos(DateTime fechaMov, bool efectivo,
+                                          bool transferencia, bool cheques)
         {
             DataCenter objDC = new DataCenter();
-            DataTable tabla = objDC.TraerMovmientos(fechaMov);
+            DataTable tabla = objDC.TraerMovmientos(fechaMov, efectivo,transferencia
+                                                    ,cheques);
             objDC.cerrarConexion();
             return tabla;
         }

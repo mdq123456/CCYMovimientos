@@ -43,6 +43,7 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             ClienteNewEdit ClienteNewEditForm = new ClienteNewEdit();
             ClienteNewEditForm.ShowDialog();
+            CargarClientes();
         }
         private void ChEmpresas_OnChange(object sender, EventArgs e)
         {
@@ -107,6 +108,7 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             ClienteNewEdit ClienteNewEditForm = new ClienteNewEdit(codCliente, ChEmpresas.Checked);
             ClienteNewEditForm.ShowDialog();
+            CargarClientes();
         }
 
         private void btnHistorialPago_Click(object sender, EventArgs e)

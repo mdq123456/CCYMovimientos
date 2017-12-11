@@ -354,13 +354,17 @@ namespace CCYMovimientos.Modelos
             
         }
         
-        public DataTable TraerMovmientos(DateTime fechaMov)
+        public DataTable TraerMovmientos(DateTime fechaMov,bool efectivo,
+                                         bool transferencia, bool cheques)
         {
             try
             {
                 abrirConexion();
                 cmd = new SqlCommand("SP_FONDOS_Traer_Movimientos", con);
-                cmd.Parameters.Add("@fechaMov", SqlDbType.SmallDateTime).Value = fechaMov;
+                cmd.Parameters.Add("@fechaMov", SqlDbType.VarChar,20).Value = fechaMov;
+                cmd.Parameters.Add("@efectivo", SqlDbType.Bit).Value = efectivo;
+                cmd.Parameters.Add("@transferencia", SqlDbType.Bit).Value = transferencia;
+                cmd.Parameters.Add("@cheques", SqlDbType.Bit).Value = cheques;
 
                 cmd.CommandType = CommandType.StoredProcedure;
 

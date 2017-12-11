@@ -128,7 +128,6 @@
             this.panel3.Controls.Add(this.bunifuCustomLabel4);
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 60);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 390);
@@ -146,18 +145,18 @@
             this.TxtNroCheque.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtNroCheque.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtNroCheque.LineThickness = 4;
-            this.TxtNroCheque.Location = new System.Drawing.Point(558, 200);
+            this.TxtNroCheque.Location = new System.Drawing.Point(558, 219);
             this.TxtNroCheque.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNroCheque.Name = "TxtNroCheque";
             this.TxtNroCheque.Size = new System.Drawing.Size(181, 33);
-            this.TxtNroCheque.TabIndex = 7;
+            this.TxtNroCheque.TabIndex = 9;
             this.TxtNroCheque.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lbl5
             // 
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(431, 208);
+            this.lbl5.Location = new System.Drawing.Point(431, 227);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(122, 21);
             this.lbl5.TabIndex = 48;
@@ -188,18 +187,18 @@
             this.Txt4.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.Txt4.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.Txt4.LineThickness = 4;
-            this.Txt4.Location = new System.Drawing.Point(164, 198);
+            this.Txt4.Location = new System.Drawing.Point(163, 217);
             this.Txt4.Margin = new System.Windows.Forms.Padding(4);
             this.Txt4.Name = "Txt4";
             this.Txt4.Size = new System.Drawing.Size(261, 33);
-            this.Txt4.TabIndex = 6;
+            this.Txt4.TabIndex = 8;
             this.Txt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lbl4
             // 
             this.lbl4.AutoSize = true;
             this.lbl4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(20, 208);
+            this.lbl4.Location = new System.Drawing.Point(20, 227);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(98, 21);
             this.lbl4.TabIndex = 45;
@@ -212,7 +211,7 @@
             this.cboFecha2.ForeColor = System.Drawing.Color.White;
             this.cboFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.cboFecha2.FormatCustom = null;
-            this.cboFecha2.Location = new System.Drawing.Point(163, 156);
+            this.cboFecha2.Location = new System.Drawing.Point(163, 175);
             this.cboFecha2.Name = "cboFecha2";
             this.cboFecha2.Size = new System.Drawing.Size(261, 36);
             this.cboFecha2.TabIndex = 5;
@@ -225,7 +224,7 @@
             this.cboFecha1.ForeColor = System.Drawing.Color.White;
             this.cboFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.cboFecha1.FormatCustom = null;
-            this.cboFecha1.Location = new System.Drawing.Point(162, 117);
+            this.cboFecha1.Location = new System.Drawing.Point(163, 136);
             this.cboFecha1.Name = "cboFecha1";
             this.cboFecha1.Size = new System.Drawing.Size(261, 36);
             this.cboFecha1.TabIndex = 4;
@@ -234,7 +233,7 @@
             // Txt3
             // 
             this.Txt3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Txt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Txt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Txt3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txt3.HintForeColor = System.Drawing.Color.Empty;
             this.Txt3.HintText = "";
@@ -242,19 +241,19 @@
             this.Txt3.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.Txt3.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.Txt3.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.Txt3.LineThickness = 3;
-            this.Txt3.Location = new System.Drawing.Point(164, 178);
+            this.Txt3.LineThickness = 4;
+            this.Txt3.Location = new System.Drawing.Point(163, 178);
             this.Txt3.Margin = new System.Windows.Forms.Padding(4);
             this.Txt3.Name = "Txt3";
             this.Txt3.Size = new System.Drawing.Size(261, 33);
-            this.Txt3.TabIndex = 42;
+            this.Txt3.TabIndex = 7;
             this.Txt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lbl3
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(20, 168);
+            this.lbl3.Location = new System.Drawing.Point(20, 187);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(125, 21);
             this.lbl3.TabIndex = 41;
@@ -263,7 +262,7 @@
             // Txt2
             // 
             this.Txt2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Txt2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txt2.HintForeColor = System.Drawing.Color.Empty;
             this.Txt2.HintText = "";
@@ -271,19 +270,19 @@
             this.Txt2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.Txt2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.Txt2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.Txt2.LineThickness = 3;
-            this.Txt2.Location = new System.Drawing.Point(164, 137);
+            this.Txt2.LineThickness = 4;
+            this.Txt2.Location = new System.Drawing.Point(163, 137);
             this.Txt2.Margin = new System.Windows.Forms.Padding(4);
             this.Txt2.Name = "Txt2";
             this.Txt2.Size = new System.Drawing.Size(261, 33);
-            this.Txt2.TabIndex = 40;
+            this.Txt2.TabIndex = 6;
             this.Txt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // lbl2
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(20, 127);
+            this.lbl2.Location = new System.Drawing.Point(20, 146);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(137, 21);
             this.lbl2.TabIndex = 39;
@@ -301,7 +300,7 @@
             this.Txt1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.Txt1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.Txt1.LineThickness = 4;
-            this.Txt1.Location = new System.Drawing.Point(163, 77);
+            this.Txt1.Location = new System.Drawing.Point(163, 96);
             this.Txt1.Margin = new System.Windows.Forms.Padding(4);
             this.Txt1.Name = "Txt1";
             this.Txt1.Size = new System.Drawing.Size(576, 33);
@@ -312,7 +311,7 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(20, 86);
+            this.lbl1.Location = new System.Drawing.Point(20, 105);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(59, 21);
             this.lbl1.TabIndex = 37;
@@ -341,7 +340,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(181, 41);
-            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -368,7 +367,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 41);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -388,7 +387,7 @@
             this.TxtImporte.Margin = new System.Windows.Forms.Padding(4);
             this.TxtImporte.Name = "TxtImporte";
             this.TxtImporte.Size = new System.Drawing.Size(181, 33);
-            this.TxtImporte.TabIndex = 8;
+            this.TxtImporte.TabIndex = 10;
             this.TxtImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TxtConcepto
@@ -403,7 +402,7 @@
             this.TxtConcepto.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtConcepto.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtConcepto.LineThickness = 4;
-            this.TxtConcepto.Location = new System.Drawing.Point(163, 37);
+            this.TxtConcepto.Location = new System.Drawing.Point(163, 56);
             this.TxtConcepto.Margin = new System.Windows.Forms.Padding(4);
             this.TxtConcepto.Name = "TxtConcepto";
             this.TxtConcepto.Size = new System.Drawing.Size(576, 33);
@@ -434,7 +433,7 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(20, 46);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(20, 65);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(83, 21);
             this.bunifuCustomLabel2.TabIndex = 28;
