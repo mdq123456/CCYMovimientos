@@ -12,6 +12,22 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\CCYMOVIMIENTOS\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +47,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E97CBB38B4FA43231754A172DAB18BCA19E67637</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CCYMovimientos_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
@@ -53,9 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelos\Clientes\DBClientes.cs" />
+    <Compile Include="Modelos\Contactos\DBContactos.cs" />
+    <Compile Include="Modelos\Contratos\DBContratos.cs" />
     <Compile Include="Modelos\Creditos\DBCreditos.cs" />
     <Compile Include="Modelos\DataCenter.cs" />
     <Compile Include="Modelos\Fondos\DBFondos.cs" />
+    <Compile Include="Modelos\Sessiones\DBSesion.cs" />
     <Compile Include="Modelos\Sessiones\Sesion.cs" />
     <Compile Include="Modelos\Ventas\DBVentas.cs" />
     <Compile Include="Program.cs" />
@@ -77,6 +108,12 @@
     </Compile>
     <Compile Include="Vistas\Clientes\ClienteNewEdit.Designer.cs">
       <DependentUpon>ClienteNewEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Clientes\ClientesContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Clientes\ClientesContactos.Designer.cs">
+      <DependentUpon>ClientesContactos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Clientes\ClientesLlamadas.cs">
       <SubType>Form</SubType>
@@ -150,6 +187,9 @@
     <EmbeddedResource Include="Vistas\Clientes\ClienteNewEdit.resx">
       <DependentUpon>ClienteNewEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Clientes\ClientesContactos.resx">
+      <DependentUpon>ClientesContactos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Clientes\ClientesLlamadas.resx">
       <DependentUpon>ClientesLlamadas.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +217,7 @@
     <EmbeddedResource Include="Vistas\Ventas\VentasABM.resx">
       <DependentUpon>VentasABM.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CCYMovimientos_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -195,6 +236,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menuFondo.BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

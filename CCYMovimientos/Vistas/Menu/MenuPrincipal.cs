@@ -11,19 +11,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCYMovimientos.Vistas.Ventas;
+using CCYMovimientos.Vistas.Notificaciones;
 
 namespace CCYMovimientos.Vistas.Menu
 {
     public partial class MenuPrincipal : Form
     {
-        private Sesion objSesion;
         private ClienteABM clienteForm;
         private FondosCaja fondosForm;
         private VentasABM ventasForm;
 
-        public MenuPrincipal(Sesion pobjSesion)
+        public MenuPrincipal()
         {
-            this.objSesion = pobjSesion;
             InitializeComponent();
         }
 
@@ -136,6 +135,10 @@ namespace CCYMovimientos.Vistas.Menu
                 this.panelMenu.Controls.Add(fondosForm);
                 fondosForm.Dock = DockStyle.Fill;
             }
+            else
+            {
+                fondosForm.CargarMovimientos();
+            }
 
             fondosForm.Show();
         }
@@ -188,5 +191,18 @@ namespace CCYMovimientos.Vistas.Menu
             //}
         }
 
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            string pregunta;
+            pregunta = "Desea cerrar la sesion del usuario '" + Sesion.usuario  + "' ?";
+            IngresoDatos objMsj = new IngresoDatos("Cerrar Sesion", pregunta,
+                                                   "No","Si");
+            objMsj.ShowDialog();
+
+            if (objMsj.getTexto1() == "S")
+            {
+                Application.Restart();
+            }
+        }
     }
 }

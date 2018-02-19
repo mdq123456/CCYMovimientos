@@ -32,8 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblFijo = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnDirecciones = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnContactos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHistorialPago = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnContacto = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnLlamadas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lblDireccion = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblEmail = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -61,8 +65,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblFijo);
+            this.panel2.Controls.Add(this.bunifuCustomLabel8);
+            this.panel2.Controls.Add(this.btnDirecciones);
+            this.panel2.Controls.Add(this.btnContactos);
             this.panel2.Controls.Add(this.btnHistorialPago);
-            this.panel2.Controls.Add(this.btnContacto);
+            this.panel2.Controls.Add(this.btnLlamadas);
             this.panel2.Controls.Add(this.lblDireccion);
             this.panel2.Controls.Add(this.lblTel);
             this.panel2.Controls.Add(this.lblEmail);
@@ -79,6 +87,102 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(789, 249);
             this.panel2.TabIndex = 13;
+            // 
+            // lblFijo
+            // 
+            this.lblFijo.AutoSize = true;
+            this.lblFijo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFijo.Location = new System.Drawing.Point(666, 107);
+            this.lblFijo.Name = "lblFijo";
+            this.lblFijo.Size = new System.Drawing.Size(86, 21);
+            this.lblFijo.TabIndex = 20;
+            this.lblFijo.Text = "xxxx-xxxxxx";
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(549, 107);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(106, 21);
+            this.bunifuCustomLabel8.TabIndex = 19;
+            this.bunifuCustomLabel8.Text = "Teléfono Fijo :";
+            // 
+            // btnDirecciones
+            // 
+            this.btnDirecciones.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnDirecciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDirecciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnDirecciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDirecciones.BorderRadius = 0;
+            this.btnDirecciones.ButtonText = "              DIRECCIONES";
+            this.btnDirecciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDirecciones.DisabledColor = System.Drawing.Color.Gray;
+            this.btnDirecciones.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDirecciones.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnDirecciones.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDirecciones.Iconimage")));
+            this.btnDirecciones.Iconimage_right = null;
+            this.btnDirecciones.Iconimage_right_Selected = null;
+            this.btnDirecciones.Iconimage_Selected = null;
+            this.btnDirecciones.IconMarginLeft = 0;
+            this.btnDirecciones.IconMarginRight = 0;
+            this.btnDirecciones.IconRightVisible = true;
+            this.btnDirecciones.IconRightZoom = 0D;
+            this.btnDirecciones.IconVisible = true;
+            this.btnDirecciones.IconZoom = 70D;
+            this.btnDirecciones.IsTab = true;
+            this.btnDirecciones.Location = new System.Drawing.Point(39, 207);
+            this.btnDirecciones.Name = "btnDirecciones";
+            this.btnDirecciones.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnDirecciones.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
+            this.btnDirecciones.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnDirecciones.selected = false;
+            this.btnDirecciones.Size = new System.Drawing.Size(212, 38);
+            this.btnDirecciones.TabIndex = 18;
+            this.btnDirecciones.Text = "              DIRECCIONES";
+            this.btnDirecciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDirecciones.Textcolor = System.Drawing.Color.Silver;
+            this.btnDirecciones.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDirecciones.Visible = false;
+            this.btnDirecciones.Click += new System.EventHandler(this.btnDirecciones_Click);
+            // 
+            // btnContactos
+            // 
+            this.btnContactos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnContactos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnContactos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnContactos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnContactos.BorderRadius = 0;
+            this.btnContactos.ButtonText = "              CONTACTOS";
+            this.btnContactos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContactos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnContactos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContactos.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnContactos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnContactos.Iconimage")));
+            this.btnContactos.Iconimage_right = null;
+            this.btnContactos.Iconimage_right_Selected = null;
+            this.btnContactos.Iconimage_Selected = null;
+            this.btnContactos.IconMarginLeft = 0;
+            this.btnContactos.IconMarginRight = 0;
+            this.btnContactos.IconRightVisible = true;
+            this.btnContactos.IconRightZoom = 0D;
+            this.btnContactos.IconVisible = true;
+            this.btnContactos.IconZoom = 70D;
+            this.btnContactos.IsTab = true;
+            this.btnContactos.Location = new System.Drawing.Point(39, 162);
+            this.btnContactos.Name = "btnContactos";
+            this.btnContactos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnContactos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
+            this.btnContactos.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnContactos.selected = false;
+            this.btnContactos.Size = new System.Drawing.Size(212, 38);
+            this.btnContactos.TabIndex = 17;
+            this.btnContactos.Text = "              CONTACTOS";
+            this.btnContactos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnContactos.Textcolor = System.Drawing.Color.Silver;
+            this.btnContactos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContactos.Visible = false;
+            this.btnContactos.Click += new System.EventHandler(this.btnContactos_Click);
             // 
             // btnHistorialPago
             // 
@@ -118,43 +222,43 @@
             this.btnHistorialPago.Visible = false;
             this.btnHistorialPago.Click += new System.EventHandler(this.btnHistorialPago_Click);
             // 
-            // btnContacto
+            // btnLlamadas
             // 
-            this.btnContacto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnContacto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnContacto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnContacto.BorderRadius = 0;
-            this.btnContacto.ButtonText = "              LLAMADAS";
-            this.btnContacto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContacto.DisabledColor = System.Drawing.Color.Gray;
-            this.btnContacto.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContacto.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnContacto.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnContacto.Iconimage")));
-            this.btnContacto.Iconimage_right = null;
-            this.btnContacto.Iconimage_right_Selected = null;
-            this.btnContacto.Iconimage_Selected = null;
-            this.btnContacto.IconMarginLeft = 0;
-            this.btnContacto.IconMarginRight = 0;
-            this.btnContacto.IconRightVisible = true;
-            this.btnContacto.IconRightZoom = 0D;
-            this.btnContacto.IconVisible = true;
-            this.btnContacto.IconZoom = 70D;
-            this.btnContacto.IsTab = true;
-            this.btnContacto.Location = new System.Drawing.Point(540, 207);
-            this.btnContacto.Name = "btnContacto";
-            this.btnContacto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnContacto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
-            this.btnContacto.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnContacto.selected = false;
-            this.btnContacto.Size = new System.Drawing.Size(212, 38);
-            this.btnContacto.TabIndex = 15;
-            this.btnContacto.Text = "              LLAMADAS";
-            this.btnContacto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContacto.Textcolor = System.Drawing.Color.Silver;
-            this.btnContacto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContacto.Visible = false;
-            this.btnContacto.Click += new System.EventHandler(this.btnContacto_Click);
+            this.btnLlamadas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnLlamadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLlamadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnLlamadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLlamadas.BorderRadius = 0;
+            this.btnLlamadas.ButtonText = "              LLAMADAS";
+            this.btnLlamadas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLlamadas.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLlamadas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLlamadas.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLlamadas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnLlamadas.Iconimage")));
+            this.btnLlamadas.Iconimage_right = null;
+            this.btnLlamadas.Iconimage_right_Selected = null;
+            this.btnLlamadas.Iconimage_Selected = null;
+            this.btnLlamadas.IconMarginLeft = 0;
+            this.btnLlamadas.IconMarginRight = 0;
+            this.btnLlamadas.IconRightVisible = true;
+            this.btnLlamadas.IconRightZoom = 0D;
+            this.btnLlamadas.IconVisible = true;
+            this.btnLlamadas.IconZoom = 70D;
+            this.btnLlamadas.IsTab = true;
+            this.btnLlamadas.Location = new System.Drawing.Point(540, 207);
+            this.btnLlamadas.Name = "btnLlamadas";
+            this.btnLlamadas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnLlamadas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
+            this.btnLlamadas.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLlamadas.selected = false;
+            this.btnLlamadas.Size = new System.Drawing.Size(212, 38);
+            this.btnLlamadas.TabIndex = 15;
+            this.btnLlamadas.Text = "              LLAMADAS";
+            this.btnLlamadas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLlamadas.Textcolor = System.Drawing.Color.Silver;
+            this.btnLlamadas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLlamadas.Visible = false;
+            this.btnLlamadas.Click += new System.EventHandler(this.btnContacto_Click);
             // 
             // lblDireccion
             // 
@@ -251,9 +355,9 @@
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.Location = new System.Drawing.Point(197, 107);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(77, 21);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(131, 21);
             this.bunifuCustomLabel4.TabIndex = 6;
-            this.bunifuCustomLabel4.Text = "Telefono :";
+            this.bunifuCustomLabel4.Text = "Teléfono Celular :";
             // 
             // bunifuCustomLabel2
             // 
@@ -287,7 +391,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 249);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(789, 378);
+            this.panel1.Size = new System.Drawing.Size(789, 347);
             this.panel1.TabIndex = 14;
             // 
             // bunifuCustomLabel6
@@ -399,7 +503,7 @@
             this.DGClientes.Location = new System.Drawing.Point(39, 104);
             this.DGClientes.Name = "DGClientes";
             this.DGClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGClientes.Size = new System.Drawing.Size(713, 271);
+            this.DGClientes.Size = new System.Drawing.Size(713, 240);
             this.DGClientes.TabIndex = 11;
             this.DGClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGClientes_CellClick);
             // 
@@ -455,8 +559,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(789, 627);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClienteABM";
@@ -476,7 +580,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton btnHistorialPago;
-        private Bunifu.Framework.UI.BunifuFlatButton btnContacto;
+        private Bunifu.Framework.UI.BunifuFlatButton btnLlamadas;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDireccion;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTel;
         private Bunifu.Framework.UI.BunifuCustomLabel lblEmail;
@@ -497,5 +601,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox TxtBuscar;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuFlatButton btnDirecciones;
+        private Bunifu.Framework.UI.BunifuFlatButton btnContactos;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblFijo;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
     }
 }

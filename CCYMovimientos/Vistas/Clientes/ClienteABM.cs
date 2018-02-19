@@ -1,5 +1,6 @@
 ﻿using CCYMovimientos.Modelos.Clientes;
 using CCYMovimientos.Vistas.Creditos;
+using CCYMovimientos.Vistas.Notificaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,7 +82,9 @@ namespace CCYMovimientos.Vistas.Clientes
             {
                 btnEditCliente.Visible = false;
                 btnHistorialPago.Visible = false;
-                btnContacto.Visible = false;
+                btnLlamadas.Visible = false;
+                btnContactos.Visible = false;
+                btnDirecciones.Visible = false;
                 return;
             }
             DGClientes.CurrentCell = null;
@@ -95,10 +98,13 @@ namespace CCYMovimientos.Vistas.Clientes
                     lblEmail.Text = row.Cells["Email"].Value.ToString();
                     lblDireccion.Text = row.Cells["Domicilio"].Value.ToString();
                     lblTel.Text = row.Cells["TelCelular"].Value.ToString();
+                    lblFijo.Text = row.Cells["TelFijo"].Value.ToString();
 
                     btnEditCliente.Visible = true;
                     btnHistorialPago.Visible = true;
-                    btnContacto.Visible = true;
+                    btnLlamadas.Visible = true;
+                    btnContactos.Visible = true;
+                    btnDirecciones.Visible = true;
                     return;
                 }
             }
@@ -115,12 +121,32 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             PagosClientesCreditos PagosCreditosForm = new PagosClientesCreditos(codCliente, lblNombre.Text);
             PagosCreditosForm.ShowDialog();
+
+            if (PagosCreditosForm.Msj != "")
+            {
+                Alertas alert;
+                alert = new Alertas(PagosCreditosForm.Msj, "");
+                alert.Show();
+            }
+            
+            
         }
 
         private void btnContacto_Click(object sender, EventArgs e)
         {
             ClientesLlamadas ClientesLlamadasForm = new ClientesLlamadas(codCliente, lblNombre.Text);
             ClientesLlamadasForm.ShowDialog();
+        }
+
+        private void btnContactos_Click(object sender, EventArgs e)
+        {
+            ClientesContactos ClientesContactosForm = new ClientesContactos(codCliente, lblNombre.Text);
+            ClientesContactosForm.ShowDialog();
+        }
+
+        private void btnDirecciones_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

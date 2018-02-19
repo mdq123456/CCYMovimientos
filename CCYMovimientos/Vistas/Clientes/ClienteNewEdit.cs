@@ -98,7 +98,8 @@ namespace CCYMovimientos.Vistas.Clientes
                 
             }
             
-            TxtTel.Text = row["TelCelular"].ToString();
+            TxtCel.Text = row["TelCelular"].ToString();
+            TxtFijo.Text = row["TelFijo"].ToString();
             TxtDireccion.Text = row["Domicilio"].ToString();
             TxtEmail.Text = row["Email"].ToString();
 
@@ -220,7 +221,8 @@ namespace CCYMovimientos.Vistas.Clientes
                                                    CUIL,
                                                    TxtDNI.Text,
                                                    cboTipoCliente.SelectedValue.ToString(),
-                                                   TxtTel.Text,
+                                                   TxtCel.Text,
+                                                   TxtFijo.Text,
                                                    TxtEmail.Text,
                                                    cboProvincia.SelectedValue.ToString(),
                                                    cboLocalidad.SelectedValue.ToString(),

@@ -17,6 +17,7 @@ namespace CCYMovimientos.Modelos.Clientes
         private string DNI { set; get; }
         private string codTipoCliente { set; get; }
         private string Telefono { set; get; }
+        private string TelefonoFijo { set; get; }
         private string Email { set; get; }
         private string codProvincia { set; get; }
         private string codLocalidad { set; get; }
@@ -29,7 +30,7 @@ namespace CCYMovimientos.Modelos.Clientes
         }
         public DBClientes(string pApellidos, string pNombres,
                           string pCUIL, string pDNI, string pcodTipoCliente,
-                          string pTelefono, string pEmail, string pcodProvincia,
+                          string pTelefono, string pTelFijo, string pEmail, string pcodProvincia,
                           string pCodLocalidad, string pDomicilio,
                           string pcodCliente)
         {
@@ -39,6 +40,7 @@ namespace CCYMovimientos.Modelos.Clientes
             DNI = pDNI;
             codTipoCliente = pcodTipoCliente;
             Telefono = pTelefono;
+            TelefonoFijo = pTelFijo;
             Email = pEmail;
             codProvincia = pcodProvincia;
             codLocalidad = pCodLocalidad;
@@ -163,6 +165,7 @@ namespace CCYMovimientos.Modelos.Clientes
                                                                   DNI,
                                                                   codTipoCliente,
                                                                   Telefono,
+                                                                  TelefonoFijo,
                                                                   Email,
                                                                   codProvincia,
                                                                   codLocalidad,

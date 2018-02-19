@@ -58,11 +58,13 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.TxtEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.TxtTel = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.TxtCel = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtCUIL = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtDNI = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtApellidos = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtNombres = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.lblfijo = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TxtFijo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -218,6 +220,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panel3.Controls.Add(this.lblfijo);
+            this.panel3.Controls.Add(this.TxtFijo);
             this.panel3.Controls.Add(this.cboLocalidad);
             this.panel3.Controls.Add(this.cboProvincia);
             this.panel3.Controls.Add(this.cboTipoCliente);
@@ -237,7 +241,7 @@
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
             this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Controls.Add(this.TxtEmail);
-            this.panel3.Controls.Add(this.TxtTel);
+            this.panel3.Controls.Add(this.TxtCel);
             this.panel3.Controls.Add(this.TxtCUIL);
             this.panel3.Controls.Add(this.TxtDNI);
             this.panel3.Controls.Add(this.TxtApellidos);
@@ -258,7 +262,7 @@
             this.cboLocalidad.Location = new System.Drawing.Point(567, 305);
             this.cboLocalidad.Name = "cboLocalidad";
             this.cboLocalidad.Size = new System.Drawing.Size(204, 33);
-            this.cboLocalidad.TabIndex = 11;
+            this.cboLocalidad.TabIndex = 12;
             // 
             // cboProvincia
             // 
@@ -270,7 +274,7 @@
             this.cboProvincia.Location = new System.Drawing.Point(235, 305);
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(204, 33);
-            this.cboProvincia.TabIndex = 10;
+            this.cboProvincia.TabIndex = 11;
             this.cboProvincia.SelectedIndexChanged += new System.EventHandler(this.cboProvincia_SelectedIndexChanged);
             // 
             // cboTipoCliente
@@ -309,7 +313,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 41);
-            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.TabIndex = 15;
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -363,7 +367,7 @@
             this.TxtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(532, 33);
-            this.TxtDireccion.TabIndex = 12;
+            this.TxtDireccion.TabIndex = 13;
             this.TxtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TxtCUILDer
@@ -435,9 +439,9 @@
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.Location = new System.Drawing.Point(90, 229);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(75, 21);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(66, 21);
             this.bunifuCustomLabel5.TabIndex = 104;
-            this.bunifuCustomLabel5.Text = "Teléfono :";
+            this.bunifuCustomLabel5.Text = "Celular :";
             // 
             // lblDNI
             // 
@@ -506,7 +510,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(181, 41);
-            this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.TabIndex = 14;
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -527,28 +531,28 @@
             this.TxtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(263, 33);
-            this.TxtEmail.TabIndex = 9;
+            this.TxtEmail.TabIndex = 10;
             this.TxtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // TxtTel
+            // TxtCel
             // 
-            this.TxtTel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TxtTel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtTel.HintForeColor = System.Drawing.Color.Empty;
-            this.TxtTel.HintText = "";
-            this.TxtTel.isPassword = false;
-            this.TxtTel.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtTel.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.TxtTel.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtTel.LineThickness = 4;
-            this.TxtTel.Location = new System.Drawing.Point(235, 221);
-            this.TxtTel.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtTel.Name = "TxtTel";
-            this.TxtTel.Size = new System.Drawing.Size(161, 33);
-            this.TxtTel.TabIndex = 8;
-            this.TxtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtCel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtCel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtCel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtCel.HintForeColor = System.Drawing.Color.Empty;
+            this.TxtCel.HintText = "";
+            this.TxtCel.isPassword = false;
+            this.TxtCel.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtCel.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.TxtCel.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtCel.LineThickness = 4;
+            this.TxtCel.Location = new System.Drawing.Point(235, 221);
+            this.TxtCel.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCel.Name = "TxtCel";
+            this.TxtCel.Size = new System.Drawing.Size(161, 33);
+            this.TxtCel.TabIndex = 8;
+            this.TxtCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TxtCUIL
             // 
@@ -631,6 +635,37 @@
             this.TxtNombres.TabIndex = 2;
             this.TxtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // lblfijo
+            // 
+            this.lblfijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblfijo.AutoSize = true;
+            this.lblfijo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfijo.Location = new System.Drawing.Point(412, 229);
+            this.lblfijo.Name = "lblfijo";
+            this.lblfijo.Size = new System.Drawing.Size(67, 21);
+            this.lblfijo.TabIndex = 116;
+            this.lblfijo.Text = "Tel. Fijo :";
+            // 
+            // TxtFijo
+            // 
+            this.TxtFijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtFijo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtFijo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtFijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtFijo.HintForeColor = System.Drawing.Color.Empty;
+            this.TxtFijo.HintText = "";
+            this.TxtFijo.isPassword = false;
+            this.TxtFijo.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtFijo.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.TxtFijo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtFijo.LineThickness = 4;
+            this.TxtFijo.Location = new System.Drawing.Point(498, 221);
+            this.TxtFijo.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtFijo.Name = "TxtFijo";
+            this.TxtFijo.Size = new System.Drawing.Size(161, 33);
+            this.TxtFijo.TabIndex = 9;
+            this.TxtFijo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // ClienteNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,10 +725,12 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuThinButton2 btnGuardar;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtEmail;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TxtTel;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TxtCel;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtCUIL;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtDNI;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtApellidos;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtNombres;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblfijo;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TxtFijo;
     }
 }

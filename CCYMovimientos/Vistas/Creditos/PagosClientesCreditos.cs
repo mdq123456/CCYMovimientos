@@ -1,5 +1,6 @@
 ﻿using CCYMovimientos.Modelos.Creditos;
 using CCYMovimientos.Modelos.Ventas;
+using CCYMovimientos.Vistas.Notificaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace CCYMovimientos.Vistas.Creditos
     public partial class PagosClientesCreditos : Form
     {
         private string codCliente;
-        private string Msj;
+        public string Msj;
         private string strCodPago;
 
         public PagosClientesCreditos(string pCodCliente, string Nombre)
@@ -23,6 +24,7 @@ namespace CCYMovimientos.Vistas.Creditos
             InitializeComponent();
             this.codCliente = pCodCliente;
             TxtCliente.Text = Nombre;
+            Msj = "";
         }
 
         private void PagosClientesCreditos_Load(object sender, EventArgs e)
@@ -45,8 +47,22 @@ namespace CCYMovimientos.Vistas.Creditos
             DBCreditos objCredito = new DBCreditos(this.codCliente);
             DGCreditos.DataSource = objCredito.TraerCreditos();
 
+            DestacarAnticipos();
+
             cboFecha1.Value = DateTime.Today;
             cboFecha2.Value = cboFecha1.Value.AddDays(30);
+        }
+
+        private void DestacarAnticipos()
+        {
+            DGCreditos.CurrentCell = null;
+            foreach (DataGridViewRow row in DGCreditos.Rows)
+            {
+                if (row.Cells["TipoCuota"].Value.ToString() == "Anticipo")
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(106)))), ((int)(((byte)(27)))));
+                }
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -69,7 +85,7 @@ namespace CCYMovimientos.Vistas.Creditos
             {
                 if (Convert.ToBoolean(row.Cells[0].Value))
                 {
-                    this.strCodPago = this.strCodPago + "|" + row.Cells["CodPago"].Value.ToString();
+                    this.strCodPago = this.strCodPago + "|" + row.Cells["CodCuota"].Value.ToString();
                     totalAPagar = totalAPagar + Convert.ToDecimal(row.Cells["Saldo_Cuota"].Value.ToString());
                 }
             }
@@ -78,12 +94,28 @@ namespace CCYMovimientos.Vistas.Creditos
                 this.strCodPago = this.strCodPago.Substring(1);
                 TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
                 TxtImporte.Text = TxtSaldoTotal.Text;
+                TxtImporte.Focus();
+            }
+            else
+            {
+                TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
+                TxtImporte.Text = TxtSaldoTotal.Text;
             }
             
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
+
+            Alertas alert;
+            if (TxtImporte.Text.Trim() == "0")
+            {
+                alert = new Alertas("Ingrese un importe mayor a 0.", "");
+                alert.Show();
+                return;
+            }
+
             DBCreditos objCredito = new DBCreditos(this.codCliente,
                                                    this.strCodPago,
                                                    TxtImporte.Text.Trim(),
@@ -96,7 +128,7 @@ namespace CCYMovimientos.Vistas.Creditos
                                                     Txt2.Text,
                                                     Txt4.Text);
 
-            this.Msj = objCredito.InsertarPago();
+            Msj = objCredito.InsertarPago();
             this.Close();
         }
 
@@ -122,7 +154,7 @@ namespace CCYMovimientos.Vistas.Creditos
                         Txt4.Visible = true;
                         cboFecha1.Visible = true;
                         cboFecha2.Visible = true;
-                        lbl90.Visible = true;
+                        lbl5.Visible = true;
                         TxtNroCheque.Visible = true;
                         break;
                     case 7:
@@ -146,7 +178,7 @@ namespace CCYMovimientos.Vistas.Creditos
             lbl2.Visible = false;
             lbl3.Visible = false;
             lbl4.Visible = false;
-            lbl90.Visible = false;
+            lbl5.Visible = false;
             Txt1.Visible = false;
             Txt2.Visible = false;
             Txt4.Visible = false;

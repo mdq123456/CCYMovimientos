@@ -1,4 +1,6 @@
-﻿using CCYMovimientos.Modelos.Ventas;
+﻿using CCYMovimientos.Modelos.Contratos;
+using CCYMovimientos.Modelos.Fondos;
+using CCYMovimientos.Modelos.Ventas;
 using CCYMovimientos.Vistas.Clientes;
 using CCYMovimientos.Vistas.Notificaciones;
 using System;
@@ -19,6 +21,9 @@ namespace CCYMovimientos.Vistas.Ventas
         Size dimension;
 
         private string codCliente;
+
+        
+
         public VentasABM(Point pPosicion, Size pDimension)
         {
             this.dimension = pDimension;
@@ -52,32 +57,66 @@ namespace CCYMovimientos.Vistas.Ventas
         private void CargarComponentes()
         {
             //Cargo combo Metodos de Pago
-            DBVentas objVenta = new DBVentas();
-            this.cboFormaPago.DisplayMember = "FormaPago";
-            this.cboFormaPago.ValueMember = "CodFormaPago";
-            this.cboFormaPago.DataSource = objVenta.TraerMetPagos();
+            DBContratos objVenta = new DBContratos();
+            this.cboContratoTipo.DisplayMember = "Contrato";
+            this.cboContratoTipo.ValueMember = "CodContrato";
+            this.cboContratoTipo.DataSource = objVenta.TraerContratosTipos();
 
-            cboFecha1.Value = DateTime.Today;
-            cboFecha2.Value = cboFecha1.Value.AddDays(30);
+        }
+
+        private bool ControlarDatos()
+        {
+            if (this.codCliente == "" ||
+                TxtCliente.Text == "" ||
+                TxtTotal.Text == "" ||
+                TxtAnticipo.Text == "" ||
+                TxtCuotas.Text == "" ||
+                TxtCuotaPrecio.Text == "" ||
+                TxtMT2.Text == "" ||
+                TxtMT2Precio.Text == "" ||
+                TxtSaldo.Text == "" ||
+                TxtContratoTipo.Text == "" ||
+                TxtConcepto.Text == "")
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            DBFondos objFondo = new DBFondos();
+            Alertas alert;
+
+            string msj = objFondo.AbrirCaja();
+            
+            if (msj != "La operación se completó con éxito !" &&
+                msj != "La caja ya se encuentra abierta.")
+            {
+                alert = new Alertas("Abra la caja para poder realizar la venta.", "");
+                alert.Show();
+                return;
+            }
+
+            if (ControlarDatos() == false)
+            {
+                alert = new Alertas("Complete todos los datos para realizar la venta.", "");
+                alert.Show();
+                return;
+            }
+
             DBVentas objVentas = new DBVentas();
 
-            Alertas alert = new Alertas(objVentas.GuardarVenta(this.codCliente,
-                                                               TxtTotal.Text.Trim(),
-                                                               TxtCuotas.Text.Trim(),
-                                                               TxtCuotaPrecio.Text.Trim(),
-                                                               TxtAnticipo.Text.Trim(),
-                                                               cboFormaPago.SelectedValue.ToString(),
-                                                               TxtConcepto.Text.Trim(),
-                                                               cboFecha1.Value,
-                                                               cboFecha2.Value,
-                                                               TxtNroCheque.Text,
-                                                               Txt1.Text,
-                                                               Txt2.Text,
-                                                               Txt4.Text), "");
+            alert = new Alertas(objVentas.GuardarVenta(this.codCliente,
+                                                        TxtTotal.Text.Trim(),
+                                                        TxtCuotas.Text.Trim(),
+                                                        TxtCuotaPrecio.Text.Trim(),
+                                                        TxtAnticipo.Text.Trim(),
+                                                        TxtContratoTipo.Text.Trim(),
+                                                        TxtConcepto.Text.Trim(),
+                                                        TxtMT2.Text,
+                                                        TxtMT2Precio.Text), "");
             alert.Show();
 
             LimpiarDatos();
@@ -86,7 +125,7 @@ namespace CCYMovimientos.Vistas.Ventas
 
         private void TxtCuotas_OnValueChanged(object sender, EventArgs e)
         {
-            Calcular();
+            //Calcular();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -98,26 +137,25 @@ namespace CCYMovimientos.Vistas.Ventas
         {
             this.codCliente = "";
             TxtCliente.Text = "";
-            TxtConcepto.Text = "";
-            TxtAnticipo.Text = "";
 
-            Txt1.Text = "";
-            Txt2.Text = "";
-            Txt4.Text = "";
-
-            TxtCuotaPrecio.Text = "0";
-            TxtCuotas.Text = "1";
-            TxtImporte.Text = "";
             TxtTotal.Text = "";
+            TxtAnticipo.Text = "0";
+            
+            TxtCuotas.Text = "1";
+            TxtCuotaPrecio.Text = "";
 
-            cboFecha1.Value = DateTime.Today;
-            cboFecha2.Value = cboFecha1.Value.AddDays(30);
+            TxtMT2.Text = "";
+            TxtMT2Precio.Text = "";
+            TxtSaldo.Text = "";
 
+            TxtConcepto.Text = "";
+
+            TxtContratoTipo.Text = "";
         }
 
         private void TxtImporte_OnValueChanged(object sender, EventArgs e)
         {
-            Calcular();
+            //Calcular();
         }
 
         private void Calcular()
@@ -126,12 +164,12 @@ namespace CCYMovimientos.Vistas.Ventas
 
             if (TxtCuotas.Text != "0" &&
                 decimal.TryParse(TxtCuotas.Text, out n) &&
-                decimal.TryParse(TxtImporte.Text, out n) &&
-                TxtImporte.Text != "0" &&
+                decimal.TryParse(TxtSaldo.Text, out n) &&
+                TxtSaldo.Text != "0" &&
                 decimal.TryParse(TxtCuotaPrecio.Text, out n) &&
                 TxtCuotaPrecio.Text != "")
             {
-                decimal importe = Convert.ToDecimal(TxtImporte.Text.Trim());
+                decimal importe = Convert.ToDecimal(TxtSaldo.Text.Trim());
                 decimal cuotas = Convert.ToDecimal(TxtCuotas.Text.Trim());
                 
                 if (TxtAnticipo.Text != "")
@@ -142,93 +180,79 @@ namespace CCYMovimientos.Vistas.Ventas
 
                 TxtCuotaPrecio.Text = Convert.ToString(importe / cuotas);
 
-                TxtTotal.Text = TxtImporte.Text;
+                TxtTotal.Text = TxtSaldo.Text;
             }
-        }
-
-        private void TxtAnticipo_OnValueChanged(object sender, EventArgs e)
-        {
-            Calcular();
         }
 
         private void cboFormaPago_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cboFormaPago.ValueMember != "")
-            {
-                switch (Convert.ToInt32(cboFormaPago.SelectedValue))
-                {
-                    case 1:
-                    case 2:
-                        OcultarControles();
-                        break;
-                    case 5:
-                    case 6:
-                        OcultarControles();
-                        lbl1.Visible = true;
-                        lbl2.Text = "Fecha de Emision :";
-                        lbl2.Visible = true;
-                        lbl3.Visible = true;
-                        lbl4.Visible = true;
-                        Txt1.Visible = true;
-                        Txt4.Visible = true;
-                        cboFecha1.Visible = true;
-                        cboFecha2.Visible = true;
-                        lbl5.Visible = true;
-                        TxtNroCheque.Visible = true;
-                        break;
-                    case 7:
-                    case 8:
-                        OcultarControles();
-                        lbl1.Visible = true;
-                        Txt1.Visible = true;
-                        lbl2.Text = "Nro Cuenta :";
-                        lbl2.Visible = true;
-                        Txt2.Visible = true;
-                        break;
-                    default:
-                        break;
-                }
-            }
+            
         }
 
         private void OcultarControles()
         {
-            lbl1.Visible = false;
-            lbl2.Visible = false;
-            lbl3.Visible = false;
-            lbl4.Visible = false;
-            lbl5.Visible = false;
-            Txt1.Visible = false;
-            Txt2.Visible = false;
-            Txt4.Visible = false;
-            TxtNroCheque.Visible = false;
-
-            cboFecha1.Visible = false;
-            cboFecha2.Visible = false;
+            
         }
 
         private void TxtCuotaPrecio_OnValueChanged(object sender, EventArgs e)
         {
-            decimal n;
+            //decimal n;
 
-            if (TxtAnticipo.Text.Trim() == "")
+            //if (TxtAnticipo.Text.Trim() == "")
+            //{
+            //    TxtAnticipo.Text = "0";
+            //}
+
+            //if (TxtCuotas.Text != "0" &&
+            //    decimal.TryParse(TxtCuotas.Text, out n) &&
+            //    decimal.TryParse(TxtSaldo.Text, out n) &&
+            //    TxtSaldo.Text != "0" &&
+            //    decimal.TryParse(TxtCuotaPrecio.Text, out n) &&
+            //    TxtCuotaPrecio.Text != "")
+            //{
+
+            //    TxtTotal.Text = Convert.ToString((Convert.ToDecimal(TxtCuotaPrecio.Text) * Convert.ToDecimal(TxtCuotas.Text))+ Convert.ToDecimal(TxtAnticipo.Text));
+
+            //}
+
+        }
+
+        private void CalcularSaldo()
+        {
+            if (TxtTotal.Text != "" &&
+                TxtAnticipo.Text != "")
             {
-                TxtAnticipo.Text = "0";
+                TxtSaldo.Text = Convert.ToString(Convert.ToDecimal(TxtTotal.Text) - Convert.ToDecimal(TxtAnticipo.Text));
             }
+        }
 
-            if (TxtCuotas.Text != "0" &&
-                decimal.TryParse(TxtCuotas.Text, out n) &&
-                decimal.TryParse(TxtImporte.Text, out n) &&
-                TxtImporte.Text != "0" &&
-                decimal.TryParse(TxtCuotaPrecio.Text, out n) &&
-                TxtCuotaPrecio.Text != "")
+        private void TxtTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-
-                TxtTotal.Text = Convert.ToString((Convert.ToDecimal(TxtCuotaPrecio.Text) * Convert.ToDecimal(TxtCuotas.Text))+ Convert.ToDecimal(TxtAnticipo.Text));
-
+                e.Handled = true;
+                return;
             }
 
         }
 
+        private void TxtAnticipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TxtTotal_OnValueChanged(object sender, EventArgs e)
+        {
+            CalcularSaldo();
+        }
+
+        private void TxtAnticipo_OnValueChanged(object sender, EventArgs e)
+        {
+            CalcularSaldo();
+        }
     }
 }

@@ -34,6 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.menuLeft = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnCreditos = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -67,6 +68,7 @@
             // menuLeft
             // 
             this.menuLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.menuLeft.Controls.Add(this.btnCerrarSesion);
             this.menuLeft.Controls.Add(this.panel4);
             this.menuLeft.Controls.Add(this.btnCreditos);
             this.menuLeft.Controls.Add(this.btnVentas);
@@ -79,6 +81,45 @@
             this.menuLeft.Name = "menuLeft";
             this.menuLeft.Size = new System.Drawing.Size(234, 416);
             this.menuLeft.TabIndex = 0;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(160)))), ((int)(((byte)(198)))));
+            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarSesion.BorderRadius = 0;
+            this.btnCerrarSesion.ButtonText = "              CERRAR SESION";
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelesAnimator.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
+            this.btnCerrarSesion.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCerrarSesion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Iconimage")));
+            this.btnCerrarSesion.Iconimage_right = null;
+            this.btnCerrarSesion.Iconimage_right_Selected = null;
+            this.btnCerrarSesion.Iconimage_Selected = null;
+            this.btnCerrarSesion.IconMarginLeft = 0;
+            this.btnCerrarSesion.IconMarginRight = 0;
+            this.btnCerrarSesion.IconRightVisible = true;
+            this.btnCerrarSesion.IconRightZoom = 0D;
+            this.btnCerrarSesion.IconVisible = true;
+            this.btnCerrarSesion.IconZoom = 55D;
+            this.btnCerrarSesion.IsTab = true;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 361);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnCerrarSesion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnCerrarSesion.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.selected = false;
+            this.btnCerrarSesion.Size = new System.Drawing.Size(240, 51);
+            this.btnCerrarSesion.TabIndex = 6;
+            this.btnCerrarSesion.Text = "              CERRAR SESION";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Textcolor = System.Drawing.Color.Silver;
+            this.btnCerrarSesion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // panel4
             // 
@@ -442,5 +483,6 @@
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuImageButton btnMenu;
         private System.Windows.Forms.Panel panelMenu;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCerrarSesion;
     }
 }

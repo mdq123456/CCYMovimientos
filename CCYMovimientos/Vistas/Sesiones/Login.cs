@@ -18,7 +18,7 @@ namespace CCYMovimientos.Vistas.Sesiones
     public partial class Login : Form
     {
         private bool status { set; get; }
-        private Sesion objSesion { set; get; }
+        private DBSesion objSesion { set; get; }
 
         public Login()
         {
@@ -27,8 +27,8 @@ namespace CCYMovimientos.Vistas.Sesiones
             
         }
         public bool getStatus(){return this.status;}
-        private void setSesion(Sesion pobjSesion) { this.objSesion = pobjSesion; }
-        public Sesion getSesion() { return this.objSesion; }
+        private void setSesion(DBSesion pobjSesion) { this.objSesion = pobjSesion; }
+        public DBSesion getSesion() { return this.objSesion; }
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace CCYMovimientos.Vistas.Sesiones
                 }
                 else
                 {
-                    Sesion pobjSesion = new Sesion(txtUsuario.Text.Trim(), txtPass.Text.Trim());
+                    DBSesion pobjSesion = new DBSesion(txtUsuario.Text.Trim(), txtPass.Text.Trim());
                     string msj = pobjSesion.Ingresar();
 
                     if (msj == "1")

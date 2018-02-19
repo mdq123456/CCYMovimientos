@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoDatos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTexto1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.TxtTexto1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.lblPregunta = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -52,6 +53,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 60);
             this.panel1.TabIndex = 5;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblTitulo.Location = new System.Drawing.Point(46, 7);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(238, 47);
+            this.lblTitulo.TabIndex = 73;
+            this.lblTitulo.Text = "Nuevo Cliente";
             // 
             // panel2
             // 
@@ -75,17 +87,6 @@
             this.btnExit.TabStop = false;
             this.btnExit.Zoom = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTitulo.Location = new System.Drawing.Point(46, 7);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(238, 47);
-            this.lblTitulo.TabIndex = 73;
-            this.lblTitulo.Text = "Nuevo Cliente";
             // 
             // lblTexto1
             // 
@@ -172,12 +173,25 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // lblPregunta
+            // 
+            this.lblPregunta.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblPregunta.AutoSize = true;
+            this.lblPregunta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPregunta.Location = new System.Drawing.Point(50, 158);
+            this.lblPregunta.Name = "lblPregunta";
+            this.lblPregunta.Size = new System.Drawing.Size(139, 21);
+            this.lblPregunta.TabIndex = 109;
+            this.lblPregunta.Text = "Importe de Cierre :";
+            this.lblPregunta.Visible = false;
+            // 
             // IngresoDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(520, 340);
+            this.Controls.Add(this.lblPregunta);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblTexto1);
@@ -207,5 +221,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtTexto1;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCancelar;
         private Bunifu.Framework.UI.BunifuThinButton2 btnGuardar;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblPregunta;
     }
 }

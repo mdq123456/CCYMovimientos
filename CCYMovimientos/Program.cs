@@ -27,7 +27,7 @@ namespace CCYMovimientos
 
             if (frmLogin.getStatus())
             {
-                MenuPrincipal mPrincipal = new MenuPrincipal(frmLogin.getSesion());
+                MenuPrincipal mPrincipal = new MenuPrincipal();
                 mPrincipal.FormBorderStyle = FormBorderStyle.Sizable;
                 Application.Run(mPrincipal);
             }
