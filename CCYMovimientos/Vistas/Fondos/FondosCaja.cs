@@ -1,4 +1,5 @@
 ﻿using CCYMovimientos.Modelos.Fondos;
+using CCYMovimientos.Reportes;
 using CCYMovimientos.Vistas.Notificaciones;
 using System;
 using System.Collections.Generic;
@@ -104,6 +105,14 @@ namespace CCYMovimientos.Vistas.Fondos
         {
             AltaMovimientos AltaMovForm = new AltaMovimientos(tipoMov);
             AltaMovForm.ShowDialog();
+
+            if (AltaMovForm.CodMovimiento != "")
+            {
+                PrevisualizarReportes ViewReport = new PrevisualizarReportes();
+                ViewReport.Codigo = AltaMovForm.CodMovimiento;
+                ViewReport.Reporte = "ReporteMovCaja";
+                ViewReport.Show();
+            }
 
             CargarMovimientos();
 

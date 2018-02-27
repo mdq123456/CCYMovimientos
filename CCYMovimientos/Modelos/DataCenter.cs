@@ -123,6 +123,57 @@ namespace CCYMovimientos.Modelos
             }
         }
 
+        public SqlDataReader GuardarDireccion(string pcodCliente, 
+                                                string pcodProvincia, 
+                                                string pCodLocalidad, 
+                                                string pDomicilio, 
+                                                string pentidad)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_DOMICILIOS_Nuevo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Convert.ToInt32(pcodCliente);
+                cmd.Parameters.Add("@entidad", SqlDbType.VarChar,100).Value = pentidad;
+                cmd.Parameters.Add("@CodLocalidad", SqlDbType.VarChar, 20).Value = pCodLocalidad;
+                cmd.Parameters.Add("@Domicilio", SqlDbType.VarChar, 20).Value = pDomicilio;
+
+                unDataReader = cmd.ExecuteReader();
+                return unDataReader;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public DataTable TraerDirecciones(string pcodigo, string pentidad)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_DOMICILIOS_Traer", con);
+                cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Convert.ToInt32(pcodigo);
+                cmd.Parameters.Add("@entidad", SqlDbType.VarChar,100).Value = pentidad;
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("ClientesDirecciones");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public DataTable TraerLlamadas(string pcodCliente)
         {
             try
@@ -394,7 +445,7 @@ namespace CCYMovimientos.Modelos
                 cmd = new SqlCommand("SP_FONDOS_Insertar_Mov", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@concepto", SqlDbType.VarChar, 200).Value = pConcepto;
+                cmd.Parameters.Add("@concepto", SqlDbType.VarChar, 300).Value = pConcepto;
                 cmd.Parameters.Add("@codTipoMov", SqlDbType.Int).Value = Convert.ToInt32(ptipoMov);
                 cmd.Parameters.Add("@importe", SqlDbType.Decimal).Value = Convert.ToDecimal(pimporte);
                 cmd.Parameters.Add("@fechaEmision", SqlDbType.SmallDateTime).Value = pfechaEmision;
@@ -420,7 +471,9 @@ namespace CCYMovimientos.Modelos
             }
             catch (Exception ex)
             {
+                cerrarConexion();
                 System.Windows.Forms.MessageBox.Show(ex.ToString());
+                return unDataReader;
                 throw;
             }
             
@@ -519,7 +572,8 @@ namespace CCYMovimientos.Modelos
                                           string pNombreCliente,
                                           DateTime pfechaEmision, DateTime pfechaCobro,
                                         string pnroCheque, string pbanco, string pcuenta,
-                                        string pbeneficiario)
+                                        string pbeneficiario,
+                                        string pConcepto, DateTime pfechaPago)
         {
             try
             {
@@ -540,6 +594,8 @@ namespace CCYMovimientos.Modelos
                 cmd.Parameters.Add("@cuenta", SqlDbType.VarChar, 100).Value = pcuenta;
                 cmd.Parameters.Add("@beneficiario", SqlDbType.VarChar, 200).Value = pbeneficiario;
                 cmd.Parameters.Add("@codLogin", SqlDbType.Int).Value = Sesion.codUsuario;
+                cmd.Parameters.Add("@Concepto", SqlDbType.VarChar, 300).Value = pConcepto;
+                cmd.Parameters.Add("@fechaPago", SqlDbType.SmallDateTime).Value = pfechaPago;
 
                 SqlDataReader unDataReader = cmd.ExecuteReader();
 

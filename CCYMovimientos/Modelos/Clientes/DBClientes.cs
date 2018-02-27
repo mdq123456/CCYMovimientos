@@ -106,6 +106,48 @@ namespace CCYMovimientos.Modelos.Clientes
             
         }
 
+        public string GuardarDireccion(string pcodCliente, string pcodProvincia,
+                          string pCodLocalidad, string pDomicilio)
+        {
+            string retorno = "";
+
+            DataCenter objDC = new DataCenter();
+            SqlDataReader unDato = objDC.GuardarDireccion(pcodCliente, pcodProvincia,
+                                                    pCodLocalidad,  pDomicilio,
+                                                    "Cliente");
+            if (unDato.HasRows)
+            {
+                unDato.Read();
+
+                retorno = unDato["Msj"].ToString();
+
+            }
+            else
+            {
+                retorno = "No se pudo realizar la operacion, comuniquese con su administrador.";
+            }
+
+            objDC.cerrarConexion();
+            return retorno;
+        }
+
+        public object TraerDirecciones(string pcodCliente)
+        {
+            try
+            {
+                DataCenter objDC = new DataCenter();
+                DataTable tabla = objDC.TraerDirecciones(pcodCliente, "Cliente");
+                objDC.cerrarConexion();
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public DataTable TraerClientesTipos()
         {
             try { 

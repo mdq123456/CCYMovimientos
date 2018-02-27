@@ -21,6 +21,7 @@ namespace CCYMovimientos.Modelos.Fondos
         private int codVenta { set; get; }
         private int codAnticipo { set; get; }
         private string beneficiario { set; get; }
+        public string CodMovimiento;
 
         private int codFondo { set; get; }
 
@@ -89,6 +90,7 @@ namespace CCYMovimientos.Modelos.Fondos
         public string InsertarMov()
         {
             string retorno;
+            CodMovimiento = "";
             DataCenter objDC = new DataCenter();
             SqlDataReader unDato = objDC.InsertarMov(this.concepto,
                                                      this.tipoMov,
@@ -101,17 +103,22 @@ namespace CCYMovimientos.Modelos.Fondos
                                                      this.codVenta,
                                                      this.codAnticipo,
                                                      this.beneficiario);
-            if (unDato.HasRows)
+            retorno = "No se pudo realizar la operacion, comuniquese con su administrador.";
+            if (unDato != null)
             {
-                unDato.Read();
+                if (unDato.HasRows)
+                {
+                    unDato.Read();
 
-                retorno = unDato["Msj"].ToString();
-
+                    retorno = unDato["Msj"].ToString();
+                    
+                    if (unDato["CodMovimiento"].ToString() != "")
+                    {
+                        CodMovimiento = unDato["CodMovimiento"].ToString();
+                    }
+                }
             }
-            else
-            {
-                retorno = "No se pudo realizar la operacion, comuniquese con su administrador.";
-            }
+            
             objDC.cerrarConexion();
             return retorno;
 

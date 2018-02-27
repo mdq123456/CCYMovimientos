@@ -22,6 +22,8 @@ namespace CCYMovimientos.Modelos.Creditos
         private string cuenta { set; get; }
         private string beneficiario { set; get; }
 
+        public string NroRecibo;
+
         public DBCreditos(string pCodCliente)
         {
             this.codCliente = pCodCliente;
@@ -62,7 +64,7 @@ namespace CCYMovimientos.Modelos.Creditos
             }
         }
 
-        public string InsertarPago()
+        public string InsertarPago(string pConcepto, DateTime pfechaPago)
         {
             string retorno;
             DataCenter objDC = new DataCenter();
@@ -76,13 +78,15 @@ namespace CCYMovimientos.Modelos.Creditos
                                                         this.nroCheque,
                                                         this.banco,
                                                         this.cuenta,
-                                                        this.beneficiario);
+                                                        this.beneficiario,
+                                                        pConcepto,
+                                                        pfechaPago);
             if (unDato.HasRows)
             {
                 unDato.Read();
 
                 retorno = unDato["Msj"].ToString();
-
+                NroRecibo = unDato["NroRecibo"].ToString();
             }
             else
             {

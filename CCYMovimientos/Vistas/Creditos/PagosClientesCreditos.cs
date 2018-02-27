@@ -17,6 +17,7 @@ namespace CCYMovimientos.Vistas.Creditos
     {
         private string codCliente;
         public string Msj;
+        public string NroRecibo;
         private string strCodPago;
 
         public PagosClientesCreditos(string pCodCliente, string Nombre)
@@ -25,6 +26,7 @@ namespace CCYMovimientos.Vistas.Creditos
             this.codCliente = pCodCliente;
             TxtCliente.Text = Nombre;
             Msj = "";
+            NroRecibo = "";
         }
 
         private void PagosClientesCreditos_Load(object sender, EventArgs e)
@@ -51,16 +53,32 @@ namespace CCYMovimientos.Vistas.Creditos
 
             cboFecha1.Value = DateTime.Today;
             cboFecha2.Value = cboFecha1.Value.AddDays(30);
+            cboFechaPago.Value = DateTime.Today;
         }
 
         private void DestacarAnticipos()
         {
+            DateTime fechaVencimiento;
+
             DGCreditos.CurrentCell = null;
             foreach (DataGridViewRow row in DGCreditos.Rows)
             {
                 if (row.Cells["TipoCuota"].Value.ToString() == "Anticipo")
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(106)))), ((int)(((byte)(27)))));
+                }
+                if (row.Cells["FechaVencimiento"].Value.ToString().Trim() != "")
+                {
+                    fechaVencimiento = Convert.ToDateTime(row.Cells["FechaVencimiento"].Value.ToString().Trim());
+                    if (fechaVencimiento < DateTime.Today)
+                    {
+                        row.DefaultCellStyle.BackColor = System.Drawing.Color.YellowGreen;
+                    }
+                    fechaVencimiento = fechaVencimiento.AddDays(30);
+                    if (fechaVencimiento < DateTime.Today)
+                    {
+                        row.DefaultCellStyle.BackColor = System.Drawing.Color.Red;
+                    }
                 }
             }
         }
@@ -78,41 +96,78 @@ namespace CCYMovimientos.Vistas.Creditos
         private void DGCreditos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             decimal totalAPagar = 0;
+            string NroCuota = "";
+            string CodCredito = "";
             this.strCodPago = "";
+            DateTime fechaVencimiento = DateTime.Today;
+            TxtImporte.Enabled = false;
+
+            DestacarAnticipos();
+
+            if (!(e.RowIndex > -1))
+            {
+                CargarCreditos();
+                TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
+                TxtImporte.Text = TxtSaldoTotal.Text;
+                return;
+            }
 
             DGCreditos.CurrentCell = null;
             foreach (DataGridViewRow row in DGCreditos.Rows)
             {
-                if (Convert.ToBoolean(row.Cells[0].Value))
+                if (row.Index == e.RowIndex)
+                {
+                    CodCredito = row.Cells["CodCredito"].Value.ToString();
+                }
+            }
+            
+            DGCreditos.CurrentCell = null;
+            foreach (DataGridViewRow row in DGCreditos.Rows)
+            {
+                row.Cells[0].Value = 0;
+                if (row.Cells["CodCredito"].Value.ToString() == CodCredito)
                 {
                     this.strCodPago = this.strCodPago + "|" + row.Cells["CodCuota"].Value.ToString();
                     totalAPagar = totalAPagar + Convert.ToDecimal(row.Cells["Saldo_Cuota"].Value.ToString());
+                    row.Cells[0].Value = 1;
+                    NroCuota = row.Cells["NroCuota"].Value.ToString();
+
+                    if (row.Cells["FechaVencimiento"].Value.ToString().Trim() != "")
+                    {
+                        fechaVencimiento = Convert.ToDateTime(row.Cells["FechaVencimiento"].Value.ToString());
+                    }
+
+                    CodCredito = "0";
                 }
             }
+
             if (this.strCodPago != "")
             {
                 this.strCodPago = this.strCodPago.Substring(1);
-                TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
-                TxtImporte.Text = TxtSaldoTotal.Text;
-                TxtImporte.Focus();
+
+                if (NroCuota == "0")
+                {
+                    TxtImporte.Enabled = true;
+                    TxtImporte.Focus();
+                }
+
+                if (fechaVencimiento < DateTime.Today)
+                {
+                    TxtImporte.Enabled = true;
+                    TxtImporte.Focus();
+                }
+
             }
-            else
-            {
-                TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
-                TxtImporte.Text = TxtSaldoTotal.Text;
-            }
+
+            TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
+            TxtImporte.Text = TxtSaldoTotal.Text;
             
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-
-            Alertas alert;
-            if (TxtImporte.Text.Trim() == "0")
+            if (ControlarDatos() == false)
             {
-                alert = new Alertas("Ingrese un importe mayor a 0.", "");
-                alert.Show();
                 return;
             }
 
@@ -128,8 +183,53 @@ namespace CCYMovimientos.Vistas.Creditos
                                                     Txt2.Text,
                                                     Txt4.Text);
 
-            Msj = objCredito.InsertarPago();
+            Msj = objCredito.InsertarPago(TxtConcepto.Text,
+                                          cboFechaPago.Value);
+            NroRecibo = objCredito.NroRecibo;
+
             this.Close();
+        }
+
+        private bool ControlarDatos()
+        {
+            Alertas alert;
+
+            if (TxtImporte.Text.Trim() == "0")
+            {
+                alert = new Alertas("Ingrese un importe mayor a 0.", "");
+                alert.Show();
+                return false;
+            }
+
+            //string CodCredito = "0";
+            //string CodCuota = "";
+            DGCreditos.CurrentCell = null;
+            foreach (DataGridViewRow row in DGCreditos.Rows)
+            {
+                //if (CodCredito != row.Cells["CodCredito"].Value.ToString())
+                //{
+                //    CodCredito = row.Cells["CodCredito"].Value.ToString();
+                //    CodCuota = "1";
+                //}
+                //if (row.Cells["NroCuota"].Value.ToString() == "0")
+                //{
+                //    CodCuota = "0";
+                //}
+
+                //Si es cuota normal
+                if (row.Cells[0].Value.ToString() == "1" &&
+                    row.Cells["NroCuota"].Value.ToString() != "0" &&
+                    (Convert.ToDecimal(TxtImporte.Text.Trim()) <
+                    Convert.ToDecimal(TxtSaldoTotal.Text.Trim())))
+                {
+                    alert = new Alertas("No puede realizar un pago parcial de una cuota vencida.", "");
+                    alert.Show();
+                    return false;
+                }
+
+            }
+
+            return true;
         }
 
         private void cboFormaPago_SelectedValueChanged(object sender, EventArgs e)

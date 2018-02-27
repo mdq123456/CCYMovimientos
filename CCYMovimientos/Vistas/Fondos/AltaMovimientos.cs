@@ -16,6 +16,7 @@ namespace CCYMovimientos.Vistas.Fondos
     {
         private string TipoMov;
         private string Msj;
+        public string CodMovimiento;
         public string getMsj() { return this.Msj; }
 
         public AltaMovimientos(string pTipo)
@@ -27,7 +28,6 @@ namespace CCYMovimientos.Vistas.Fondos
         private void AltaMovimientos_Load(object sender, EventArgs e)
         {
             cargarComponentes();
-
         }
 
         private void cargarComponentes()
@@ -45,12 +45,14 @@ namespace CCYMovimientos.Vistas.Fondos
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Msj = "";
+            this.CodMovimiento = "";
             this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Msj = "";
+            this.CodMovimiento = "";
             this.Close();
         }
 
@@ -68,6 +70,7 @@ namespace CCYMovimientos.Vistas.Fondos
                                              Txt4.Text);
 
             this.Msj = objFondo.InsertarMov();
+            this.CodMovimiento = objFondo.CodMovimiento;
             this.Close();
 
         }
