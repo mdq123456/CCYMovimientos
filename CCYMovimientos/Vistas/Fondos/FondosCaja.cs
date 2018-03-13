@@ -1,4 +1,6 @@
 ﻿using CCYMovimientos.Modelos.Fondos;
+using CCYMovimientos.Modelos.Registros;
+using CCYMovimientos.Modelos.Sessiones;
 using CCYMovimientos.Reportes;
 using CCYMovimientos.Vistas.Notificaciones;
 using System;
@@ -17,6 +19,8 @@ namespace CCYMovimientos.Vistas.Fondos
     {
         Point posicion;
         Size dimension;
+        string codFondosMov;
+
         public FondosCaja(Point pPosicion, Size pDimension)
         {
             this.dimension = pDimension;
@@ -44,6 +48,7 @@ namespace CCYMovimientos.Vistas.Fondos
 
             decimal ingresos = 0;
             decimal egresos = 0;
+            decimal apertura = 0;
             foreach (DataGridViewRow row in DGMovimientos.Rows)
             {
                 if (row.Cells["Tipo_Movimiento"].Value.ToString().Substring(0,6).Trim() == "Ingres")
@@ -54,12 +59,16 @@ namespace CCYMovimientos.Vistas.Fondos
                 {
                     egresos = egresos + Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
                 }
-
+                if (row.Cells["Tipo_Movimiento"].Value.ToString().Substring(0, 6).Trim() == "Apertu")
+                {
+                    apertura = egresos + Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
+                }
             }
 
+            lblApertura.Text = apertura.ToString();
             lblIngresos.Text = ingresos.ToString();
             lblEgresos.Text = egresos.ToString();
-            lblTotal.Text = Convert.ToString(ingresos - egresos);
+            lblTotal.Text = Convert.ToString(ingresos - egresos + apertura);
 
         }
 
@@ -146,6 +155,64 @@ namespace CCYMovimientos.Vistas.Fondos
         private void ChCheques_OnChange(object sender, EventArgs e)
         {
             CargarMovimientos();
+        }
+
+        private void DGMovimientos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(e.RowIndex > -1) || Sesion.codRol == 2)
+            {
+                return;
+            }
+
+            DGMovimientos.CurrentCell = null;
+            foreach (DataGridViewRow row in DGMovimientos.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
+
+                    if (row.Cells["Tipo_Movimiento"].Value.ToString().Substring(0, 6).Trim() == "Apertu")
+                    {
+                        return;
+                    }
+
+                    codFondosMov = row.Cells["Codigo"].Value.ToString();
+                    string pInfo = row.Cells["Concepto"].Value.ToString();
+                    string pregunta;
+                    pregunta = "¿Desea anular el movimiento de caja numero " + codFondosMov + "?";
+
+                    PreguntaRespuesta pForm = new PreguntaRespuesta("Anular Movimiento",
+                                                                    pregunta,
+                                                                    pInfo,
+                                                                    "NO",
+                                                                    "SI");
+
+                    pForm.ShowDialog();
+
+                    if (pForm.SIoNO == "1")
+                    {
+                        DBRegistros objRegistro = new DBRegistros(codFondosMov,
+                                                                  "Fondos_Mov",
+                                                                  pForm.concepto,
+                                                                  "CodFondoMov");
+
+                        Alertas alert = new Alertas(objRegistro.AnularRegistro(), "");
+                        alert.Show();
+
+                        if (objRegistro.getCodigo() != "")
+                        {
+                            PrevisualizarReportes ViewReport = new PrevisualizarReportes();
+                            ViewReport.Codigo = objRegistro.getCodigo();
+                            ViewReport.Reporte = "ReporteAnulacion";
+                            ViewReport.Show();
+                        }
+
+                        CargarMovimientos();
+                    }
+
+                    this.codFondosMov = "";
+                    return;
+                }
+            }
         }
     }
 }

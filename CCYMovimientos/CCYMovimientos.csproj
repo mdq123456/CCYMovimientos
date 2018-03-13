@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -93,6 +93,7 @@
     <Compile Include="Modelos\Creditos\DBCreditos.cs" />
     <Compile Include="Modelos\DataCenter.cs" />
     <Compile Include="Modelos\Fondos\DBFondos.cs" />
+    <Compile Include="Modelos\Registros\DBRegistros.cs" />
     <Compile Include="Modelos\Sessiones\DBSesion.cs" />
     <Compile Include="Modelos\Sessiones\Sesion.cs" />
     <Compile Include="Modelos\Ventas\DBVentas.cs" />
@@ -115,6 +116,12 @@
     </Compile>
     <Compile Include="Reportes\PrevisualizarReportes.Designer.cs">
       <DependentUpon>PrevisualizarReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Registros\ReporteAnulacion.cs">
+      <DependentUpon>ReporteAnulacion.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Vistas\Clientes\ClienteABM.cs">
       <SubType>Form</SubType>
@@ -188,6 +195,12 @@
     <Compile Include="Vistas\Notificaciones\IngresoDatos.Designer.cs">
       <DependentUpon>IngresoDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Notificaciones\PreguntaRespuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Notificaciones\PreguntaRespuesta.Designer.cs">
+      <DependentUpon>PreguntaRespuesta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Sesiones\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +232,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\PrevisualizarReportes.resx">
       <DependentUpon>PrevisualizarReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Registros\ReporteAnulacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteAnulacion.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Clientes\ClienteABM.resx">
       <DependentUpon>ClienteABM.cs</DependentUpon>
@@ -255,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Notificaciones\IngresoDatos.resx">
       <DependentUpon>IngresoDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Notificaciones\PreguntaRespuesta.resx">
+      <DependentUpon>PreguntaRespuesta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Sesiones\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using CCYMovimientos.Reportes.Creditos;
 using CCYMovimientos.Reportes.Fondos;
+using CCYMovimientos.Reportes.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,11 @@ namespace CCYMovimientos.Reportes
                     ReporteMovCaja objReport = new ReporteMovCaja();
                     objReport.SetParameterValue("@CodFondosMov", Convert.ToInt32(Codigo));
                     crystalReportViewer1.ReportSource = objReport;
+                    break;
+                case "ReporteAnulacion":
+                    ReporteAnulacion objRepor = new ReporteAnulacion();
+                    objRepor.SetParameterValue("@NroRecibo", Convert.ToInt32(Codigo));
+                    crystalReportViewer1.ReportSource = objRepor;
                     break;
                 default:
                     break;

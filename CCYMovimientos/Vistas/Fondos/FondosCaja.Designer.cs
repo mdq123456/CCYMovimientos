@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FondosCaja));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrarCaja = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAbrirCaja = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEgresos = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -52,9 +53,14 @@
             this.lblEgresos = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTotal = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.mFondos = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.anularMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblApertura = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGMovimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDer)).BeginInit();
+            this.mFondos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCerrarCaja
@@ -231,21 +237,21 @@
             // 
             this.DGMovimientos.AllowUserToAddRows = false;
             this.DGMovimientos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DGMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DGMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGMovimientos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGMovimientos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGMovimientos.DoubleBuffered = true;
             this.DGMovimientos.EnableHeadersVisualStyles = false;
@@ -257,6 +263,7 @@
             this.DGMovimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGMovimientos.Size = new System.Drawing.Size(837, 275);
             this.DGMovimientos.TabIndex = 30;
+            this.DGMovimientos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMovimientos_CellDoubleClick);
             // 
             // btnIzq
             // 
@@ -430,6 +437,43 @@
             this.lblTotal.TabIndex = 72;
             this.lblTotal.Text = "0";
             // 
+            // mFondos
+            // 
+            this.mFondos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.anularMovimientoToolStripMenuItem});
+            this.mFondos.Name = "mFondos";
+            this.mFondos.Size = new System.Drawing.Size(178, 26);
+            this.mFondos.Text = "Opciones";
+            // 
+            // anularMovimientoToolStripMenuItem
+            // 
+            this.anularMovimientoToolStripMenuItem.Name = "anularMovimientoToolStripMenuItem";
+            this.anularMovimientoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.anularMovimientoToolStripMenuItem.Text = "Anular Movimiento";
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(600, 188);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(119, 25);
+            this.bunifuCustomLabel8.TabIndex = 73;
+            this.bunifuCustomLabel8.Text = "Apertura $ :";
+            // 
+            // lblApertura
+            // 
+            this.lblApertura.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblApertura.AutoSize = true;
+            this.lblApertura.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApertura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.lblApertura.Location = new System.Drawing.Point(725, 188);
+            this.lblApertura.Name = "lblApertura";
+            this.lblApertura.Size = new System.Drawing.Size(23, 25);
+            this.lblApertura.TabIndex = 74;
+            this.lblApertura.Text = "0";
+            // 
             // FondosCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,6 +481,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(890, 680);
+            this.Controls.Add(this.lblApertura);
+            this.Controls.Add(this.bunifuCustomLabel8);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.bunifuCustomLabel6);
             this.Controls.Add(this.lblEgresos);
@@ -466,6 +512,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGMovimientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIzq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDer)).EndInit();
+            this.mFondos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,5 +540,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblEgresos;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTotal;
+        private System.Windows.Forms.ContextMenuStrip mFondos;
+        private System.Windows.Forms.ToolStripMenuItem anularMovimientoToolStripMenuItem;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblApertura;
     }
 }

@@ -39,6 +39,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblfijo = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TxtFijo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cboLocalidad = new System.Windows.Forms.ComboBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
             this.cboTipoCliente = new System.Windows.Forms.ComboBox();
@@ -63,8 +65,6 @@
             this.TxtDNI = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtApellidos = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtNombres = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.lblfijo = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TxtFijo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -251,6 +251,37 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(865, 492);
             this.panel3.TabIndex = 48;
+            // 
+            // lblfijo
+            // 
+            this.lblfijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblfijo.AutoSize = true;
+            this.lblfijo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfijo.Location = new System.Drawing.Point(412, 229);
+            this.lblfijo.Name = "lblfijo";
+            this.lblfijo.Size = new System.Drawing.Size(67, 21);
+            this.lblfijo.TabIndex = 116;
+            this.lblfijo.Text = "Tel. Fijo :";
+            // 
+            // TxtFijo
+            // 
+            this.TxtFijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtFijo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtFijo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtFijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtFijo.HintForeColor = System.Drawing.Color.Empty;
+            this.TxtFijo.HintText = "";
+            this.TxtFijo.isPassword = false;
+            this.TxtFijo.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtFijo.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.TxtFijo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
+            this.TxtFijo.LineThickness = 4;
+            this.TxtFijo.Location = new System.Drawing.Point(498, 221);
+            this.TxtFijo.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtFijo.Name = "TxtFijo";
+            this.TxtFijo.Size = new System.Drawing.Size(161, 33);
+            this.TxtFijo.TabIndex = 9;
+            this.TxtFijo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cboLocalidad
             // 
@@ -593,6 +624,7 @@
             this.TxtDNI.Size = new System.Drawing.Size(161, 33);
             this.TxtDNI.TabIndex = 4;
             this.TxtDNI.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDNI_KeyPress);
             // 
             // TxtApellidos
             // 
@@ -634,37 +666,6 @@
             this.TxtNombres.Size = new System.Drawing.Size(532, 33);
             this.TxtNombres.TabIndex = 2;
             this.TxtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // lblfijo
-            // 
-            this.lblfijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblfijo.AutoSize = true;
-            this.lblfijo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfijo.Location = new System.Drawing.Point(412, 229);
-            this.lblfijo.Name = "lblfijo";
-            this.lblfijo.Size = new System.Drawing.Size(67, 21);
-            this.lblfijo.TabIndex = 116;
-            this.lblfijo.Text = "Tel. Fijo :";
-            // 
-            // TxtFijo
-            // 
-            this.TxtFijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TxtFijo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtFijo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TxtFijo.HintForeColor = System.Drawing.Color.Empty;
-            this.TxtFijo.HintText = "";
-            this.TxtFijo.isPassword = false;
-            this.TxtFijo.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtFijo.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.TxtFijo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
-            this.TxtFijo.LineThickness = 4;
-            this.TxtFijo.Location = new System.Drawing.Point(498, 221);
-            this.TxtFijo.Margin = new System.Windows.Forms.Padding(4);
-            this.TxtFijo.Name = "TxtFijo";
-            this.TxtFijo.Size = new System.Drawing.Size(161, 33);
-            this.TxtFijo.TabIndex = 9;
-            this.TxtFijo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // ClienteNewEdit
             // 

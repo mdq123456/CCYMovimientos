@@ -53,6 +53,14 @@ namespace CCYMovimientos.Vistas.Menu
             this.WindowState = FormWindowState.Maximized;
             //this.FormBorderStyle = FormBorderStyle.None;
             //this.WindowState = FormWindowState.Maximized;
+
+            if (Sesion.codRol == 2)
+            {
+                btnFondos.Visible = false;
+                btnCreditos.Visible = false;
+                btnFondos.Visible = false;
+            }
+
         }
 
         private void btnMin_Click(object sender, EventArgs e)

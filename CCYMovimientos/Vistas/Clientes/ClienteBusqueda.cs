@@ -90,5 +90,6 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             this.Close();
         }
+        
     }
 }

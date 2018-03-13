@@ -730,5 +730,35 @@ namespace CCYMovimientos.Modelos
         }
         //Contratos**********************************************
 
+        //Registros**********************************************
+        public SqlDataReader AnularRegistro(string pcodigo, string ptabla, string pconcepto, string pcodigoReferencia)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_REGISTROS_Anular", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@codigo", SqlDbType.Int).Value = Convert.ToInt32(pcodigo);
+                cmd.Parameters.Add("@tablaReferencia", SqlDbType.VarChar, 300).Value = ptabla;
+                cmd.Parameters.Add("@codigoReferencia", SqlDbType.VarChar, 300).Value = pcodigoReferencia; 
+                cmd.Parameters.Add("@concepto", SqlDbType.VarChar, 300).Value = pconcepto;
+
+                cmd.Parameters.Add("@codUsuario", SqlDbType.Int).Value = Sesion.codUsuario;
+
+                SqlDataReader unDataReader = cmd.ExecuteReader();
+
+                return unDataReader;
+            }
+            catch (Exception ex)
+            {
+                cerrarConexion();
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                return unDataReader;
+                throw;
+            }
+        }
+        //Registros**********************************************
+
     }
 }
