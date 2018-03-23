@@ -22,7 +22,8 @@ namespace CCYMovimientos.Modelos.Clientes
         private string codProvincia { set; get; }
         private string codLocalidad { set; get; }
         private string Domicilio { set; get; }
-        
+        private bool Activo { set; get; }
+
 
         public DBClientes()
         {
@@ -32,7 +33,7 @@ namespace CCYMovimientos.Modelos.Clientes
                           string pCUIL, string pDNI, string pcodTipoCliente,
                           string pTelefono, string pTelFijo, string pEmail, string pcodProvincia,
                           string pCodLocalidad, string pDomicilio,
-                          string pcodCliente)
+                          string pcodCliente, bool pActivo)
         {
             Apellidos = pApellidos;
             Nombres = pNombres;
@@ -46,6 +47,7 @@ namespace CCYMovimientos.Modelos.Clientes
             codLocalidad = pCodLocalidad;
             Domicilio = pDomicilio;
             codCliente = pcodCliente;
+            Activo = pActivo;
         }
 
         public object TraerLlamadas(string pcodCliente)
@@ -212,7 +214,8 @@ namespace CCYMovimientos.Modelos.Clientes
                                                                   codProvincia,
                                                                   codLocalidad,
                                                                   Domicilio,
-                                                                  codCliente);
+                                                                  codCliente,
+                                                                  Activo);
             
                 if (resultado.HasRows)
                 {

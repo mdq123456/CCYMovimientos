@@ -56,5 +56,13 @@ namespace CCYMovimientos.Modelos.Ventas
             objDC.cerrarConexion();
             return retorno;
         }
+
+        public DataTable TraerHVentas(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            DataCenter objDC = new DataCenter();
+            DataTable tabla = objDC.TraerHVentas(fechaDesde, fechaHasta);
+            objDC.cerrarConexion();
+            return tabla;
+        }
     }
 }

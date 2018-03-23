@@ -61,7 +61,7 @@ namespace CCYMovimientos.Vistas.Fondos
                 }
                 if (row.Cells["Tipo_Movimiento"].Value.ToString().Substring(0, 6).Trim() == "Apertu")
                 {
-                    apertura = egresos + Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
+                    apertura = Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
                 }
             }
 

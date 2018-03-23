@@ -59,6 +59,7 @@ namespace CCYMovimientos.Vistas.Menu
                 btnFondos.Visible = false;
                 btnCreditos.Visible = false;
                 btnFondos.Visible = false;
+                btnHVentas.Visible = false;
             }
 
         }
@@ -127,8 +128,12 @@ namespace CCYMovimientos.Vistas.Menu
                 clienteForm.MdiParent = this;
                 this.panelMenu.Controls.Add(clienteForm);
                 clienteForm.Dock = DockStyle.Fill;
+                
             }
+            btnTitulo.Iconimage = btnClientes.Iconimage;
+            lblTitulo.Text = "CLIENTES";
             clienteForm.Show();
+            clienteForm.CargarClientes();
         }
 
         private void btnFondo_Click(object sender, EventArgs e)
@@ -142,12 +147,14 @@ namespace CCYMovimientos.Vistas.Menu
                 fondosForm.MdiParent = this;
                 this.panelMenu.Controls.Add(fondosForm);
                 fondosForm.Dock = DockStyle.Fill;
+                
             }
             else
             {
                 fondosForm.CargarMovimientos();
             }
-
+            btnTitulo.Iconimage = btnFondos.Iconimage;
+            lblTitulo.Text = "FONDOS";
             fondosForm.Show();
         }
 
@@ -162,8 +169,10 @@ namespace CCYMovimientos.Vistas.Menu
                 ventasForm.MdiParent = this;
                 this.panelMenu.Controls.Add(ventasForm);
                 ventasForm.Dock = DockStyle.Fill;
+                
             }
-
+            btnTitulo.Iconimage = btnVentas.Iconimage;
+            lblTitulo.Text = "VENTAS";
             ventasForm.Show();
         }
 
@@ -211,6 +220,17 @@ namespace CCYMovimientos.Vistas.Menu
             {
                 Application.Restart();
             }
+        }
+
+        private void btnHVentas_Click(object sender, EventArgs e)
+        {
+            HistorialVentas HVentasForm = new HistorialVentas();
+            HVentasForm.ShowDialog();
+        }
+
+        private void btnTitulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

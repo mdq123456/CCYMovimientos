@@ -227,7 +227,8 @@ namespace CCYMovimientos.Vistas.Clientes
                                                    cboProvincia.SelectedValue.ToString(),
                                                    cboLocalidad.SelectedValue.ToString(),
                                                    TxtDireccion.Text,
-                                                   codCliente.ToString());
+                                                   codCliente.ToString(),
+                                                   ChActivo.Checked);
             if (objCliente.GuardarCliente())
             {
                 Alertas alert = new Alertas("Operacion finalizada con éxito !", "");

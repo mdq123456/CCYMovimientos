@@ -50,6 +50,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelesAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.btnHVentas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnTitulo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuLeft.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -68,6 +71,7 @@
             // menuLeft
             // 
             this.menuLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.menuLeft.Controls.Add(this.btnHVentas);
             this.menuLeft.Controls.Add(this.btnCerrarSesion);
             this.menuLeft.Controls.Add(this.panel4);
             this.menuLeft.Controls.Add(this.btnCreditos);
@@ -105,7 +109,7 @@
             this.btnCerrarSesion.IconRightVisible = true;
             this.btnCerrarSesion.IconRightZoom = 0D;
             this.btnCerrarSesion.IconVisible = true;
-            this.btnCerrarSesion.IconZoom = 55D;
+            this.btnCerrarSesion.IconZoom = 60D;
             this.btnCerrarSesion.IsTab = true;
             this.btnCerrarSesion.Location = new System.Drawing.Point(0, 361);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
@@ -171,7 +175,7 @@
             this.btnCreditos.IconRightVisible = true;
             this.btnCreditos.IconRightZoom = 0D;
             this.btnCreditos.IconVisible = true;
-            this.btnCreditos.IconZoom = 55D;
+            this.btnCreditos.IconZoom = 60D;
             this.btnCreditos.IsTab = true;
             this.btnCreditos.Location = new System.Drawing.Point(0, 229);
             this.btnCreditos.Name = "btnCreditos";
@@ -210,7 +214,7 @@
             this.btnVentas.IconRightVisible = true;
             this.btnVentas.IconRightZoom = 0D;
             this.btnVentas.IconVisible = true;
-            this.btnVentas.IconZoom = 55D;
+            this.btnVentas.IconZoom = 60D;
             this.btnVentas.IsTab = true;
             this.btnVentas.Location = new System.Drawing.Point(0, 172);
             this.btnVentas.Name = "btnVentas";
@@ -248,7 +252,7 @@
             this.btnFondos.IconRightVisible = true;
             this.btnFondos.IconRightZoom = 0D;
             this.btnFondos.IconVisible = true;
-            this.btnFondos.IconZoom = 55D;
+            this.btnFondos.IconZoom = 60D;
             this.btnFondos.IsTab = true;
             this.btnFondos.Location = new System.Drawing.Point(0, 115);
             this.btnFondos.Name = "btnFondos";
@@ -286,7 +290,7 @@
             this.btnClientes.IconRightVisible = true;
             this.btnClientes.IconRightZoom = 0D;
             this.btnClientes.IconVisible = true;
-            this.btnClientes.IconZoom = 55D;
+            this.btnClientes.IconZoom = 60D;
             this.btnClientes.IsTab = true;
             this.btnClientes.Location = new System.Drawing.Point(0, 60);
             this.btnClientes.Name = "btnClientes";
@@ -349,6 +353,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.panel1.Controls.Add(this.btnTitulo);
+            this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panelesAnimator.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
@@ -432,6 +438,94 @@
             this.panelesAnimator.Interval = 0;
             this.panelesAnimator.TimeStep = 0.1F;
             // 
+            // btnHVentas
+            // 
+            this.btnHVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHVentas.BorderRadius = 0;
+            this.btnHVentas.ButtonText = "              HISTORIAL VENTAS";
+            this.btnHVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelesAnimator.SetDecoration(this.btnHVentas, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.btnHVentas, BunifuAnimatorNS.DecorationType.None);
+            this.btnHVentas.DisabledColor = System.Drawing.Color.Gray;
+            this.btnHVentas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHVentas.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnHVentas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHVentas.Iconimage")));
+            this.btnHVentas.Iconimage_right = null;
+            this.btnHVentas.Iconimage_right_Selected = null;
+            this.btnHVentas.Iconimage_Selected = null;
+            this.btnHVentas.IconMarginLeft = 0;
+            this.btnHVentas.IconMarginRight = 0;
+            this.btnHVentas.IconRightVisible = true;
+            this.btnHVentas.IconRightZoom = 0D;
+            this.btnHVentas.IconVisible = true;
+            this.btnHVentas.IconZoom = 60D;
+            this.btnHVentas.IsTab = true;
+            this.btnHVentas.Location = new System.Drawing.Point(0, 286);
+            this.btnHVentas.Name = "btnHVentas";
+            this.btnHVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnHVentas.selected = false;
+            this.btnHVentas.Size = new System.Drawing.Size(240, 51);
+            this.btnHVentas.TabIndex = 7;
+            this.btnHVentas.Text = "              HISTORIAL VENTAS";
+            this.btnHVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHVentas.Textcolor = System.Drawing.Color.Silver;
+            this.btnHVentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHVentas.Click += new System.EventHandler(this.btnHVentas_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.menuLeftAnimator.SetDecoration(this.lblTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.panelesAnimator.SetDecoration(this.lblTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblTitulo.Location = new System.Drawing.Point(65, 7);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(343, 47);
+            this.lblTitulo.TabIndex = 74;
+            this.lblTitulo.Text = " Construcciones NEA";
+            // 
+            // btnTitulo
+            // 
+            this.btnTitulo.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnTitulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTitulo.BorderRadius = 0;
+            this.btnTitulo.ButtonText = "";
+            this.btnTitulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelesAnimator.SetDecoration(this.btnTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.btnTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.btnTitulo.DisabledColor = System.Drawing.Color.Gray;
+            this.btnTitulo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTitulo.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnTitulo.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTitulo.Iconimage")));
+            this.btnTitulo.Iconimage_right = null;
+            this.btnTitulo.Iconimage_right_Selected = null;
+            this.btnTitulo.Iconimage_Selected = null;
+            this.btnTitulo.IconMarginLeft = 0;
+            this.btnTitulo.IconMarginRight = 0;
+            this.btnTitulo.IconRightVisible = true;
+            this.btnTitulo.IconRightZoom = 0D;
+            this.btnTitulo.IconVisible = true;
+            this.btnTitulo.IconZoom = 60D;
+            this.btnTitulo.IsTab = true;
+            this.btnTitulo.Location = new System.Drawing.Point(3, 5);
+            this.btnTitulo.Name = "btnTitulo";
+            this.btnTitulo.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnTitulo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnTitulo.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnTitulo.selected = false;
+            this.btnTitulo.Size = new System.Drawing.Size(56, 51);
+            this.btnTitulo.TabIndex = 75;
+            this.btnTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTitulo.Textcolor = System.Drawing.Color.Silver;
+            this.btnTitulo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTitulo.Click += new System.EventHandler(this.btnTitulo_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,6 +550,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -484,5 +579,8 @@
         private Bunifu.Framework.UI.BunifuImageButton btnMenu;
         private System.Windows.Forms.Panel panelMenu;
         private Bunifu.Framework.UI.BunifuFlatButton btnCerrarSesion;
+        private Bunifu.Framework.UI.BunifuFlatButton btnHVentas;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblTitulo;
+        private Bunifu.Framework.UI.BunifuFlatButton btnTitulo;
     }
 }

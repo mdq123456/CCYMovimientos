@@ -28,6 +28,23 @@ namespace CCYMovimientos.Modelos.Creditos
         {
             this.codCliente = pCodCliente;
         }
+
+        public DataTable TraerPagos()
+        {
+            try
+            {
+                DataCenter objDC = new DataCenter();
+                DataTable tabla = objDC.TraerPagos(this.codCliente);
+                objDC.cerrarConexion();
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
         public DBCreditos(string pCodCliente, string pstrCodPago,string pimporte,
                             string pcodFormaPago, string pNombreCliente,
                             DateTime pfechaEmision, DateTime pfechaCobro,

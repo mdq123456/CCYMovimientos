@@ -484,6 +484,7 @@
             this.DGClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGClientes.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -497,15 +498,18 @@
             this.DGClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGClientes.DoubleBuffered = true;
+            this.DGClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGClientes.EnableHeadersVisualStyles = false;
             this.DGClientes.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.DGClientes.HeaderForeColor = System.Drawing.Color.Gainsboro;
             this.DGClientes.Location = new System.Drawing.Point(39, 104);
             this.DGClientes.Name = "DGClientes";
             this.DGClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DGClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGClientes.Size = new System.Drawing.Size(713, 240);
             this.DGClientes.TabIndex = 11;
             this.DGClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGClientes_CellClick);
+            this.DGClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGClientes_CellDoubleClick);
             // 
             // btnNuevoCliente
             // 

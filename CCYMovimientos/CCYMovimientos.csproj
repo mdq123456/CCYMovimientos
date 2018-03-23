@@ -159,6 +159,12 @@
     <Compile Include="Vistas\Clientes\ClientesLlamadas.Designer.cs">
       <DependentUpon>ClientesLlamadas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Creditos\HistorialPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Creditos\HistorialPagos.Designer.cs">
+      <DependentUpon>HistorialPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Creditos\PagosClientesCreditos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,12 @@
     </Compile>
     <Compile Include="Vistas\Sesiones\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Ventas\HistorialVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ventas\HistorialVentas.Designer.cs">
+      <DependentUpon>HistorialVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Ventas\VentasABM.cs">
       <SubType>Form</SubType>
@@ -255,6 +267,9 @@
     <EmbeddedResource Include="Vistas\Clientes\ClientesLlamadas.resx">
       <DependentUpon>ClientesLlamadas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Creditos\HistorialPagos.resx">
+      <DependentUpon>HistorialPagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Creditos\PagosClientesCreditos.resx">
       <DependentUpon>PagosClientesCreditos.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Sesiones\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Ventas\HistorialVentas.resx">
+      <DependentUpon>HistorialVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Ventas\VentasABM.resx">
       <DependentUpon>VentasABM.cs</DependentUpon>

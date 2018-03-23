@@ -241,6 +241,7 @@
             this.DGMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGMovimientos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGMovimientos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -254,6 +255,7 @@
             this.DGMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGMovimientos.DoubleBuffered = true;
+            this.DGMovimientos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGMovimientos.EnableHeadersVisualStyles = false;
             this.DGMovimientos.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.DGMovimientos.HeaderForeColor = System.Drawing.Color.Gainsboro;
@@ -261,6 +263,7 @@
             this.DGMovimientos.Name = "DGMovimientos";
             this.DGMovimientos.ReadOnly = true;
             this.DGMovimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DGMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGMovimientos.Size = new System.Drawing.Size(837, 275);
             this.DGMovimientos.TabIndex = 30;
             this.DGMovimientos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMovimientos_CellDoubleClick);

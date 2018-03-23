@@ -99,6 +99,8 @@ namespace CCYMovimientos.Modelos
             
         }
 
+        
+
         //Clientes***********************************************
         public SqlDataReader GuardarLlamada(string pcodCliente, DateTime pFechaLlamada, string pConcepto)
         {
@@ -299,7 +301,7 @@ namespace CCYMovimientos.Modelos
                                               string pTelefono, string pTelFijo, 
                                               string pEmail, string pcodProvincia,
                                               string pCodLocalidad, string pDomicilio,
-                                              string pcodCliente)
+                                              string pcodCliente, bool pActivo)
         {
             try
             {
@@ -320,6 +322,7 @@ namespace CCYMovimientos.Modelos
                 cmd.Parameters.Add("@Domicilio", SqlDbType.VarChar, 20).Value = pDomicilio;
                 cmd.Parameters.Add("@CodCliente", SqlDbType.Int).Value = Convert.ToInt32(pcodCliente);
                 cmd.Parameters.Add("@codLogin", SqlDbType.Int).Value = Sesion.codUsuario;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = pActivo;
 
                 unDataReader = cmd.ExecuteReader();
                 return unDataReader;
@@ -481,6 +484,30 @@ namespace CCYMovimientos.Modelos
         //Fondos*************************************************
 
         //Ventas*************************************************
+        public DataTable TraerHVentas(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_VENTAS_Traer_HVentas", con);
+                cmd.Parameters.Add("@fechaDesde", SqlDbType.SmallDateTime).Value = fechaDesde;
+                cmd.Parameters.Add("@fechaHasta", SqlDbType.SmallDateTime).Value = fechaHasta;
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("HVentas");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public DataTable TraerMetPagos()
         {
             try
@@ -544,6 +571,28 @@ namespace CCYMovimientos.Modelos
         //Ventas*************************************************
 
         //Creditos***********************************************
+        public DataTable TraerPagos(string codCliente)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_CREDITOS_TraerPagos", con);
+                cmd.Parameters.Add("@codCliente", SqlDbType.Int).Value = Convert.ToInt32(codCliente);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Pagos");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
         public DataTable TraerCreditos(string codCliente)
         {
             try

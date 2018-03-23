@@ -20,6 +20,7 @@ namespace CCYMovimientos.Vistas.Clientes
         Point posicion;
         Size dimension;
         private string codCliente;
+        private string estado;
 
         public ClienteABM(Point pPosicion, Size pDimension)
         {
@@ -30,15 +31,42 @@ namespace CCYMovimientos.Vistas.Clientes
 
         private void ClienteABM_Load(object sender, EventArgs e)
         {
+            Posicionar();
+            //CargarClientes();
+        }
+
+        private void Posicionar()
+        {
             this.Size = this.dimension;
             this.Location = this.posicion;
-            CargarClientes();
         }
 
         public void CargarClientes()
         {
             DBClientes objCliente = new DBClientes();
             DGClientes.DataSource = objCliente.TraerClientes(ChEmpresas.Checked);
+
+            DestacarMora();
+        }
+
+        private void DestacarMora()
+        {
+            DGClientes.CurrentCell = null;
+            foreach (DataGridViewRow row in DGClientes.Rows)
+            {
+                if (row.Cells["Estado"].Value.ToString() == "False")
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                }
+                
+            }
+
+            if (estado == "False")
+            {
+                bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            }
         }
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
@@ -119,12 +147,32 @@ namespace CCYMovimientos.Vistas.Clientes
                     lblDireccion.Text = row.Cells["Domicilio"].Value.ToString();
                     lblTel.Text = row.Cells["TelCelular"].Value.ToString();
                     lblFijo.Text = row.Cells["TelFijo"].Value.ToString();
+                    estado = row.Cells["Estado"].Value.ToString();
 
-                    btnEditCliente.Visible = true;
-                    btnHistorialPago.Visible = true;
-                    btnLlamadas.Visible = true;
-                    btnContactos.Visible = true;
-                    btnDirecciones.Visible = true;
+                    if (estado == "True")
+                    {
+                        btnEditCliente.Visible = true;
+                        btnHistorialPago.Visible = true;
+                        btnLlamadas.Visible = true;
+                        btnContactos.Visible = true;
+                        btnDirecciones.Visible = true;
+                        bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+                        bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+                        bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+
+                    }
+                    else
+                    {
+                        btnEditCliente.Visible = true;
+                        btnHistorialPago.Visible = false;
+                        btnLlamadas.Visible = false;
+                        btnContactos.Visible = false;
+                        btnDirecciones.Visible = false;
+                        bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                        bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                        bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                    }
+                        
                     return;
                 }
             }
@@ -177,6 +225,12 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             ClientesDirecciones ClientesDireccionesForm = new ClientesDirecciones(codCliente, lblNombre.Text);
             ClientesDireccionesForm.ShowDialog();
+        }
+
+        private void DGClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HistorialPagos PagosCreditosForm = new HistorialPagos(codCliente, lblNombre.Text);
+            PagosCreditosForm.ShowDialog();
         }
     }
 }

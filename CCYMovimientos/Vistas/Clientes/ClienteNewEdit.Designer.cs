@@ -39,6 +39,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblActivar = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ChActivo = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lblfijo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.TxtFijo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cboLocalidad = new System.Windows.Forms.ComboBox();
@@ -75,7 +77,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
@@ -108,8 +110,8 @@
             // 
             // bunifuFlatButton1
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "";
@@ -130,8 +132,8 @@
             this.bunifuFlatButton1.IsTab = true;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(23, 8);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(50, 45);
@@ -151,8 +153,8 @@
             // 
             // btnNuevoCliente
             // 
-            this.btnNuevoCliente.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnNuevoCliente.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.btnNuevoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNuevoCliente.BorderRadius = 0;
             this.btnNuevoCliente.ButtonText = "";
@@ -173,8 +175,8 @@
             this.btnNuevoCliente.IsTab = true;
             this.btnNuevoCliente.Location = new System.Drawing.Point(13, 7);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnNuevoCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnNuevoCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnNuevoCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.btnNuevoCliente.OnHoverTextColor = System.Drawing.Color.White;
             this.btnNuevoCliente.selected = false;
             this.btnNuevoCliente.Size = new System.Drawing.Size(50, 45);
@@ -220,6 +222,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panel3.Controls.Add(this.lblActivar);
+            this.panel3.Controls.Add(this.ChActivo);
             this.panel3.Controls.Add(this.lblfijo);
             this.panel3.Controls.Add(this.TxtFijo);
             this.panel3.Controls.Add(this.cboLocalidad);
@@ -251,6 +255,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(865, 492);
             this.panel3.TabIndex = 48;
+            // 
+            // lblActivar
+            // 
+            this.lblActivar.AutoSize = true;
+            this.lblActivar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivar.Location = new System.Drawing.Point(718, 62);
+            this.lblActivar.Name = "lblActivar";
+            this.lblActivar.Size = new System.Drawing.Size(53, 21);
+            this.lblActivar.TabIndex = 118;
+            this.lblActivar.Text = "Activo";
+            // 
+            // ChActivo
+            // 
+            this.ChActivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.ChActivo.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ChActivo.Checked = true;
+            this.ChActivo.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.ChActivo.ForeColor = System.Drawing.Color.White;
+            this.ChActivo.Location = new System.Drawing.Point(692, 63);
+            this.ChActivo.Name = "ChActivo";
+            this.ChActivo.Size = new System.Drawing.Size(20, 20);
+            this.ChActivo.TabIndex = 117;
             // 
             // lblfijo
             // 
@@ -733,5 +759,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtNombres;
         private Bunifu.Framework.UI.BunifuCustomLabel lblfijo;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtFijo;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblActivar;
+        private Bunifu.Framework.UI.BunifuCheckbox ChActivo;
     }
 }

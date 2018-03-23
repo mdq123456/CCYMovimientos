@@ -34,8 +34,26 @@ namespace CCYMovimientos.Vistas.Clientes
             DGClientes.CurrentCell = null;
             foreach (DataGridViewRow row in DGClientes.Rows)
             {
-                string mayus = row.Cells[1].Value.ToString().ToUpper();
-                if (mayus.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1)
+                string mayus = row.Cells[0].Value.ToString().ToUpper();
+                string mayus1 = row.Cells[1].Value.ToString().ToUpper();
+                string mayus2 = row.Cells[2].Value.ToString().ToUpper();
+                string mayus3 = row.Cells[3].Value.ToString().ToUpper();
+                string mayus4 = row.Cells[4].Value.ToString().ToUpper();
+                string mayus5 = row.Cells[5].Value.ToString().ToUpper();
+                string mayus6 = row.Cells[6].Value.ToString().ToUpper();
+                string mayus7 = row.Cells[7].Value.ToString().ToUpper();
+                string mayus8 = row.Cells[8].Value.ToString().ToUpper();
+                string mayus9 = row.Cells[9].Value.ToString().ToUpper();
+                if (mayus.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus1.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus2.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus3.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus4.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus5.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus6.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus7.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus8.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
+                    mayus9.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1)
                 {
                     row.Visible = true;
                 }
@@ -56,6 +74,20 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             DBClientes objCliente = new DBClientes();
             DGClientes.DataSource = objCliente.TraerClientes(ChEmpresas.Checked);
+
+            DestacarMora();
+        }
+
+        private void DestacarMora()
+        {
+            DGClientes.CurrentCell = null;
+            foreach (DataGridViewRow row in DGClientes.Rows)
+            {
+                if (row.Cells["Estado"].Value.ToString() == "False")
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                }
+            }
         }
 
         private void ClienteBusqueda_Load(object sender, EventArgs e)

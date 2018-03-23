@@ -59,12 +59,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(811, 406);
+            this.panel1.Size = new System.Drawing.Size(975, 470);
             this.panel1.TabIndex = 15;
             // 
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.Location = new System.Drawing.Point(35, 25);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
@@ -85,6 +86,7 @@
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.Location = new System.Drawing.Point(336, 56);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
@@ -114,6 +116,7 @@
             this.DGClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGClientes.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -127,25 +130,27 @@
             this.DGClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGClientes.DoubleBuffered = true;
+            this.DGClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGClientes.EnableHeadersVisualStyles = false;
             this.DGClientes.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.DGClientes.HeaderForeColor = System.Drawing.Color.Gainsboro;
             this.DGClientes.Location = new System.Drawing.Point(39, 104);
             this.DGClientes.Name = "DGClientes";
             this.DGClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DGClientes.Size = new System.Drawing.Size(735, 270);
+            this.DGClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGClientes.Size = new System.Drawing.Size(899, 334);
             this.DGClientes.TabIndex = 11;
             this.DGClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGClientes_CellDoubleClick);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.panel2.Controls.Add(this.bunifuCustomLabel12);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(811, 60);
+            this.panel2.Size = new System.Drawing.Size(975, 60);
             this.panel2.TabIndex = 16;
             // 
             // bunifuCustomLabel12
@@ -163,7 +168,7 @@
             // 
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(767, 0);
+            this.panel3.Location = new System.Drawing.Point(931, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(44, 60);
             this.panel3.TabIndex = 3;
@@ -187,7 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(811, 466);
+            this.ClientSize = new System.Drawing.Size(975, 530);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
