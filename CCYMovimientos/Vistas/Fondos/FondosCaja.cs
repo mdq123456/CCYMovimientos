@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace CCYMovimientos.Vistas.Fondos
         Point posicion;
         Size dimension;
         string codFondosMov;
+        DataTable rsMov;
 
         public FondosCaja(Point pPosicion, Size pDimension)
         {
@@ -41,14 +43,16 @@ namespace CCYMovimientos.Vistas.Fondos
         public void CargarMovimientos()
         {
             DBFondos objFondo = new DBFondos();
-            DGMovimientos.DataSource = objFondo.TraerMovimientos(cboFechaMov.Value,
-                                                                 chEfectivo.Checked,
-                                                                 chTrans.Checked,
-                                                                 ChCheques.Checked);
+            rsMov = objFondo.TraerMovimientos(cboFechaMov.Value,
+                                            chEfectivo.Checked,
+                                            chTrans.Checked,
+                                            ChCheques.Checked);
+            DGMovimientos.DataSource = rsMov;
 
             decimal ingresos = 0;
             decimal egresos = 0;
             decimal apertura = 0;
+            decimal total = 0;
             foreach (DataGridViewRow row in DGMovimientos.Rows)
             {
                 if (row.Cells["Tipo_Movimiento"].Value.ToString().Substring(0,6).Trim() == "Ingres")
@@ -64,11 +68,12 @@ namespace CCYMovimientos.Vistas.Fondos
                     apertura = Convert.ToDecimal(row.Cells["Importe"].Value.ToString());
                 }
             }
-
-            lblApertura.Text = apertura.ToString();
-            lblIngresos.Text = ingresos.ToString();
-            lblEgresos.Text = egresos.ToString();
-            lblTotal.Text = Convert.ToString(ingresos - egresos + apertura);
+            
+            lblApertura.Text = apertura.ToString("C1", CultureInfo.CurrentCulture);
+            lblIngresos.Text = ingresos.ToString("C1", CultureInfo.CurrentCulture);
+            lblEgresos.Text = egresos.ToString("C1", CultureInfo.CurrentCulture);
+            total = (ingresos - egresos + apertura);
+            lblTotal.Text = total.ToString("C1", CultureInfo.CurrentCulture);
 
         }
 
@@ -213,6 +218,19 @@ namespace CCYMovimientos.Vistas.Fondos
                     return;
                 }
             }
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+            (DGMovimientos.DataSource as DataTable).DefaultView.RowFilter = string.Format("Concepto Like '%{0}%' or Tipo_Movimiento Like '%{0}%'", TxtBuscar.Text.Trim().ToUpper());
+
+        }
+
+        private void TxtBuscar_Click(object sender, EventArgs e)
+        {
+            TxtBuscar.SelectionStart = 0;
+            TxtBuscar.SelectionLength = TxtBuscar.Text.Length;
         }
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialPagos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,6 +39,7 @@
             this.DGPagos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnReImprimir = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -115,22 +116,22 @@
             // 
             this.DGPagos.AllowUserToAddRows = false;
             this.DGPagos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DGPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DGPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DGPagos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGPagos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Chk});
@@ -144,6 +145,7 @@
             this.DGPagos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGPagos.Size = new System.Drawing.Size(888, 355);
             this.DGPagos.TabIndex = 102;
+            this.DGPagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGPagos_CellClick);
             // 
             // Chk
             // 
@@ -161,12 +163,50 @@
             this.bunifuCustomLabel2.TabIndex = 101;
             this.bunifuCustomLabel2.Text = "Cliente :";
             // 
+            // btnReImprimir
+            // 
+            this.btnReImprimir.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReImprimir.BorderRadius = 5;
+            this.btnReImprimir.ButtonText = "";
+            this.btnReImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReImprimir.DisabledColor = System.Drawing.Color.Gray;
+            this.btnReImprimir.Enabled = false;
+            this.btnReImprimir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReImprimir.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnReImprimir.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnReImprimir.Iconimage")));
+            this.btnReImprimir.Iconimage_right = null;
+            this.btnReImprimir.Iconimage_right_Selected = null;
+            this.btnReImprimir.Iconimage_Selected = null;
+            this.btnReImprimir.IconMarginLeft = 0;
+            this.btnReImprimir.IconMarginRight = 0;
+            this.btnReImprimir.IconRightVisible = true;
+            this.btnReImprimir.IconRightZoom = 0D;
+            this.btnReImprimir.IconVisible = true;
+            this.btnReImprimir.IconZoom = 70D;
+            this.btnReImprimir.IsTab = true;
+            this.btnReImprimir.Location = new System.Drawing.Point(865, 90);
+            this.btnReImprimir.Name = "btnReImprimir";
+            this.btnReImprimir.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnReImprimir.selected = false;
+            this.btnReImprimir.Size = new System.Drawing.Size(41, 38);
+            this.btnReImprimir.TabIndex = 104;
+            this.btnReImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReImprimir.Textcolor = System.Drawing.Color.Silver;
+            this.btnReImprimir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReImprimir.Click += new System.EventHandler(this.btnReImprimir_Click);
+            // 
             // HistorialPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(922, 549);
+            this.Controls.Add(this.btnReImprimir);
             this.Controls.Add(this.TxtCliente);
             this.Controls.Add(this.DGPagos);
             this.Controls.Add(this.bunifuCustomLabel2);
@@ -196,5 +236,6 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid DGPagos;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Chk;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuFlatButton btnReImprimir;
     }
 }

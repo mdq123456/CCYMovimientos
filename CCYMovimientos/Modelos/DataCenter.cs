@@ -99,7 +99,30 @@ namespace CCYMovimientos.Modelos
             
         }
 
-        
+        public DataTable TraerVentas(string pCodCliente)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_CREDITOS_TraerVentas", con);
+                cmd.Parameters.Add("@codCliente", SqlDbType.Int).Value = Convert.ToInt32(pCodCliente);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("ClientesVentas");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+
 
         //Clientes***********************************************
         public SqlDataReader GuardarLlamada(string pcodCliente, DateTime pFechaLlamada, string pConcepto)
@@ -440,7 +463,8 @@ namespace CCYMovimientos.Modelos
         public SqlDataReader InsertarMov(string pConcepto, string ptipoMov, string pimporte,
                         DateTime pfechaEmision, DateTime pfechaCobro,
                         string pnroCheque, string pbanco, string pcuenta,
-                        int pcodVenta, int pcodAnticipo, string pbeneficiario)
+                        int pcodVenta, int pcodAnticipo, string pbeneficiario, string psena,
+                        int pCodCliente)
         {
             try
             {
@@ -466,6 +490,15 @@ namespace CCYMovimientos.Modelos
                 {
                     cmd.Parameters.Add("@codAnticipo", SqlDbType.Int).Value = pcodAnticipo;
                 }
+                if (psena == "1")
+                {
+                    cmd.Parameters.Add("@sena", SqlDbType.Int).Value = Convert.ToInt32(psena);
+                }
+                if (pCodCliente != 0)
+                {
+                    cmd.Parameters.Add("@codCliente", SqlDbType.Int).Value = pCodCliente;
+                }
+
                 cmd.Parameters.Add("@codLogin", SqlDbType.Int).Value = Sesion.codUsuario;
 
                 SqlDataReader unDataReader = cmd.ExecuteReader();
@@ -622,7 +655,7 @@ namespace CCYMovimientos.Modelos
                                           DateTime pfechaEmision, DateTime pfechaCobro,
                                         string pnroCheque, string pbanco, string pcuenta,
                                         string pbeneficiario,
-                                        string pConcepto, DateTime pfechaPago)
+                                        string pConcepto, DateTime pfechaPago, string pCodCredito)
         {
             try
             {
@@ -645,6 +678,7 @@ namespace CCYMovimientos.Modelos
                 cmd.Parameters.Add("@codLogin", SqlDbType.Int).Value = Sesion.codUsuario;
                 cmd.Parameters.Add("@Concepto", SqlDbType.VarChar, 300).Value = pConcepto;
                 cmd.Parameters.Add("@fechaPago", SqlDbType.SmallDateTime).Value = pfechaPago;
+                cmd.Parameters.Add("@codCredito", SqlDbType.Int).Value = Convert.ToInt32(pCodCredito);
 
                 SqlDataReader unDataReader = cmd.ExecuteReader();
 

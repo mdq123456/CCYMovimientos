@@ -57,6 +57,8 @@
             this.anularMovimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblApertura = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TxtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGMovimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDer)).BeginInit();
@@ -69,7 +71,7 @@
             this.btnCerrarCaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnCerrarCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCerrarCaja.BorderRadius = 0;
+            this.btnCerrarCaja.BorderRadius = 5;
             this.btnCerrarCaja.ButtonText = "              CERRAR CAJA";
             this.btnCerrarCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarCaja.DisabledColor = System.Drawing.Color.Gray;
@@ -106,7 +108,7 @@
             this.btnAbrirCaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAbrirCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnAbrirCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAbrirCaja.BorderRadius = 0;
+            this.btnAbrirCaja.BorderRadius = 5;
             this.btnAbrirCaja.ButtonText = "              ABRIR CAJA";
             this.btnAbrirCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAbrirCaja.DisabledColor = System.Drawing.Color.Gray;
@@ -142,7 +144,7 @@
             this.btnEgresos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnEgresos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnEgresos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEgresos.BorderRadius = 0;
+            this.btnEgresos.BorderRadius = 5;
             this.btnEgresos.ButtonText = "              EGRESOS";
             this.btnEgresos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEgresos.DisabledColor = System.Drawing.Color.Gray;
@@ -178,7 +180,7 @@
             this.btnIngresos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnIngresos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnIngresos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIngresos.BorderRadius = 0;
+            this.btnIngresos.BorderRadius = 5;
             this.btnIngresos.ButtonText = "              INGRESOS";
             this.btnIngresos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresos.DisabledColor = System.Drawing.Color.Gray;
@@ -237,7 +239,10 @@
             // 
             this.DGMovimientos.AllowUserToAddRows = false;
             this.DGMovimientos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.DGMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGMovimientos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -260,6 +265,7 @@
             this.DGMovimientos.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.DGMovimientos.HeaderForeColor = System.Drawing.Color.Gainsboro;
             this.DGMovimientos.Location = new System.Drawing.Point(27, 342);
+            this.DGMovimientos.MultiSelect = false;
             this.DGMovimientos.Name = "DGMovimientos";
             this.DGMovimientos.ReadOnly = true;
             this.DGMovimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -303,9 +309,9 @@
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.Location = new System.Drawing.Point(613, 251);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(106, 25);
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(90, 25);
             this.bunifuCustomLabel7.TabIndex = 60;
-            this.bunifuCustomLabel7.Text = "Egresos $ :";
+            this.bunifuCustomLabel7.Text = "Egresos :";
             // 
             // bunifuCustomLabel2
             // 
@@ -314,9 +320,9 @@
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(605, 219);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(114, 25);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(98, 25);
             this.bunifuCustomLabel2.TabIndex = 62;
-            this.bunifuCustomLabel2.Text = "Ingresos $ :";
+            this.bunifuCustomLabel2.Text = "Ingresos :";
             // 
             // bunifuCustomLabel5
             // 
@@ -399,7 +405,7 @@
             this.lblIngresos.AutoSize = true;
             this.lblIngresos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(118)))), ((int)(((byte)(13)))));
-            this.lblIngresos.Location = new System.Drawing.Point(725, 219);
+            this.lblIngresos.Location = new System.Drawing.Point(702, 219);
             this.lblIngresos.Name = "lblIngresos";
             this.lblIngresos.Size = new System.Drawing.Size(23, 25);
             this.lblIngresos.TabIndex = 69;
@@ -411,7 +417,7 @@
             this.lblEgresos.AutoSize = true;
             this.lblEgresos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEgresos.ForeColor = System.Drawing.Color.Crimson;
-            this.lblEgresos.Location = new System.Drawing.Point(725, 251);
+            this.lblEgresos.Location = new System.Drawing.Point(702, 251);
             this.lblEgresos.Name = "lblEgresos";
             this.lblEgresos.Size = new System.Drawing.Size(23, 25);
             this.lblEgresos.TabIndex = 70;
@@ -424,9 +430,9 @@
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.Location = new System.Drawing.Point(569, 303);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(150, 25);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(134, 25);
             this.bunifuCustomLabel6.TabIndex = 71;
-            this.bunifuCustomLabel6.Text = "Total en Caja $ :";
+            this.bunifuCustomLabel6.Text = "Total en Caja :";
             // 
             // lblTotal
             // 
@@ -434,7 +440,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.lblTotal.Location = new System.Drawing.Point(725, 303);
+            this.lblTotal.Location = new System.Drawing.Point(702, 303);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(23, 25);
             this.lblTotal.TabIndex = 72;
@@ -461,9 +467,9 @@
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel8.Location = new System.Drawing.Point(600, 188);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(119, 25);
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(103, 25);
             this.bunifuCustomLabel8.TabIndex = 73;
-            this.bunifuCustomLabel8.Text = "Apertura $ :";
+            this.bunifuCustomLabel8.Text = "Apertura :";
             // 
             // lblApertura
             // 
@@ -471,11 +477,32 @@
             this.lblApertura.AutoSize = true;
             this.lblApertura.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApertura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.lblApertura.Location = new System.Drawing.Point(725, 188);
+            this.lblApertura.Location = new System.Drawing.Point(702, 188);
             this.lblApertura.Name = "lblApertura";
             this.lblApertura.Size = new System.Drawing.Size(23, 25);
             this.lblApertura.TabIndex = 74;
             this.lblApertura.Text = "0";
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(23, 311);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(51, 21);
+            this.bunifuCustomLabel9.TabIndex = 76;
+            this.bunifuCustomLabel9.Text = "Filtrar";
+            // 
+            // TxtBuscar
+            // 
+            this.TxtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBuscar.Location = new System.Drawing.Point(80, 307);
+            this.TxtBuscar.Name = "TxtBuscar";
+            this.TxtBuscar.Size = new System.Drawing.Size(250, 29);
+            this.TxtBuscar.TabIndex = 75;
+            this.TxtBuscar.Click += new System.EventHandler(this.TxtBuscar_Click);
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // FondosCaja
             // 
@@ -484,6 +511,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(890, 680);
+            this.Controls.Add(this.bunifuCustomLabel9);
+            this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.lblApertura);
             this.Controls.Add(this.bunifuCustomLabel8);
             this.Controls.Add(this.lblTotal);
@@ -547,5 +576,7 @@
         private System.Windows.Forms.ToolStripMenuItem anularMovimientoToolStripMenuItem;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel lblApertura;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private System.Windows.Forms.TextBox TxtBuscar;
     }
 }

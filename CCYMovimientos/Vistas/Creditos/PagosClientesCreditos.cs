@@ -43,6 +43,7 @@ namespace CCYMovimientos.Vistas.Creditos
             this.cboFormaPago.DisplayMember = "FormaPago";
             this.cboFormaPago.ValueMember = "CodFormaPago";
             this.cboFormaPago.DataSource = objVenta.TraerMetPagos();
+
         }
 
         private void CargarCreditos()
@@ -55,13 +56,30 @@ namespace CCYMovimientos.Vistas.Creditos
             cboFecha1.Value = DateTime.Today;
             cboFecha2.Value = cboFecha1.Value.AddDays(30);
             cboFechaPago.Value = DateTime.Today;
+
+            this.cboVentas.DisplayMember = "Venta";
+            this.cboVentas.ValueMember = "CodCredito";
+            this.cboVentas.DataSource = objCredito.TraerVentas();
+
         }
 
         private void DestacarAnticipos()
         {
-            DateTime fechaVencimiento;
 
             DGCreditos.CurrentCell = null;
+
+            if (ChCostoAdicional.Checked)
+            {
+                foreach (DataGridViewRow row in DGCreditos.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                }
+
+                return;
+            }
+
+            DateTime fechaVencimiento;
+
             foreach (DataGridViewRow row in DGCreditos.Rows)
             {
                 row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -118,7 +136,8 @@ namespace CCYMovimientos.Vistas.Creditos
                                                     Txt4.Text);
 
             Msj = objCredito.InsertarPago(TxtConcepto.Text,
-                                          cboFechaPago.Value);
+                                          cboFechaPago.Value,
+                                          cboVentas.SelectedValue.ToString());
             NroRecibo = objCredito.NroRecibo;
 
             this.Close();
@@ -128,40 +147,32 @@ namespace CCYMovimientos.Vistas.Creditos
         {
             Alertas alert;
 
-            if (TxtImporte.Text.Trim() == "0")
+            if (TxtImporte.Text.Trim() == "0" && ChCostoAdicional.Checked == false)
             {
                 alert = new Alertas("Ingrese un importe mayor a 0.", "");
                 alert.Show();
                 return false;
             }
 
-            //string CodCredito = "0";
-            //string CodCuota = "";
-            DGCreditos.CurrentCell = null;
-            foreach (DataGridViewRow row in DGCreditos.Rows)
+            if (ChCostoAdicional.Checked == false)
             {
-                //if (CodCredito != row.Cells["CodCredito"].Value.ToString())
-                //{
-                //    CodCredito = row.Cells["CodCredito"].Value.ToString();
-                //    CodCuota = "1";
-                //}
-                //if (row.Cells["NroCuota"].Value.ToString() == "0")
-                //{
-                //    CodCuota = "0";
-                //}
-
-                //Si es cuota normal
-                if (row.Cells[0].Value.ToString() == "1" &&
-                    row.Cells["NroCuota"].Value.ToString() != "0" &&
-                    (Convert.ToDecimal(TxtImporte.Text.Trim()) <
-                    Convert.ToDecimal(TxtSaldoTotal.Text.Trim())))
+                DGCreditos.CurrentCell = null;
+                foreach (DataGridViewRow row in DGCreditos.Rows)
                 {
-                    alert = new Alertas("No puede realizar un pago parcial de una cuota vencida.", "");
-                    alert.Show();
-                    return false;
-                }
 
-            }
+                    //Si es cuota normal
+                    if (row.Cells[0].Value.ToString() == "1" &&
+                        row.Cells["NroCuota"].Value.ToString() != "0" &&
+                        (Convert.ToDecimal(TxtImporte.Text.Trim()) <
+                        Convert.ToDecimal(TxtSaldoTotal.Text.Trim())))
+                    {
+                        alert = new Alertas("No puede realizar un pago parcial de una cuota vencida.", "");
+                        alert.Show();
+                        return false;
+                    }
+
+                }
+            }            
 
             return true;
         }
@@ -288,7 +299,7 @@ namespace CCYMovimientos.Vistas.Creditos
                     {
                         fechaVencimiento = Convert.ToDateTime(row.Cells["FechaVencimiento"].Value.ToString());
                     }
-
+                    row.Selected = true;
                     CodCredito = "0";
                 }
             }
@@ -313,6 +324,56 @@ namespace CCYMovimientos.Vistas.Creditos
 
             TxtSaldoTotal.Text = Convert.ToString(totalAPagar);
             TxtImporte.Text = TxtSaldoTotal.Text;
+        }
+
+        private void ChCostoAdicional_OnChange(object sender, EventArgs e)
+        {
+            CostoAdicional();
+        }
+
+        private void CostoAdicional()
+        {
+            TxtImporte.Text = "0";
+            if (ChCostoAdicional.Checked)
+            {
+                cboVentas.Visible = true;
+                lblAdicional.Visible = true;
+                ChActivo.Checked = true;
+                TxtImporte.Enabled = true;
+                cboVentas.Enabled = true;
+                
+                DGCreditos.CurrentCell = null;
+                foreach (DataGridViewRow row in DGCreditos.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                    if (row.Selected)
+                    {
+                        row.Cells[0].Value = 0;
+                    }
+                    this.strCodPago = "";
+                }
+                DGCreditos.Enabled = false;
+                
+                return;
+
+            }
+            else
+            {
+                ChActivo.Checked = false;
+                DGCreditos.Enabled = true;
+                cboVentas.Enabled = false;
+                cboVentas.Visible = false;
+                lblAdicional.Visible = false;
+                DestacarAnticipos();
+            }
+        }
+
+        private void TxtImporte_OnValueChanged(object sender, EventArgs e)
+        {
+            if (ChCostoAdicional.Checked)
+            {
+                TxtSaldoTotal.Text = TxtImporte.Text;
+            }
         }
     }
 }

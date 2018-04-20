@@ -64,6 +64,23 @@ namespace CCYMovimientos.Modelos.Creditos
             this.beneficiario = pbeneficiario;
         }
 
+        public DataTable TraerVentas()
+        {
+            try
+            {
+                DataCenter objDC = new DataCenter();
+                DataTable tabla = objDC.TraerVentas(this.codCliente);
+                objDC.cerrarConexion();
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public DataTable TraerCreditos()
         {
             try
@@ -81,7 +98,8 @@ namespace CCYMovimientos.Modelos.Creditos
             }
         }
 
-        public string InsertarPago(string pConcepto, DateTime pfechaPago)
+        public string InsertarPago(string pConcepto, DateTime pfechaPago,
+                                   string pCodCredito)
         {
             string retorno;
             DataCenter objDC = new DataCenter();
@@ -97,7 +115,8 @@ namespace CCYMovimientos.Modelos.Creditos
                                                         this.cuenta,
                                                         this.beneficiario,
                                                         pConcepto,
-                                                        pfechaPago);
+                                                        pfechaPago,
+                                                        pCodCredito);
             if (unDato.HasRows)
             {
                 unDato.Read();

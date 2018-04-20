@@ -61,7 +61,7 @@
             this.bunifuCustomLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(39, 153);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(39, 200);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(87, 21);
             this.bunifuCustomLabel1.TabIndex = 39;
@@ -86,7 +86,7 @@
             this.btnGuardar.IdleFillColor = System.Drawing.Color.White;
             this.btnGuardar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnGuardar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.Location = new System.Drawing.Point(655, 546);
+            this.btnGuardar.Location = new System.Drawing.Point(655, 566);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(181, 41);
@@ -99,7 +99,7 @@
             this.bunifuCustomLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(459, 309);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(459, 356);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(154, 21);
             this.bunifuCustomLabel4.TabIndex = 34;
@@ -110,7 +110,7 @@
             this.bunifuCustomLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(39, 42);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(39, 89);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(65, 21);
             this.bunifuCustomLabel2.TabIndex = 32;
@@ -122,7 +122,8 @@
             this.btnNuevoCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnNuevoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevoCliente.BorderRadius = 0;
+            this.btnNuevoCliente.BorderRadius = 5;
+            this.btnNuevoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnNuevoCliente.ButtonText = "";
             this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoCliente.DisabledColor = System.Drawing.Color.Gray;
@@ -139,7 +140,7 @@
             this.btnNuevoCliente.IconVisible = true;
             this.btnNuevoCliente.IconZoom = 70D;
             this.btnNuevoCliente.IsTab = true;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(748, 27);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(748, 74);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnNuevoCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
@@ -158,7 +159,8 @@
             this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.BorderRadius = 0;
+            this.btnBuscar.BorderRadius = 5;
+            this.btnBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnBuscar.ButtonText = "";
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.DisabledColor = System.Drawing.Color.Gray;
@@ -175,7 +177,7 @@
             this.btnBuscar.IconVisible = true;
             this.btnBuscar.IconZoom = 70D;
             this.btnBuscar.IsTab = true;
-            this.btnBuscar.Location = new System.Drawing.Point(796, 27);
+            this.btnBuscar.Location = new System.Drawing.Point(796, 74);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnBuscar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
@@ -195,7 +197,7 @@
             this.cboContratoTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboContratoTipo.ForeColor = System.Drawing.Color.White;
             this.cboContratoTipo.FormattingEnabled = true;
-            this.cboContratoTipo.Location = new System.Drawing.Point(608, 141);
+            this.cboContratoTipo.Location = new System.Drawing.Point(608, 188);
             this.cboContratoTipo.Name = "cboContratoTipo";
             this.cboContratoTipo.Size = new System.Drawing.Size(228, 33);
             this.cboContratoTipo.TabIndex = 99;
@@ -207,7 +209,7 @@
             this.bunifuCustomLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(39, 211);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(39, 258);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(65, 21);
             this.bunifuCustomLabel5.TabIndex = 44;
@@ -232,7 +234,7 @@
             this.btnCancelar.IdleFillColor = System.Drawing.Color.White;
             this.btnCancelar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
             this.btnCancelar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.Location = new System.Drawing.Point(511, 546);
+            this.btnCancelar.Location = new System.Drawing.Point(511, 566);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 41);
@@ -245,7 +247,7 @@
             this.bunifuCustomLabel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(43, 366);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(43, 413);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(83, 21);
             this.bunifuCustomLabel6.TabIndex = 50;
@@ -255,7 +257,7 @@
             // 
             this.TxtConcepto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TxtConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtConcepto.Location = new System.Drawing.Point(187, 366);
+            this.TxtConcepto.Location = new System.Drawing.Point(187, 413);
             this.TxtConcepto.Name = "TxtConcepto";
             this.TxtConcepto.Size = new System.Drawing.Size(649, 145);
             this.TxtConcepto.TabIndex = 10;
@@ -275,7 +277,7 @@
             this.TxtCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtCliente.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtCliente.LineThickness = 4;
-            this.TxtCliente.Location = new System.Drawing.Point(187, 27);
+            this.TxtCliente.Location = new System.Drawing.Point(187, 74);
             this.TxtCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCliente.Name = "TxtCliente";
             this.TxtCliente.Size = new System.Drawing.Size(549, 41);
@@ -296,7 +298,7 @@
             this.TxtSaldo.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtSaldo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtSaldo.LineThickness = 4;
-            this.TxtSaldo.Location = new System.Drawing.Point(654, 296);
+            this.TxtSaldo.Location = new System.Drawing.Point(654, 343);
             this.TxtSaldo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtSaldo.Name = "TxtSaldo";
             this.TxtSaldo.Size = new System.Drawing.Size(179, 41);
@@ -317,7 +319,7 @@
             this.TxtCuotas.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtCuotas.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtCuotas.LineThickness = 4;
-            this.TxtCuotas.Location = new System.Drawing.Point(187, 199);
+            this.TxtCuotas.Location = new System.Drawing.Point(187, 246);
             this.TxtCuotas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCuotas.Name = "TxtCuotas";
             this.TxtCuotas.Size = new System.Drawing.Size(79, 41);
@@ -339,7 +341,7 @@
             this.TxtAnticipo.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtAnticipo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtAnticipo.LineThickness = 4;
-            this.TxtAnticipo.Location = new System.Drawing.Point(187, 139);
+            this.TxtAnticipo.Location = new System.Drawing.Point(187, 186);
             this.TxtAnticipo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtAnticipo.Name = "TxtAnticipo";
             this.TxtAnticipo.Size = new System.Drawing.Size(199, 41);
@@ -354,7 +356,7 @@
             this.bunifuCustomLabel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(38, 94);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(38, 141);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(142, 25);
             this.bunifuCustomLabel7.TabIndex = 58;
@@ -373,7 +375,7 @@
             this.TxtTotal.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtTotal.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtTotal.LineThickness = 4;
-            this.TxtTotal.Location = new System.Drawing.Point(187, 83);
+            this.TxtTotal.Location = new System.Drawing.Point(187, 130);
             this.TxtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(199, 41);
@@ -395,7 +397,7 @@
             this.TxtCuotaPrecio.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtCuotaPrecio.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtCuotaPrecio.LineThickness = 4;
-            this.TxtCuotaPrecio.Location = new System.Drawing.Point(654, 199);
+            this.TxtCuotaPrecio.Location = new System.Drawing.Point(654, 246);
             this.TxtCuotaPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCuotaPrecio.Name = "TxtCuotaPrecio";
             this.TxtCuotaPrecio.Size = new System.Drawing.Size(179, 41);
@@ -408,7 +410,7 @@
             this.bunifuCustomLabel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(459, 214);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(459, 261);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(146, 21);
             this.bunifuCustomLabel8.TabIndex = 60;
@@ -427,7 +429,7 @@
             this.TxtMT2Precio.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtMT2Precio.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtMT2Precio.LineThickness = 4;
-            this.TxtMT2Precio.Location = new System.Drawing.Point(654, 247);
+            this.TxtMT2Precio.Location = new System.Drawing.Point(654, 294);
             this.TxtMT2Precio.Margin = new System.Windows.Forms.Padding(4);
             this.TxtMT2Precio.Name = "TxtMT2Precio";
             this.TxtMT2Precio.Size = new System.Drawing.Size(179, 41);
@@ -439,7 +441,7 @@
             this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(459, 264);
+            this.lbl1.Location = new System.Drawing.Point(459, 311);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(136, 21);
             this.lbl1.TabIndex = 83;
@@ -450,7 +452,7 @@
             this.bunifuCustomLabel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(459, 94);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(459, 141);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(133, 21);
             this.bunifuCustomLabel9.TabIndex = 88;
@@ -469,7 +471,7 @@
             this.TxtMT2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtMT2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtMT2.LineThickness = 4;
-            this.TxtMT2.Location = new System.Drawing.Point(187, 247);
+            this.TxtMT2.Location = new System.Drawing.Point(187, 294);
             this.TxtMT2.Margin = new System.Windows.Forms.Padding(4);
             this.TxtMT2.Name = "TxtMT2";
             this.TxtMT2.Size = new System.Drawing.Size(79, 41);
@@ -481,7 +483,7 @@
             this.bunifuCustomLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(39, 265);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(39, 312);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(48, 21);
             this.bunifuCustomLabel3.TabIndex = 90;
@@ -500,7 +502,7 @@
             this.TxtContratoTipo.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtContratoTipo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtContratoTipo.LineThickness = 4;
-            this.TxtContratoTipo.Location = new System.Drawing.Point(608, 83);
+            this.TxtContratoTipo.Location = new System.Drawing.Point(608, 130);
             this.TxtContratoTipo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtContratoTipo.Name = "TxtContratoTipo";
             this.TxtContratoTipo.Size = new System.Drawing.Size(225, 41);
@@ -513,7 +515,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(898, 606);
+            this.ClientSize = new System.Drawing.Size(898, 612);
             this.Controls.Add(this.TxtContratoTipo);
             this.Controls.Add(this.TxtMT2);
             this.Controls.Add(this.bunifuCustomLabel3);

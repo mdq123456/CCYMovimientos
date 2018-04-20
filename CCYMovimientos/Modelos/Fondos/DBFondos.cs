@@ -22,6 +22,8 @@ namespace CCYMovimientos.Modelos.Fondos
         private int codAnticipo { set; get; }
         private string beneficiario { set; get; }
         public string CodMovimiento;
+        private string sena { set; get; }
+        private int codCliente { set; get; }
 
         private int codFondo { set; get; }
 
@@ -45,6 +47,14 @@ namespace CCYMovimientos.Modelos.Fondos
             this.banco = pbanco;
             this.cuenta = pcuenta;
             this.beneficiario = pbeneficiario;
+            sena = "";
+            codCliente = 0;
+        }
+
+        public void setSena(string psena, int pCodCliente)
+        {
+            sena = psena;
+            codCliente = pCodCliente;
         }
 
         public string AbrirCaja()
@@ -102,7 +112,9 @@ namespace CCYMovimientos.Modelos.Fondos
                                                      this.cuenta,
                                                      this.codVenta,
                                                      this.codAnticipo,
-                                                     this.beneficiario);
+                                                     this.beneficiario,
+                                                     sena,
+                                                     codCliente);
             retorno = "No se pudo realizar la operacion, comuniquese con su administrador.";
             if (unDato != null)
             {

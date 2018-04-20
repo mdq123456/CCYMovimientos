@@ -134,6 +134,7 @@ namespace CCYMovimientos.Vistas.Menu
             lblTitulo.Text = "CLIENTES";
             clienteForm.Show();
             clienteForm.CargarClientes();
+            clienteForm.DestacarMora();
         }
 
         private void btnFondo_Click(object sender, EventArgs e)

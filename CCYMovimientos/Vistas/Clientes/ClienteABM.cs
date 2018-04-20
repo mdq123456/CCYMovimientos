@@ -1,6 +1,7 @@
 ﻿using CCYMovimientos.Modelos.Clientes;
 using CCYMovimientos.Reportes;
 using CCYMovimientos.Vistas.Creditos;
+using CCYMovimientos.Vistas.Fondos;
 using CCYMovimientos.Vistas.Notificaciones;
 using System;
 using System.Collections.Generic;
@@ -45,11 +46,9 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             DBClientes objCliente = new DBClientes();
             DGClientes.DataSource = objCliente.TraerClientes(ChEmpresas.Checked);
-
-            DestacarMora();
         }
 
-        private void DestacarMora()
+        public void DestacarMora()
         {
             DGClientes.CurrentCell = null;
             foreach (DataGridViewRow row in DGClientes.Rows)
@@ -74,6 +73,7 @@ namespace CCYMovimientos.Vistas.Clientes
             ClienteNewEdit ClienteNewEditForm = new ClienteNewEdit();
             ClienteNewEditForm.ShowDialog();
             CargarClientes();
+            DestacarMora();
         }
         private void ChEmpresas_OnChange(object sender, EventArgs e)
         {
@@ -83,38 +83,15 @@ namespace CCYMovimientos.Vistas.Clientes
 
         private void TxtBuscar_OnTextChange(object sender = null, EventArgs e = null)
         {
-            DGClientes.CurrentCell = null;
-            foreach (DataGridViewRow row in DGClientes.Rows)
+            if (ChEmpresas.Checked == true)
             {
-                string mayus = row.Cells[0].Value.ToString().ToUpper();
-                string mayus1 = row.Cells[1].Value.ToString().ToUpper();
-                string mayus2 = row.Cells[2].Value.ToString().ToUpper();
-                string mayus3 = row.Cells[3].Value.ToString().ToUpper();
-                string mayus4 = row.Cells[4].Value.ToString().ToUpper();
-                string mayus5 = row.Cells[5].Value.ToString().ToUpper();
-                string mayus6 = row.Cells[6].Value.ToString().ToUpper();
-                string mayus7 = row.Cells[7].Value.ToString().ToUpper();
-                string mayus8 = row.Cells[8].Value.ToString().ToUpper();
-                string mayus9 = row.Cells[9].Value.ToString().ToUpper();
-                if (mayus.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus1.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus2.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus3.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus4.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus5.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus6.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus7.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus8.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus9.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1)
-                {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = false;
-                }
-
+                (DGClientes.DataSource as DataTable).DefaultView.RowFilter = string.Format("RazonSocial Like '%{0}%' or Nombre Like '%{0}%' or Identificacion Like '%{0}%' or TelCelular Like '%{0}%' or TelFijo Like '%{0}%' or Domicilio Like '%{0}%' or Localidad Like '%{0}%' or email Like '%{0}%'", TxtBuscar.Text.Trim().ToUpper());
             }
+            else
+            {
+                (DGClientes.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre Like '%{0}%' or Identificacion Like '%{0}%' or CUIL Like '%{0}%' or TelCelular Like '%{0}%' or TelFijo Like '%{0}%' or Domicilio Like '%{0}%' or Localidad Like '%{0}%' or email Like '%{0}%'", TxtBuscar.Text.Trim().ToUpper());
+            }
+            DestacarMora();
         }
 
         private void TxtBuscar_Click(object sender, EventArgs e)
@@ -133,6 +110,8 @@ namespace CCYMovimientos.Vistas.Clientes
                 btnLlamadas.Visible = false;
                 btnContactos.Visible = false;
                 btnDirecciones.Visible = false;
+                btnSena.Visible = false;
+
                 return;
             }
             DGClientes.CurrentCell = null;
@@ -156,10 +135,11 @@ namespace CCYMovimientos.Vistas.Clientes
                         btnLlamadas.Visible = true;
                         btnContactos.Visible = true;
                         btnDirecciones.Visible = true;
+                        btnSena.Visible = true;
                         bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
                         bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
                         bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-
+                        
                     }
                     else
                     {
@@ -168,14 +148,19 @@ namespace CCYMovimientos.Vistas.Clientes
                         btnLlamadas.Visible = false;
                         btnContactos.Visible = false;
                         btnDirecciones.Visible = false;
+                        btnSena.Visible = false;
                         bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
                         bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
                         bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
                     }
-                        
-                    return;
+
+                    row.Selected = true; 
+                    break;
                 }
             }
+
+            
+
         }
 
         private void btnEditCliente_Click(object sender, EventArgs e)
@@ -183,6 +168,7 @@ namespace CCYMovimientos.Vistas.Clientes
             ClienteNewEdit ClienteNewEditForm = new ClienteNewEdit(codCliente, ChEmpresas.Checked);
             ClienteNewEditForm.ShowDialog();
             CargarClientes();
+            DestacarMora();
         }
 
         private void btnHistorialPago_Click(object sender, EventArgs e)
@@ -231,6 +217,13 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             HistorialPagos PagosCreditosForm = new HistorialPagos(codCliente, lblNombre.Text);
             PagosCreditosForm.ShowDialog();
+        }
+
+        private void btnSena_Click(object sender, EventArgs e)
+        {
+            AltaMovimientos movForm = new AltaMovimientos("Ingreso", lblNombre.Text,Convert.ToInt32(codCliente));
+
+            movForm.ShowDialog();
         }
     }
 }

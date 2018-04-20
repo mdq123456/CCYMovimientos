@@ -31,37 +31,18 @@ namespace CCYMovimientos.Vistas.Clientes
 
         private void TxtBuscar_TextChanged(object sender = null, EventArgs e = null)
         {
-            DGClientes.CurrentCell = null;
-            foreach (DataGridViewRow row in DGClientes.Rows)
+
+            if (ChEmpresas.Checked == true)
             {
-                string mayus = row.Cells[0].Value.ToString().ToUpper();
-                string mayus1 = row.Cells[1].Value.ToString().ToUpper();
-                string mayus2 = row.Cells[2].Value.ToString().ToUpper();
-                string mayus3 = row.Cells[3].Value.ToString().ToUpper();
-                string mayus4 = row.Cells[4].Value.ToString().ToUpper();
-                string mayus5 = row.Cells[5].Value.ToString().ToUpper();
-                string mayus6 = row.Cells[6].Value.ToString().ToUpper();
-                string mayus7 = row.Cells[7].Value.ToString().ToUpper();
-                string mayus8 = row.Cells[8].Value.ToString().ToUpper();
-                string mayus9 = row.Cells[9].Value.ToString().ToUpper();
-                if (mayus.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus1.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus2.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus3.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus4.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus5.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus6.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus7.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus8.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1 ||
-                    mayus9.IndexOf(TxtBuscar.Text.Trim().ToUpper()) != -1)
-                {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = false;
-                }
+                (DGClientes.DataSource as DataTable).DefaultView.RowFilter = string.Format("RazonSocial Like '%{0}%' or Nombre Like '%{0}%' or Identificacion Like '%{0}%' or TelCelular Like '%{0}%' or TelFijo Like '%{0}%' or Domicilio Like '%{0}%' or Localidad Like '%{0}%' or email Like '%{0}%'", TxtBuscar.Text.Trim().ToUpper());
             }
+            else
+            {
+                (DGClientes.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre Like '%{0}%' or Identificacion Like '%{0}%' or CUIL Like '%{0}%' or TelCelular Like '%{0}%' or TelFijo Like '%{0}%' or Domicilio Like '%{0}%' or Localidad Like '%{0}%' or email Like '%{0}%'", TxtBuscar.Text.Trim().ToUpper());
+            }
+
+            DestacarMora();
+
         }
 
         private void ChEmpresas_OnChange(object sender, EventArgs e)
@@ -75,7 +56,6 @@ namespace CCYMovimientos.Vistas.Clientes
             DBClientes objCliente = new DBClientes();
             DGClientes.DataSource = objCliente.TraerClientes(ChEmpresas.Checked);
 
-            DestacarMora();
         }
 
         private void DestacarMora()
@@ -94,6 +74,7 @@ namespace CCYMovimientos.Vistas.Clientes
         {
             panel1.Dock = DockStyle.Fill;
             CargarClientes();
+            DestacarMora();
         }
 
         private void DGClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

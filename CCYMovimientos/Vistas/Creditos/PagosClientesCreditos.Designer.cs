@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagosClientesCreditos));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cboFormaPago = new System.Windows.Forms.ComboBox();
             this.ChActivo = new Bunifu.Framework.UI.BunifuCheckbox();
             this.cboFechaPago = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -54,7 +55,6 @@
             this.TxtImporte = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.DGCreditos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cboFormaPago = new System.Windows.Forms.ComboBox();
             this.lbl90 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Importe = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -64,6 +64,10 @@
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.ChCostoAdicional = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lblAdicional = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cboVentas = new System.Windows.Forms.ComboBox();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGCreditos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -74,6 +78,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panel3.Controls.Add(this.cboVentas);
+            this.panel3.Controls.Add(this.bunifuCustomLabel4);
+            this.panel3.Controls.Add(this.lblAdicional);
+            this.panel3.Controls.Add(this.ChCostoAdicional);
+            this.panel3.Controls.Add(this.cboFormaPago);
             this.panel3.Controls.Add(this.ChActivo);
             this.panel3.Controls.Add(this.cboFechaPago);
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
@@ -95,17 +104,28 @@
             this.panel3.Controls.Add(this.TxtCliente);
             this.panel3.Controls.Add(this.TxtImporte);
             this.panel3.Controls.Add(this.DGCreditos);
-            this.panel3.Controls.Add(this.cboFormaPago);
             this.panel3.Controls.Add(this.lbl90);
             this.panel3.Controls.Add(this.Importe);
             this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 60);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(992, 680);
             this.panel3.TabIndex = 35;
+            // 
+            // cboFormaPago
+            // 
+            this.cboFormaPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboFormaPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.cboFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboFormaPago.ForeColor = System.Drawing.Color.White;
+            this.cboFormaPago.FormattingEnabled = true;
+            this.cboFormaPago.Location = new System.Drawing.Point(729, 53);
+            this.cboFormaPago.Name = "cboFormaPago";
+            this.cboFormaPago.Size = new System.Drawing.Size(225, 33);
+            this.cboFormaPago.TabIndex = 2;
+            this.cboFormaPago.SelectedValueChanged += new System.EventHandler(this.cboFormaPago_SelectedValueChanged);
             // 
             // ChActivo
             // 
@@ -177,10 +197,10 @@
             this.TxtNroCheque.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtNroCheque.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtNroCheque.LineThickness = 4;
-            this.TxtNroCheque.Location = new System.Drawing.Point(753, 183);
+            this.TxtNroCheque.Location = new System.Drawing.Point(730, 183);
             this.TxtNroCheque.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNroCheque.Name = "TxtNroCheque";
-            this.TxtNroCheque.Size = new System.Drawing.Size(198, 41);
+            this.TxtNroCheque.Size = new System.Drawing.Size(220, 41);
             this.TxtNroCheque.TabIndex = 8;
             this.TxtNroCheque.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TxtNroCheque.Visible = false;
@@ -190,7 +210,7 @@
             this.lbl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(629, 198);
+            this.lbl5.Location = new System.Drawing.Point(598, 198);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(122, 21);
             this.lbl5.TabIndex = 99;
@@ -274,7 +294,7 @@
             this.Txt1.Location = new System.Drawing.Point(188, 91);
             this.Txt1.Margin = new System.Windows.Forms.Padding(4);
             this.Txt1.Name = "Txt1";
-            this.Txt1.Size = new System.Drawing.Size(593, 41);
+            this.Txt1.Size = new System.Drawing.Size(540, 41);
             this.Txt1.TabIndex = 3;
             this.Txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Txt1.Visible = false;
@@ -379,7 +399,7 @@
             this.TxtCliente.Location = new System.Drawing.Point(188, 3);
             this.TxtCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCliente.Name = "TxtCliente";
-            this.TxtCliente.Size = new System.Drawing.Size(596, 41);
+            this.TxtCliente.Size = new System.Drawing.Size(543, 41);
             this.TxtCliente.TabIndex = 100;
             this.TxtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -403,6 +423,7 @@
             this.TxtImporte.TabIndex = 1;
             this.TxtImporte.Text = "0";
             this.TxtImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtImporte.OnValueChanged += new System.EventHandler(this.TxtImporte_OnValueChanged);
             // 
             // DGCreditos
             // 
@@ -445,19 +466,6 @@
             this.Chk.HeaderText = "";
             this.Chk.Name = "Chk";
             this.Chk.Width = 5;
-            // 
-            // cboFormaPago
-            // 
-            this.cboFormaPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboFormaPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.cboFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboFormaPago.ForeColor = System.Drawing.Color.White;
-            this.cboFormaPago.FormattingEnabled = true;
-            this.cboFormaPago.Location = new System.Drawing.Point(729, 53);
-            this.cboFormaPago.Name = "cboFormaPago";
-            this.cboFormaPago.Size = new System.Drawing.Size(225, 33);
-            this.cboFormaPago.TabIndex = 2;
-            this.cboFormaPago.SelectedValueChanged += new System.EventHandler(this.cboFormaPago_SelectedValueChanged);
             // 
             // lbl90
             // 
@@ -589,6 +597,56 @@
             this.btnExit.Zoom = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // ChCostoAdicional
+            // 
+            this.ChCostoAdicional.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChCostoAdicional.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ChCostoAdicional.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ChCostoAdicional.Checked = false;
+            this.ChCostoAdicional.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.ChCostoAdicional.ForeColor = System.Drawing.Color.White;
+            this.ChCostoAdicional.Location = new System.Drawing.Point(930, 18);
+            this.ChCostoAdicional.Name = "ChCostoAdicional";
+            this.ChCostoAdicional.Size = new System.Drawing.Size(20, 20);
+            this.ChCostoAdicional.TabIndex = 120;
+            this.ChCostoAdicional.OnChange += new System.EventHandler(this.ChCostoAdicional_OnChange);
+            // 
+            // lblAdicional
+            // 
+            this.lblAdicional.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAdicional.AutoSize = true;
+            this.lblAdicional.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdicional.Location = new System.Drawing.Point(803, 17);
+            this.lblAdicional.Name = "lblAdicional";
+            this.lblAdicional.Size = new System.Drawing.Size(125, 21);
+            this.lblAdicional.TabIndex = 121;
+            this.lblAdicional.Text = "Costo Adicional :";
+            // 
+            // cboVentas
+            // 
+            this.cboVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.cboVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVentas.ForeColor = System.Drawing.Color.White;
+            this.cboVentas.FormattingEnabled = true;
+            this.cboVentas.Location = new System.Drawing.Point(515, 233);
+            this.cboVentas.Name = "cboVentas";
+            this.cboVentas.Size = new System.Drawing.Size(439, 33);
+            this.cboVentas.TabIndex = 122;
+            this.cboVentas.Visible = false;
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(453, 239);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(56, 21);
+            this.bunifuCustomLabel4.TabIndex = 123;
+            this.bunifuCustomLabel4.Text = "Venta :";
+            this.bunifuCustomLabel4.Visible = false;
+            // 
             // PagosClientesCreditos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,5 +706,9 @@
         private Bunifu.Framework.UI.BunifuDatepicker cboFechaPago;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCheckbox ChActivo;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblAdicional;
+        private Bunifu.Framework.UI.BunifuCheckbox ChCostoAdicional;
+        private System.Windows.Forms.ComboBox cboVentas;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
     }
 }

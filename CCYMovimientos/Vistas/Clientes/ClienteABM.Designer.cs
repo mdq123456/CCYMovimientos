@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteABM));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteABM));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblFijo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -57,7 +57,7 @@
             this.btnEditCliente = new Bunifu.Framework.UI.BunifuFlatButton();
             this.DGClientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnNuevoCliente = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSena = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGClientes)).BeginInit();
@@ -65,6 +65,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSena);
             this.panel2.Controls.Add(this.lblFijo);
             this.panel2.Controls.Add(this.bunifuCustomLabel8);
             this.panel2.Controls.Add(this.btnDirecciones);
@@ -85,7 +86,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(789, 249);
+            this.panel2.Size = new System.Drawing.Size(790, 299);
             this.panel2.TabIndex = 13;
             // 
             // lblFijo
@@ -114,7 +115,7 @@
             this.btnDirecciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDirecciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnDirecciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDirecciones.BorderRadius = 0;
+            this.btnDirecciones.BorderRadius = 5;
             this.btnDirecciones.ButtonText = "              DIRECCIONES";
             this.btnDirecciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDirecciones.DisabledColor = System.Drawing.Color.Gray;
@@ -131,7 +132,7 @@
             this.btnDirecciones.IconVisible = true;
             this.btnDirecciones.IconZoom = 70D;
             this.btnDirecciones.IsTab = true;
-            this.btnDirecciones.Location = new System.Drawing.Point(39, 207);
+            this.btnDirecciones.Location = new System.Drawing.Point(39, 257);
             this.btnDirecciones.Name = "btnDirecciones";
             this.btnDirecciones.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnDirecciones.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
@@ -152,7 +153,7 @@
             this.btnContactos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnContactos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnContactos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnContactos.BorderRadius = 0;
+            this.btnContactos.BorderRadius = 5;
             this.btnContactos.ButtonText = "              CONTACTOS";
             this.btnContactos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContactos.DisabledColor = System.Drawing.Color.Gray;
@@ -169,7 +170,7 @@
             this.btnContactos.IconVisible = true;
             this.btnContactos.IconZoom = 70D;
             this.btnContactos.IsTab = true;
-            this.btnContactos.Location = new System.Drawing.Point(39, 162);
+            this.btnContactos.Location = new System.Drawing.Point(39, 212);
             this.btnContactos.Name = "btnContactos";
             this.btnContactos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnContactos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
@@ -190,7 +191,7 @@
             this.btnHistorialPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHistorialPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnHistorialPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHistorialPago.BorderRadius = 0;
+            this.btnHistorialPago.BorderRadius = 5;
             this.btnHistorialPago.ButtonText = "              PAGOS";
             this.btnHistorialPago.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHistorialPago.DisabledColor = System.Drawing.Color.Gray;
@@ -207,7 +208,7 @@
             this.btnHistorialPago.IconVisible = true;
             this.btnHistorialPago.IconZoom = 70D;
             this.btnHistorialPago.IsTab = true;
-            this.btnHistorialPago.Location = new System.Drawing.Point(540, 162);
+            this.btnHistorialPago.Location = new System.Drawing.Point(541, 212);
             this.btnHistorialPago.Name = "btnHistorialPago";
             this.btnHistorialPago.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnHistorialPago.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
@@ -228,7 +229,7 @@
             this.btnLlamadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLlamadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnLlamadas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLlamadas.BorderRadius = 0;
+            this.btnLlamadas.BorderRadius = 5;
             this.btnLlamadas.ButtonText = "              LLAMADAS";
             this.btnLlamadas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLlamadas.DisabledColor = System.Drawing.Color.Gray;
@@ -245,7 +246,7 @@
             this.btnLlamadas.IconVisible = true;
             this.btnLlamadas.IconZoom = 70D;
             this.btnLlamadas.IsTab = true;
-            this.btnLlamadas.Location = new System.Drawing.Point(540, 207);
+            this.btnLlamadas.Location = new System.Drawing.Point(541, 257);
             this.btnLlamadas.Name = "btnLlamadas";
             this.btnLlamadas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnLlamadas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
@@ -389,9 +390,9 @@
             this.panel1.Controls.Add(this.DGClientes);
             this.panel1.Controls.Add(this.btnNuevoCliente);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 249);
+            this.panel1.Location = new System.Drawing.Point(0, 299);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(789, 347);
+            this.panel1.Size = new System.Drawing.Size(790, 411);
             this.panel1.TabIndex = 14;
             // 
             // bunifuCustomLabel6
@@ -443,7 +444,7 @@
             this.btnEditCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnEditCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditCliente.BorderRadius = 0;
+            this.btnEditCliente.BorderRadius = 5;
             this.btnEditCliente.ButtonText = "              EDITAR CLIENTE";
             this.btnEditCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditCliente.DisabledColor = System.Drawing.Color.Gray;
@@ -460,7 +461,7 @@
             this.btnEditCliente.IconVisible = true;
             this.btnEditCliente.IconZoom = 70D;
             this.btnEditCliente.IsTab = true;
-            this.btnEditCliente.Location = new System.Drawing.Point(540, 52);
+            this.btnEditCliente.Location = new System.Drawing.Point(541, 52);
             this.btnEditCliente.Name = "btnEditCliente";
             this.btnEditCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnEditCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
@@ -479,7 +480,10 @@
             // 
             this.DGClientes.AllowUserToAddRows = false;
             this.DGClientes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.DGClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -502,11 +506,13 @@
             this.DGClientes.EnableHeadersVisualStyles = false;
             this.DGClientes.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.DGClientes.HeaderForeColor = System.Drawing.Color.Gainsboro;
-            this.DGClientes.Location = new System.Drawing.Point(39, 104);
+            this.DGClientes.Location = new System.Drawing.Point(39, 106);
+            this.DGClientes.MultiSelect = false;
             this.DGClientes.Name = "DGClientes";
+            this.DGClientes.ReadOnly = true;
             this.DGClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGClientes.Size = new System.Drawing.Size(713, 240);
+            this.DGClientes.Size = new System.Drawing.Size(714, 273);
             this.DGClientes.TabIndex = 11;
             this.DGClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGClientes_CellClick);
             this.DGClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGClientes_CellDoubleClick);
@@ -517,7 +523,7 @@
             this.btnNuevoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnNuevoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevoCliente.BorderRadius = 0;
+            this.btnNuevoCliente.BorderRadius = 5;
             this.btnNuevoCliente.ButtonText = "              NUEVO CLIENTE";
             this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoCliente.DisabledColor = System.Drawing.Color.Gray;
@@ -534,7 +540,7 @@
             this.btnNuevoCliente.IconVisible = true;
             this.btnNuevoCliente.IconZoom = 70D;
             this.btnNuevoCliente.IsTab = true;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(540, 8);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(541, 8);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnNuevoCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
@@ -548,13 +554,43 @@
             this.btnNuevoCliente.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
-            // panel3
+            // btnSena
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 596);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(789, 31);
-            this.panel3.TabIndex = 15;
+            this.btnSena.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnSena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnSena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSena.BorderRadius = 5;
+            this.btnSena.ButtonText = "              SEÑAR";
+            this.btnSena.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSena.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSena.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSena.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSena.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSena.Iconimage")));
+            this.btnSena.Iconimage_right = null;
+            this.btnSena.Iconimage_right_Selected = null;
+            this.btnSena.Iconimage_Selected = null;
+            this.btnSena.IconMarginLeft = 0;
+            this.btnSena.IconMarginRight = 0;
+            this.btnSena.IconRightVisible = true;
+            this.btnSena.IconRightZoom = 0D;
+            this.btnSena.IconVisible = true;
+            this.btnSena.IconZoom = 70D;
+            this.btnSena.IsTab = true;
+            this.btnSena.Location = new System.Drawing.Point(541, 167);
+            this.btnSena.Name = "btnSena";
+            this.btnSena.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnSena.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
+            this.btnSena.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSena.selected = false;
+            this.btnSena.Size = new System.Drawing.Size(212, 38);
+            this.btnSena.TabIndex = 21;
+            this.btnSena.Text = "              SEÑAR";
+            this.btnSena.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSena.Textcolor = System.Drawing.Color.Silver;
+            this.btnSena.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSena.Visible = false;
+            this.btnSena.Click += new System.EventHandler(this.btnSena_Click);
             // 
             // ClienteABM
             // 
@@ -562,9 +598,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(789, 627);
+            this.ClientSize = new System.Drawing.Size(790, 710);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClienteABM";
@@ -602,12 +637,12 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnEditCliente;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DGClientes;
         private Bunifu.Framework.UI.BunifuFlatButton btnNuevoCliente;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox TxtBuscar;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuFlatButton btnDirecciones;
         private Bunifu.Framework.UI.BunifuFlatButton btnContactos;
         private Bunifu.Framework.UI.BunifuCustomLabel lblFijo;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSena;
     }
 }

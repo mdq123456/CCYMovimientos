@@ -16,13 +16,27 @@ namespace CCYMovimientos.Vistas.Fondos
     {
         private string TipoMov;
         private string Msj;
+        public string sena;
+        public int CodCliente;
         public string CodMovimiento;
         public string getMsj() { return this.Msj; }
 
         public AltaMovimientos(string pTipo)
         {
             this.TipoMov = pTipo;
+            sena = "";
             InitializeComponent();
+        }
+
+        public AltaMovimientos(string pTipo, string pConcepto,int pCodCliente)
+        {
+            InitializeComponent();
+            this.TipoMov = pTipo;
+            string concep = "Seña de " + pConcepto;
+            TxtConcepto.Text = concep;
+            TxtConcepto.Enabled = false;
+            sena = "1";
+            CodCliente = pCodCliente;
         }
 
         private void AltaMovimientos_Load(object sender, EventArgs e)
@@ -68,7 +82,10 @@ namespace CCYMovimientos.Vistas.Fondos
                                              Txt1.Text,
                                              Txt2.Text,
                                              Txt4.Text);
-
+            if (sena == "1")
+            {
+                objFondo.setSena(sena,CodCliente);
+            }
             this.Msj = objFondo.InsertarMov();
             this.CodMovimiento = objFondo.CodMovimiento;
             this.Close();

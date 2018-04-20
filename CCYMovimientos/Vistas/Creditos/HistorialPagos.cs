@@ -1,4 +1,5 @@
 ﻿using CCYMovimientos.Modelos.Creditos;
+using CCYMovimientos.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace CCYMovimientos.Vistas.Creditos
     public partial class HistorialPagos : Form
     {
         private string codCliente { set; get; }
+        private string codRecibo { set; get; }
         public HistorialPagos(string pCodCliente, string Nombre)
         {
             InitializeComponent();
@@ -36,5 +38,41 @@ namespace CCYMovimientos.Vistas.Creditos
         {
             this.Close();
         }
+
+        private void btnReImprimir_Click(object sender, EventArgs e)
+        {
+            if (codRecibo != "")
+            {
+                PrevisualizarReportes ViewReport = new PrevisualizarReportes();
+                ViewReport.Codigo = codRecibo;
+                ViewReport.Reporte = "ReciboDePagoCuota";
+                ViewReport.Show();
+            }
+        }
+
+        private void DGPagos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //si se pulsa e el header el RowIndex sera menos a menos
+            if (!(e.RowIndex > -1))
+            {
+                btnReImprimir.Enabled = false;
+                codRecibo = "";
+                return;
+            }
+            DGPagos.CurrentCell = null;
+            foreach (DataGridViewRow row in DGPagos.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
+                    btnReImprimir.Enabled = true;
+                    codRecibo = row.Cells["NroRecibo"].Value.ToString();
+                    
+                    row.Selected = true;
+                    break;
+                }
+            }
+        }
+
+
     }
 }

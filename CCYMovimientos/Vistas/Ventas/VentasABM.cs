@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -178,7 +179,9 @@ namespace CCYMovimientos.Vistas.Ventas
                     importe = importe - anticipo;
                 }
 
-                TxtCuotaPrecio.Text = Convert.ToString(importe / cuotas);
+                n = (importe / cuotas);
+                
+                TxtCuotaPrecio.Text = n.ToString("N1");
 
                 TxtTotal.Text = TxtSaldo.Text;
             }
@@ -196,39 +199,33 @@ namespace CCYMovimientos.Vistas.Ventas
 
         private void TxtCuotaPrecio_OnValueChanged(object sender, EventArgs e)
         {
-            //decimal n;
-
-            //if (TxtAnticipo.Text.Trim() == "")
-            //{
-            //    TxtAnticipo.Text = "0";
-            //}
-
-            //if (TxtCuotas.Text != "0" &&
-            //    decimal.TryParse(TxtCuotas.Text, out n) &&
-            //    decimal.TryParse(TxtSaldo.Text, out n) &&
-            //    TxtSaldo.Text != "0" &&
-            //    decimal.TryParse(TxtCuotaPrecio.Text, out n) &&
-            //    TxtCuotaPrecio.Text != "")
-            //{
-
-            //    TxtTotal.Text = Convert.ToString((Convert.ToDecimal(TxtCuotaPrecio.Text) * Convert.ToDecimal(TxtCuotas.Text))+ Convert.ToDecimal(TxtAnticipo.Text));
-
-            //}
+            
 
         }
 
         private void CalcularSaldo()
         {
+            decimal n;
+            bool isNumeric = decimal.TryParse(TxtTotal.Text, out n);
+
+            n = 0;
+
             if (TxtTotal.Text != "" &&
-                TxtAnticipo.Text != "")
+                TxtAnticipo.Text != "" &&
+                isNumeric)
             {
-                TxtSaldo.Text = Convert.ToString(Convert.ToDecimal(TxtTotal.Text) - Convert.ToDecimal(TxtAnticipo.Text));
+                n = Convert.ToDecimal(TxtTotal.Text) - Convert.ToDecimal(TxtAnticipo.Text);
             }
+
+            TxtSaldo.Text = n.ToString("N1", CultureInfo.CurrentCulture);
         }
 
         private void TxtTotal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsNumber(e.KeyChar)) 
+                && (e.KeyChar != (char)Keys.Back)
+                && (e.KeyChar != 46)
+                && (e.KeyChar != 44))
             {
                 e.Handled = true;
                 return;
@@ -238,7 +235,10 @@ namespace CCYMovimientos.Vistas.Ventas
 
         private void TxtAnticipo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsNumber(e.KeyChar))
+                && (e.KeyChar != (char)Keys.Back)
+                && (e.KeyChar != 46)
+                && (e.KeyChar != 44))
             {
                 e.Handled = true;
                 return;
