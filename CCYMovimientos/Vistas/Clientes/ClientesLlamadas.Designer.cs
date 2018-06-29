@@ -28,82 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesLlamadas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesLlamadas));
             this.TxtConcepto = new System.Windows.Forms.RichTextBox();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DGLlamadas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.cboFecha2 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.lbl3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.TxtCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnGuardar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGLlamadas)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ActiveBorderThickness = 1;
-            this.btnCancelar.ActiveCornerRadius = 20;
-            this.btnCancelar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancelar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.ButtonText = "Cancelar";
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.IdleBorderThickness = 1;
-            this.btnCancelar.IdleCornerRadius = 20;
-            this.btnCancelar.IdleFillColor = System.Drawing.Color.White;
-            this.btnCancelar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.Location = new System.Drawing.Point(595, 343);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(131, 41);
-            this.btnCancelar.TabIndex = 12;
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.ActiveBorderThickness = 1;
-            this.btnGuardar.ActiveCornerRadius = 20;
-            this.btnGuardar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnGuardar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
-            this.btnGuardar.ButtonText = "Guardar";
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.IdleBorderThickness = 1;
-            this.btnGuardar.IdleCornerRadius = 20;
-            this.btnGuardar.IdleFillColor = System.Drawing.Color.White;
-            this.btnGuardar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.Location = new System.Drawing.Point(739, 343);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(181, 41);
-            this.btnGuardar.TabIndex = 11;
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // TxtConcepto
             // 
@@ -111,20 +62,9 @@
             this.TxtConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtConcepto.Location = new System.Drawing.Point(39, 190);
             this.TxtConcepto.Name = "TxtConcepto";
-            this.TxtConcepto.Size = new System.Drawing.Size(884, 145);
+            this.TxtConcepto.Size = new System.Drawing.Size(884, 127);
             this.TxtConcepto.TabIndex = 51;
             this.TxtConcepto.Text = "";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(36, 157);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(104, 21);
-            this.bunifuCustomLabel6.TabIndex = 52;
-            this.bunifuCustomLabel6.Text = "Conversación";
             // 
             // DGLlamadas
             // 
@@ -166,7 +106,7 @@
             this.cboFecha2.ForeColor = System.Drawing.Color.White;
             this.cboFecha2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.cboFecha2.FormatCustom = null;
-            this.cboFecha2.Location = new System.Drawing.Point(698, 139);
+            this.cboFecha2.Location = new System.Drawing.Point(698, 143);
             this.cboFecha2.Name = "cboFecha2";
             this.cboFecha2.Size = new System.Drawing.Size(225, 36);
             this.cboFecha2.TabIndex = 86;
@@ -176,7 +116,7 @@
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(544, 149);
+            this.lbl3.Location = new System.Drawing.Point(544, 153);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(148, 21);
             this.lbl3.TabIndex = 87;
@@ -185,47 +125,61 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.bunifuImageButton1);
             this.panel2.Controls.Add(this.bunifuCustomLabel12);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(965, 60);
             this.panel2.TabIndex = 88;
             // 
-            // bunifuCustomLabel12
+            // panel1
             // 
-            this.bunifuCustomLabel12.AutoSize = true;
-            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel12.ForeColor = System.Drawing.SystemColors.Window;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(28, 7);
-            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-            this.bunifuCustomLabel12.Size = new System.Drawing.Size(316, 47);
-            this.bunifuCustomLabel12.TabIndex = 76;
-            this.bunifuCustomLabel12.Text = "Llamadas al Cliente";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnExit);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(921, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(44, 60);
-            this.panel3.TabIndex = 3;
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(907, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(58, 60);
+            this.panel1.TabIndex = 135;
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageActive = null;
             this.btnExit.Location = new System.Drawing.Point(9, 13);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 1;
             this.btnExit.TabStop = false;
             this.btnExit.Zoom = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(3, 2);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(57, 56);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 134;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel12.ForeColor = System.Drawing.SystemColors.Window;
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(66, 7);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(316, 47);
+            this.bunifuCustomLabel12.TabIndex = 76;
+            this.bunifuCustomLabel12.Text = "Llamadas al Cliente";
             // 
             // TxtCliente
             // 
@@ -241,7 +195,7 @@
             this.TxtCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.TxtCliente.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(7)))), ((int)(((byte)(67)))));
             this.TxtCliente.LineThickness = 4;
-            this.TxtCliente.Location = new System.Drawing.Point(143, 71);
+            this.TxtCliente.Location = new System.Drawing.Point(143, 92);
             this.TxtCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCliente.Name = "TxtCliente";
             this.TxtCliente.Size = new System.Drawing.Size(549, 41);
@@ -253,22 +207,129 @@
             this.bunifuCustomLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 86);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 107);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(65, 21);
             this.bunifuCustomLabel2.TabIndex = 90;
             this.bunifuCustomLabel2.Text = "Cliente :";
             // 
-            // bunifuCustomLabel1
+            // panel7
             // 
-            this.bunifuCustomLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(37, 396);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(155, 21);
-            this.bunifuCustomLabel1.TabIndex = 91;
-            this.bunifuCustomLabel1.Text = "Historial de llamadas";
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.bunifuCustomLabel5);
+            this.panel7.Controls.Add(this.btnGuardar);
+            this.panel7.Controls.Add(this.btnCancelar);
+            this.panel7.Location = new System.Drawing.Point(28, 82);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(909, 313);
+            this.panel7.TabIndex = 140;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.BorderRadius = 5;
+            this.btnGuardar.ButtonText = "Guardar";
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGuardar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Iconimage")));
+            this.btnGuardar.Iconimage_right = null;
+            this.btnGuardar.Iconimage_right_Selected = null;
+            this.btnGuardar.Iconimage_Selected = null;
+            this.btnGuardar.IconMarginLeft = 0;
+            this.btnGuardar.IconMarginRight = 0;
+            this.btnGuardar.IconRightVisible = true;
+            this.btnGuardar.IconRightZoom = 0D;
+            this.btnGuardar.IconVisible = true;
+            this.btnGuardar.IconZoom = 90D;
+            this.btnGuardar.IsTab = false;
+            this.btnGuardar.Location = new System.Drawing.Point(768, 252);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.btnGuardar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardar.selected = false;
+            this.btnGuardar.Size = new System.Drawing.Size(126, 49);
+            this.btnGuardar.TabIndex = 134;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardar.Textcolor = System.Drawing.Color.White;
+            this.btnGuardar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BorderRadius = 5;
+            this.btnCancelar.ButtonText = "Cancelar";
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Iconimage")));
+            this.btnCancelar.Iconimage_right = null;
+            this.btnCancelar.Iconimage_right_Selected = null;
+            this.btnCancelar.Iconimage_Selected = null;
+            this.btnCancelar.IconMarginLeft = 0;
+            this.btnCancelar.IconMarginRight = 0;
+            this.btnCancelar.IconRightVisible = true;
+            this.btnCancelar.IconRightZoom = 0D;
+            this.btnCancelar.IconVisible = true;
+            this.btnCancelar.IconZoom = 90D;
+            this.btnCancelar.IsTab = false;
+            this.btnCancelar.Location = new System.Drawing.Point(629, 252);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancelar.selected = false;
+            this.btnCancelar.Size = new System.Drawing.Size(126, 49);
+            this.btnCancelar.TabIndex = 133;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Textcolor = System.Drawing.Color.White;
+            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(169)))), ((int)(((byte)(184)))));
+            this.panel3.Location = new System.Drawing.Point(38, 73);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(907, 314);
+            this.panel3.TabIndex = 141;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(7, 74);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(137, 30);
+            this.bunifuCustomLabel5.TabIndex = 135;
+            this.bunifuCustomLabel5.Text = "Conversación";
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(34, 399);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(206, 30);
+            this.bunifuCustomLabel3.TabIndex = 142;
+            this.bunifuCustomLabel3.Text = "Historial de llamadas";
             // 
             // ClientesLlamadas
             // 
@@ -276,7 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(965, 649);
-            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.TxtCliente);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.panel2);
@@ -284,9 +345,8 @@
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.DGLlamadas);
             this.Controls.Add(this.TxtConcepto);
-            this.Controls.Add(this.bunifuCustomLabel6);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientesLlamadas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -295,28 +355,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGLlamadas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelar;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnGuardar;
         private System.Windows.Forms.RichTextBox TxtConcepto;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DGLlamadas;
         private Bunifu.Framework.UI.BunifuDatepicker cboFecha2;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl3;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
-        private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtCliente;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancelar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnGuardar;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

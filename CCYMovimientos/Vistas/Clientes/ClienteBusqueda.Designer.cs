@@ -38,12 +38,14 @@
             this.ChEmpresas = new Bunifu.Framework.UI.BunifuCheckbox();
             this.DGClientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGClientes)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
@@ -148,20 +150,34 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
-            this.panel2.Controls.Add(this.bunifuCustomLabel12);
             this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.bunifuImageButton1);
+            this.panel2.Controls.Add(this.bunifuCustomLabel12);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1101, 60);
             this.panel2.TabIndex = 16;
             // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(3, 2);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(57, 56);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 134;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
             // bunifuCustomLabel12
             // 
             this.bunifuCustomLabel12.AutoSize = true;
             this.bunifuCustomLabel12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel12.ForeColor = System.Drawing.SystemColors.Window;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(28, 7);
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(66, 7);
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
             this.bunifuCustomLabel12.Size = new System.Drawing.Size(338, 47);
             this.bunifuCustomLabel12.TabIndex = 76;
@@ -171,19 +187,19 @@
             // 
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1057, 0);
+            this.panel3.Location = new System.Drawing.Point(1043, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(44, 60);
-            this.panel3.TabIndex = 3;
+            this.panel3.Size = new System.Drawing.Size(58, 60);
+            this.panel3.TabIndex = 135;
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageActive = null;
             this.btnExit.Location = new System.Drawing.Point(9, 13);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 1;
             this.btnExit.TabStop = false;
@@ -208,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGClientes)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
@@ -224,6 +241,7 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid DGClientes;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
     }

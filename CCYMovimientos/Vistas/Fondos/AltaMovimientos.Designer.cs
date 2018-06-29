@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaMovimientos));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.TxtNroCheque = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lbl5 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -47,14 +48,16 @@
             this.lbl2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Txt1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lbl1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.TxtImporte = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtConcepto = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnGuardar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.panel3.SuspendLayout();
@@ -63,51 +66,68 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
-            this.panel1.Controls.Add(this.bunifuCustomLabel12);
+            this.panel1.Controls.Add(this.bunifuImageButton1);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.bunifuCustomLabel12);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 60);
+            this.panel1.Size = new System.Drawing.Size(838, 60);
             this.panel1.TabIndex = 5;
             // 
-            // bunifuCustomLabel12
+            // bunifuImageButton1
             // 
-            this.bunifuCustomLabel12.AutoSize = true;
-            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel12.ForeColor = System.Drawing.SystemColors.Window;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(28, 7);
-            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-            this.bunifuCustomLabel12.Size = new System.Drawing.Size(346, 47);
-            this.bunifuCustomLabel12.TabIndex = 76;
-            this.bunifuCustomLabel12.Text = "Movimientos de Caja";
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(3, 2);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(57, 56);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 136;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(756, 0);
+            this.panel2.Location = new System.Drawing.Point(780, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(44, 60);
-            this.panel2.TabIndex = 3;
+            this.panel2.Size = new System.Drawing.Size(58, 60);
+            this.panel2.TabIndex = 135;
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageActive = null;
             this.btnExit.Location = new System.Drawing.Point(9, 13);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 1;
             this.btnExit.TabStop = false;
             this.btnExit.Zoom = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel12.ForeColor = System.Drawing.SystemColors.Window;
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(66, 7);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(346, 47);
+            this.bunifuCustomLabel12.TabIndex = 76;
+            this.bunifuCustomLabel12.Text = "Movimientos de Caja";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnGuardar);
+            this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Controls.Add(this.TxtNroCheque);
             this.panel3.Controls.Add(this.lbl5);
             this.panel3.Controls.Add(this.cboTipoMov);
@@ -121,14 +141,12 @@
             this.panel3.Controls.Add(this.lbl2);
             this.panel3.Controls.Add(this.Txt1);
             this.panel3.Controls.Add(this.lbl1);
-            this.panel3.Controls.Add(this.btnGuardar);
-            this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Controls.Add(this.TxtImporte);
             this.panel3.Controls.Add(this.TxtConcepto);
             this.panel3.Controls.Add(this.bunifuCustomLabel4);
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
-            this.panel3.Location = new System.Drawing.Point(0, 60);
+            this.panel3.Location = new System.Drawing.Point(15, 85);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 390);
             this.panel3.TabIndex = 33;
@@ -169,7 +187,7 @@
             this.cboTipoMov.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoMov.ForeColor = System.Drawing.Color.White;
             this.cboTipoMov.FormattingEnabled = true;
-            this.cboTipoMov.Location = new System.Drawing.Point(164, 20);
+            this.cboTipoMov.Location = new System.Drawing.Point(163, 20);
             this.cboTipoMov.Name = "cboTipoMov";
             this.cboTipoMov.Size = new System.Drawing.Size(262, 33);
             this.cboTipoMov.TabIndex = 1;
@@ -317,60 +335,6 @@
             this.lbl1.TabIndex = 37;
             this.lbl1.Text = "Banco :";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.ActiveBorderThickness = 1;
-            this.btnGuardar.ActiveCornerRadius = 20;
-            this.btnGuardar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnGuardar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
-            this.btnGuardar.ButtonText = "Guardar";
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.IdleBorderThickness = 1;
-            this.btnGuardar.IdleCornerRadius = 20;
-            this.btnGuardar.IdleFillColor = System.Drawing.Color.White;
-            this.btnGuardar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.Location = new System.Drawing.Point(581, 333);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(181, 41);
-            this.btnGuardar.TabIndex = 11;
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ActiveBorderThickness = 1;
-            this.btnCancelar.ActiveCornerRadius = 20;
-            this.btnCancelar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancelar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.ButtonText = "Cancelar";
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.IdleBorderThickness = 1;
-            this.btnCancelar.IdleCornerRadius = 20;
-            this.btnCancelar.IdleFillColor = System.Drawing.Color.White;
-            this.btnCancelar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.Location = new System.Drawing.Point(440, 333);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(131, 41);
-            this.btnCancelar.TabIndex = 12;
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // TxtImporte
             // 
             this.TxtImporte.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -439,14 +403,96 @@
             this.bunifuCustomLabel2.TabIndex = 28;
             this.bunifuCustomLabel2.Text = "Concepto :";
             // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(169)))), ((int)(((byte)(184)))));
+            this.panel7.Location = new System.Drawing.Point(24, 75);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(801, 389);
+            this.panel7.TabIndex = 136;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BorderRadius = 5;
+            this.btnCancelar.ButtonText = "Cancelar";
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Iconimage")));
+            this.btnCancelar.Iconimage_right = null;
+            this.btnCancelar.Iconimage_right_Selected = null;
+            this.btnCancelar.Iconimage_Selected = null;
+            this.btnCancelar.IconMarginLeft = 0;
+            this.btnCancelar.IconMarginRight = 0;
+            this.btnCancelar.IconRightVisible = true;
+            this.btnCancelar.IconRightZoom = 0D;
+            this.btnCancelar.IconVisible = true;
+            this.btnCancelar.IconZoom = 90D;
+            this.btnCancelar.IsTab = false;
+            this.btnCancelar.Location = new System.Drawing.Point(467, 318);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancelar.selected = false;
+            this.btnCancelar.Size = new System.Drawing.Size(126, 49);
+            this.btnCancelar.TabIndex = 133;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Textcolor = System.Drawing.Color.White;
+            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.BorderRadius = 5;
+            this.btnGuardar.ButtonText = "Guardar";
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGuardar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Iconimage")));
+            this.btnGuardar.Iconimage_right = null;
+            this.btnGuardar.Iconimage_right_Selected = null;
+            this.btnGuardar.Iconimage_Selected = null;
+            this.btnGuardar.IconMarginLeft = 0;
+            this.btnGuardar.IconMarginRight = 0;
+            this.btnGuardar.IconRightVisible = true;
+            this.btnGuardar.IconRightZoom = 0D;
+            this.btnGuardar.IconVisible = true;
+            this.btnGuardar.IconZoom = 90D;
+            this.btnGuardar.IsTab = false;
+            this.btnGuardar.Location = new System.Drawing.Point(611, 318);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.btnGuardar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardar.selected = false;
+            this.btnGuardar.Size = new System.Drawing.Size(126, 49);
+            this.btnGuardar.TabIndex = 134;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardar.Textcolor = System.Drawing.Color.White;
+            this.btnGuardar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // AltaMovimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(838, 492);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaMovimientos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -454,6 +500,7 @@
             this.Load += new System.EventHandler(this.AltaMovimientos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -465,11 +512,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnGuardar;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelar;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtImporte;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtConcepto;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
@@ -489,5 +532,11 @@
         private System.Windows.Forms.ComboBox cboTipoMov;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtNroCheque;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl5;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Panel panel7;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancelar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnGuardar;
     }
 }

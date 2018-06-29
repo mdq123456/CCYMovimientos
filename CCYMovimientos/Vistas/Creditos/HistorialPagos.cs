@@ -57,6 +57,7 @@ namespace CCYMovimientos.Vistas.Creditos
             {
                 btnReImprimir.Enabled = false;
                 codRecibo = "";
+                TraerFormasPago("");
                 return;
             }
             DGPagos.CurrentCell = null;
@@ -66,13 +67,26 @@ namespace CCYMovimientos.Vistas.Creditos
                 {
                     btnReImprimir.Enabled = true;
                     codRecibo = row.Cells["NroRecibo"].Value.ToString();
-                    
+
                     row.Selected = true;
+
+                    TraerFormasPago(row.Cells["CodPago"].Value.ToString());
+
                     break;
                 }
             }
         }
 
+        private void TraerFormasPago(string pCodPago)
+        {
+            if (pCodPago == "")
+            {
+                DGFormas.DataSource = new DataTable();
+                return;
+            }
 
+            DBCreditos objCredito = new DBCreditos(codCliente);
+            DGFormas.DataSource = objCredito.TraerFormasPago(pCodPago);
+        }
     }
 }

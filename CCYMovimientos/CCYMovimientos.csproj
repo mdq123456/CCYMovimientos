@@ -219,6 +219,12 @@
     <Compile Include="Vistas\Ventas\HistorialVentas.Designer.cs">
       <DependentUpon>HistorialVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Ventas\InformacionVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ventas\InformacionVentas.Designer.cs">
+      <DependentUpon>InformacionVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Ventas\VentasABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Ventas\HistorialVentas.resx">
       <DependentUpon>HistorialVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Ventas\InformacionVentas.resx">
+      <DependentUpon>InformacionVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Ventas\VentasABM.resx">
       <DependentUpon>VentasABM.cs</DependentUpon>

@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteNewEdit));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnNuevoCliente = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblActivar = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ChActivo = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -46,7 +46,6 @@
             this.cboLocalidad = new System.Windows.Forms.ComboBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
             this.cboTipoCliente = new System.Windows.Forms.ComboBox();
-            this.btnCancelar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -60,32 +59,58 @@
             this.lblApellido = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblNombre = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.TxtEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtCel = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtCUIL = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtDNI = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtApellidos = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.TxtNombres = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnGuardar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(865, 60);
             this.panel1.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(807, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(58, 60);
+            this.panel2.TabIndex = 135;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(9, 13);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 1;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel5
             // 
@@ -196,32 +221,11 @@
             this.bunifuCustomLabel11.TabIndex = 72;
             this.bunifuCustomLabel11.Text = "Nuevo Cliente";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(821, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(44, 60);
-            this.panel2.TabIndex = 3;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(9, 13);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 25);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 1;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panel3.Controls.Add(this.btnGuardar);
+            this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Controls.Add(this.lblActivar);
             this.panel3.Controls.Add(this.ChActivo);
             this.panel3.Controls.Add(this.lblfijo);
@@ -229,7 +233,6 @@
             this.panel3.Controls.Add(this.cboLocalidad);
             this.panel3.Controls.Add(this.cboProvincia);
             this.panel3.Controls.Add(this.cboTipoCliente);
-            this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Controls.Add(this.bunifuCustomLabel10);
             this.panel3.Controls.Add(this.bunifuCustomLabel9);
             this.panel3.Controls.Add(this.bunifuCustomLabel8);
@@ -243,13 +246,14 @@
             this.panel3.Controls.Add(this.lblApellido);
             this.panel3.Controls.Add(this.lblNombre);
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
-            this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Controls.Add(this.TxtEmail);
             this.panel3.Controls.Add(this.TxtCel);
             this.panel3.Controls.Add(this.TxtCUIL);
             this.panel3.Controls.Add(this.TxtDNI);
             this.panel3.Controls.Add(this.TxtApellidos);
             this.panel3.Controls.Add(this.TxtNombres);
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.panel7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 60);
             this.panel3.Name = "panel3";
@@ -346,33 +350,6 @@
             this.cboTipoCliente.Size = new System.Drawing.Size(204, 33);
             this.cboTipoCliente.TabIndex = 1;
             this.cboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cboTipoCliente_SelectedIndexChanged);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ActiveBorderThickness = 1;
-            this.btnCancelar.ActiveCornerRadius = 20;
-            this.btnCancelar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancelar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.ButtonText = "Cancelar";
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.IdleBorderThickness = 1;
-            this.btnCancelar.IdleCornerRadius = 20;
-            this.btnCancelar.IdleFillColor = System.Drawing.Color.White;
-            this.btnCancelar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(64)))), ((int)(((byte)(48)))));
-            this.btnCancelar.Location = new System.Drawing.Point(431, 413);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(131, 41);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // bunifuCustomLabel10
             // 
@@ -544,33 +521,6 @@
             this.bunifuCustomLabel2.TabIndex = 100;
             this.bunifuCustomLabel2.Text = "Tipo de Cliente :";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.ActiveBorderThickness = 1;
-            this.btnGuardar.ActiveCornerRadius = 20;
-            this.btnGuardar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.ActiveForecolor = System.Drawing.Color.White;
-            this.btnGuardar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
-            this.btnGuardar.ButtonText = "Guardar";
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.IdleBorderThickness = 1;
-            this.btnGuardar.IdleCornerRadius = 20;
-            this.btnGuardar.IdleFillColor = System.Drawing.Color.White;
-            this.btnGuardar.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnGuardar.Location = new System.Drawing.Point(586, 413);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(181, 41);
-            this.btnGuardar.TabIndex = 14;
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // TxtEmail
             // 
             this.TxtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -693,6 +643,97 @@
             this.TxtNombres.TabIndex = 2;
             this.TxtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BorderRadius = 5;
+            this.btnCancelar.ButtonText = "Cancelar";
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Iconimage")));
+            this.btnCancelar.Iconimage_right = null;
+            this.btnCancelar.Iconimage_right_Selected = null;
+            this.btnCancelar.Iconimage_Selected = null;
+            this.btnCancelar.IconMarginLeft = 0;
+            this.btnCancelar.IconMarginRight = 0;
+            this.btnCancelar.IconRightVisible = true;
+            this.btnCancelar.IconRightZoom = 0D;
+            this.btnCancelar.IconVisible = true;
+            this.btnCancelar.IconZoom = 90D;
+            this.btnCancelar.IsTab = false;
+            this.btnCancelar.Location = new System.Drawing.Point(503, 405);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancelar.selected = false;
+            this.btnCancelar.Size = new System.Drawing.Size(126, 49);
+            this.btnCancelar.TabIndex = 132;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Textcolor = System.Drawing.Color.White;
+            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.BorderRadius = 5;
+            this.btnGuardar.ButtonText = "Guardar";
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGuardar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Iconimage")));
+            this.btnGuardar.Iconimage_right = null;
+            this.btnGuardar.Iconimage_right_Selected = null;
+            this.btnGuardar.Iconimage_Selected = null;
+            this.btnGuardar.IconMarginLeft = 0;
+            this.btnGuardar.IconMarginRight = 0;
+            this.btnGuardar.IconRightVisible = true;
+            this.btnGuardar.IconRightZoom = 0D;
+            this.btnGuardar.IconVisible = true;
+            this.btnGuardar.IconZoom = 90D;
+            this.btnGuardar.IsTab = false;
+            this.btnGuardar.Location = new System.Drawing.Point(645, 405);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.btnGuardar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardar.selected = false;
+            this.btnGuardar.Size = new System.Drawing.Size(126, 49);
+            this.btnGuardar.TabIndex = 133;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardar.Textcolor = System.Drawing.Color.White;
+            this.btnGuardar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Location = new System.Drawing.Point(68, 30);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(731, 439);
+            this.panel6.TabIndex = 134;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(169)))), ((int)(((byte)(184)))));
+            this.panel7.Location = new System.Drawing.Point(80, 19);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(731, 439);
+            this.panel7.TabIndex = 135;
+            // 
             // ClienteNewEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -709,12 +750,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ClienteNewEdit_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -724,8 +765,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuImageButton btnExit;
         private System.Windows.Forms.Panel panel5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
@@ -736,7 +775,6 @@
         private System.Windows.Forms.ComboBox cboLocalidad;
         private System.Windows.Forms.ComboBox cboProvincia;
         private System.Windows.Forms.ComboBox cboTipoCliente;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancelar;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
@@ -750,7 +788,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblApellido;
         private Bunifu.Framework.UI.BunifuCustomLabel lblNombre;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnGuardar;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtEmail;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtCel;
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtCUIL;
@@ -761,5 +798,11 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox TxtFijo;
         private Bunifu.Framework.UI.BunifuCustomLabel lblActivar;
         private Bunifu.Framework.UI.BunifuCheckbox ChActivo;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancelar;
+        private Bunifu.Framework.UI.BunifuFlatButton btnGuardar;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
     }
 }

@@ -232,5 +232,10 @@ namespace CCYMovimientos.Vistas.Fondos
             TxtBuscar.SelectionStart = 0;
             TxtBuscar.SelectionLength = TxtBuscar.Text.Length;
         }
+
+        private void DGMovimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -111,7 +111,7 @@ namespace CCYMovimientos.Vistas.Clientes
                 btnContactos.Visible = false;
                 btnDirecciones.Visible = false;
                 btnSena.Visible = false;
-
+                btnHistorialPagos.Visible = false;
                 return;
             }
             DGClientes.CurrentCell = null;
@@ -153,7 +153,7 @@ namespace CCYMovimientos.Vistas.Clientes
                         bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
                         bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
                     }
-
+                    btnHistorialPagos.Visible = true;
                     row.Selected = true; 
                     break;
                 }
@@ -224,6 +224,17 @@ namespace CCYMovimientos.Vistas.Clientes
             AltaMovimientos movForm = new AltaMovimientos("Ingreso", lblNombre.Text,Convert.ToInt32(codCliente));
 
             movForm.ShowDialog();
+        }
+
+        private void btnHistorialPagos_Click(object sender, EventArgs e)
+        {
+            if (lblNombre.Text == "Cliente X")
+            {
+                return;
+            }
+
+            HistorialPagos PagosCreditosForm = new HistorialPagos(codCliente, lblNombre.Text);
+            PagosCreditosForm.ShowDialog();
         }
     }
 }

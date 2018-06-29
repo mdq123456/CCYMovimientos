@@ -99,6 +99,52 @@ namespace CCYMovimientos.Modelos
             
         }
 
+        public DataTable TraerSena(string pCodCliente)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_CREDITOS_TraerSena", con);
+                cmd.Parameters.Add("@codCliente", SqlDbType.Int).Value = Convert.ToInt32(pCodCliente);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("ClientesSena");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public DataTable TraerFormasPagos(string pCodPago)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_CREDITOS_TraerFormasPagos", con);
+                cmd.Parameters.Add("@codpago", SqlDbType.Int).Value = Convert.ToInt32(pCodPago);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("FormasPagos");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public DataTable TraerVentas(string pCodCliente)
         {
             try
@@ -541,13 +587,18 @@ namespace CCYMovimientos.Modelos
             }
         }
 
-        public DataTable TraerMetPagos()
+        public DataTable TraerMetPagos(decimal pvalorSena)
         {
             try
             {
                 abrirConexion();
                 cmd = new SqlCommand("SP_VENTAS_Traer_MetPagos", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@sena", SqlDbType.Decimal).Value = pvalorSena;
+                if (Sesion.codRol == 1 )
+                {
+                    cmd.Parameters.Add("@bonificacion", SqlDbType.Int).Value = 1;
+                }
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("MetPagos");
@@ -648,14 +699,14 @@ namespace CCYMovimientos.Modelos
                 throw;
             }
         }
-
-        public SqlDataReader InsertarPago(string pcodCliente, string pcodFormaPago, 
-                                          string pimporte, string pstrCodPago,
+        public SqlDataReader InsertarPago(string pcodCliente, string pstrFormasPago, 
+                                          string pimporte, string pTotal, string pstrCodPago,
                                           string pNombreCliente,
                                           DateTime pfechaEmision, DateTime pfechaCobro,
                                         string pnroCheque, string pbanco, string pcuenta,
                                         string pbeneficiario,
-                                        string pConcepto, DateTime pfechaPago, string pCodCredito)
+                                        string pConcepto, DateTime pfechaPago, 
+                                        string pCodCredito)
         {
             try
             {
@@ -664,17 +715,18 @@ namespace CCYMovimientos.Modelos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@codCliente", SqlDbType.Int).Value = Convert.ToInt32(pcodCliente);
-                cmd.Parameters.Add("@codFormaPago", SqlDbType.Int).Value = Convert.ToInt32(pcodFormaPago);
+                cmd.Parameters.Add("@strFormasPago", SqlDbType.VarChar, 2000).Value = pstrFormasPago;
                 cmd.Parameters.Add("@importe", SqlDbType.Decimal).Value = Convert.ToDecimal(pimporte);
+                cmd.Parameters.Add("@Total", SqlDbType.Decimal).Value = Convert.ToDecimal(pTotal);
                 cmd.Parameters.Add("@strCodPago", SqlDbType.VarChar, 2000).Value = pstrCodPago;
                 cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 300).Value = pNombreCliente;
 
-                cmd.Parameters.Add("@fechaEmision", SqlDbType.SmallDateTime).Value = pfechaEmision;
-                cmd.Parameters.Add("@fechaCobro", SqlDbType.SmallDateTime).Value = pfechaCobro;
-                cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar, 30).Value = pnroCheque;
-                cmd.Parameters.Add("@banco", SqlDbType.VarChar, 200).Value = pbanco;
-                cmd.Parameters.Add("@cuenta", SqlDbType.VarChar, 100).Value = pcuenta;
-                cmd.Parameters.Add("@beneficiario", SqlDbType.VarChar, 200).Value = pbeneficiario;
+                //cmd.Parameters.Add("@fechaEmision", SqlDbType.SmallDateTime).Value = pfechaEmision;
+                //cmd.Parameters.Add("@fechaCobro", SqlDbType.SmallDateTime).Value = pfechaCobro;
+                //cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar, 30).Value = pnroCheque;
+                //cmd.Parameters.Add("@banco", SqlDbType.VarChar, 200).Value = pbanco;
+                //cmd.Parameters.Add("@nroCuenta", SqlDbType.VarChar, 100).Value = pcuenta;
+                //cmd.Parameters.Add("@beneficiario", SqlDbType.VarChar, 200).Value = pbeneficiario;
                 cmd.Parameters.Add("@codLogin", SqlDbType.Int).Value = Sesion.codUsuario;
                 cmd.Parameters.Add("@Concepto", SqlDbType.VarChar, 300).Value = pConcepto;
                 cmd.Parameters.Add("@fechaPago", SqlDbType.SmallDateTime).Value = pfechaPago;

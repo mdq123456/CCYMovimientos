@@ -82,6 +82,13 @@ namespace CCYMovimientos.Vistas.Clientes
 
         private void DGLlamadas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!(e.RowIndex > -1))
+            {
+                cboFecha2.Value = DateTime.Today;
+                TxtConcepto.Text = "";
+                return;
+            }
+
             DGLlamadas.CurrentCell = null;
             foreach (DataGridViewRow row in DGLlamadas.Rows)
             {

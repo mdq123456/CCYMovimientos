@@ -14,7 +14,8 @@ namespace CCYMovimientos.Modelos.Creditos
         private string NombreCliente { set; get; }
         private string strCodPago { set; get; }
         private string importe { set; get; }
-        private string codFormaPago { set; get; }
+        private string Total { set; get; }
+        private string strFormasPago { set; get; }
         private DateTime fechaEmision { set; get; }
         private DateTime fechaCobro { set; get; }
         private string nroCheque { set; get; }
@@ -45,8 +46,9 @@ namespace CCYMovimientos.Modelos.Creditos
                 throw;
             }
         }
-        public DBCreditos(string pCodCliente, string pstrCodPago,string pimporte,
-                            string pcodFormaPago, string pNombreCliente,
+        public DBCreditos(string pCodCliente, string pstrCodPago,
+                            string pimporte, string pTotal,
+                            string pstrFormasPago, string pNombreCliente,
                             DateTime pfechaEmision, DateTime pfechaCobro,
                             string pnroCheque, string pbanco, string pcuenta,
                             string pbeneficiario)
@@ -54,7 +56,7 @@ namespace CCYMovimientos.Modelos.Creditos
             this.codCliente = pCodCliente;
             this.strCodPago = pstrCodPago;
             this.importe = pimporte;
-            this.codFormaPago = pcodFormaPago;
+            this.strFormasPago = pstrFormasPago;
             this.NombreCliente = pNombreCliente;
             this.fechaEmision = pfechaEmision;
             this.fechaCobro = pfechaCobro;
@@ -62,6 +64,41 @@ namespace CCYMovimientos.Modelos.Creditos
             this.banco = pbanco;
             this.cuenta = pcuenta;
             this.beneficiario = pbeneficiario;
+            this.Total = pTotal;
+        }
+
+        public DataTable TraerSena()
+        {
+            try
+            {
+                DataCenter objDC = new DataCenter();
+                DataTable sena = objDC.TraerSena(this.codCliente);
+                objDC.cerrarConexion();
+
+                return sena;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public object TraerFormasPago(string pCodPago)
+        {
+            try
+            {
+                DataCenter objDC = new DataCenter();
+                DataTable tabla = objDC.TraerFormasPagos(pCodPago);
+                objDC.cerrarConexion();
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
         }
 
         public DataTable TraerVentas()
@@ -98,14 +135,15 @@ namespace CCYMovimientos.Modelos.Creditos
             }
         }
 
-        public string InsertarPago(string pConcepto, DateTime pfechaPago,
+        public string InsertarPago(string pConcepto, DateTime pfechaPago, 
                                    string pCodCredito)
         {
             string retorno;
             DataCenter objDC = new DataCenter();
             SqlDataReader unDato = objDC.InsertarPago(this.codCliente,
-                                                      this.codFormaPago,
+                                                      this.strFormasPago,
                                                       this.importe,
+                                                      this.Total,
                                                       this.strCodPago,
                                                       this.NombreCliente,
                                                       this.fechaEmision,

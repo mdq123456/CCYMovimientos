@@ -12,12 +12,12 @@ namespace CCYMovimientos.Modelos.Ventas
     {
 
 
-        public DataTable TraerMetPagos()
+        public DataTable TraerMetPagos(decimal pvalorSena)
         {
             try
             {
                 DataCenter objDC = new DataCenter();
-                DataTable tabla = objDC.TraerMetPagos();
+                DataTable tabla = objDC.TraerMetPagos(pvalorSena);
                 objDC.cerrarConexion();
 
                 return tabla;

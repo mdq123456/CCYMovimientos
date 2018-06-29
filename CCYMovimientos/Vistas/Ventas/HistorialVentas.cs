@@ -87,5 +87,40 @@ namespace CCYMovimientos.Vistas.Ventas
 
             }
         }
+
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DGHVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DGHVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //si se pulsa e el header el RowIndex sera menos a menos
+            //if (!(e.RowIndex > -1))
+            //{
+            //    TraerPago("");
+            //    return;
+            //}
+            //DGPagos.CurrentCell = null;
+            //foreach (DataGridViewRow row in DGPagos.Rows)
+            //{
+            //    if (row.Index == e.RowIndex)
+            //    {
+            //        btnReImprimir.Enabled = true;
+            //        codRecibo = row.Cells["NroRecibo"].Value.ToString();
+
+            //        row.Selected = true;
+
+            //        TraerFormasPago(row.Cells["CodPago"].Value.ToString());
+
+            //        break;
+            //    }
+            //}
+        }
     }
 }

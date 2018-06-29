@@ -34,6 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.menuLeft = new System.Windows.Forms.Panel();
+            this.btnHVentas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCerrarSesion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnMenu = new Bunifu.Framework.UI.BunifuImageButton();
@@ -45,14 +46,13 @@
             this.menuLeftAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTitulo = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelesAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.btnHVentas = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.lblTitulo = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnTitulo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuLeft.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -86,6 +86,44 @@
             this.menuLeft.Size = new System.Drawing.Size(234, 416);
             this.menuLeft.TabIndex = 0;
             // 
+            // btnHVentas
+            // 
+            this.btnHVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHVentas.BorderRadius = 0;
+            this.btnHVentas.ButtonText = "         HISTORIAL VENTAS";
+            this.btnHVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelesAnimator.SetDecoration(this.btnHVentas, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.btnHVentas, BunifuAnimatorNS.DecorationType.None);
+            this.btnHVentas.DisabledColor = System.Drawing.Color.Gray;
+            this.btnHVentas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHVentas.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnHVentas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHVentas.Iconimage")));
+            this.btnHVentas.Iconimage_right = null;
+            this.btnHVentas.Iconimage_right_Selected = null;
+            this.btnHVentas.Iconimage_Selected = null;
+            this.btnHVentas.IconMarginLeft = 10;
+            this.btnHVentas.IconMarginRight = 0;
+            this.btnHVentas.IconRightVisible = true;
+            this.btnHVentas.IconRightZoom = 0D;
+            this.btnHVentas.IconVisible = true;
+            this.btnHVentas.IconZoom = 90D;
+            this.btnHVentas.IsTab = true;
+            this.btnHVentas.Location = new System.Drawing.Point(0, 286);
+            this.btnHVentas.Name = "btnHVentas";
+            this.btnHVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnHVentas.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnHVentas.selected = false;
+            this.btnHVentas.Size = new System.Drawing.Size(240, 51);
+            this.btnHVentas.TabIndex = 7;
+            this.btnHVentas.Text = "         HISTORIAL VENTAS";
+            this.btnHVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHVentas.Textcolor = System.Drawing.Color.Silver;
+            this.btnHVentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHVentas.Click += new System.EventHandler(this.btnHVentas_Click);
+            // 
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(160)))), ((int)(((byte)(198)))));
@@ -93,7 +131,7 @@
             this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCerrarSesion.BorderRadius = 0;
-            this.btnCerrarSesion.ButtonText = "              CERRAR SESION";
+            this.btnCerrarSesion.ButtonText = "         CERRAR SESION";
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelesAnimator.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
             this.menuLeftAnimator.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
@@ -104,12 +142,12 @@
             this.btnCerrarSesion.Iconimage_right = null;
             this.btnCerrarSesion.Iconimage_right_Selected = null;
             this.btnCerrarSesion.Iconimage_Selected = null;
-            this.btnCerrarSesion.IconMarginLeft = 0;
+            this.btnCerrarSesion.IconMarginLeft = 10;
             this.btnCerrarSesion.IconMarginRight = 0;
             this.btnCerrarSesion.IconRightVisible = true;
             this.btnCerrarSesion.IconRightZoom = 0D;
             this.btnCerrarSesion.IconVisible = true;
-            this.btnCerrarSesion.IconZoom = 60D;
+            this.btnCerrarSesion.IconZoom = 90D;
             this.btnCerrarSesion.IsTab = true;
             this.btnCerrarSesion.Location = new System.Drawing.Point(0, 361);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
@@ -119,7 +157,7 @@
             this.btnCerrarSesion.selected = false;
             this.btnCerrarSesion.Size = new System.Drawing.Size(240, 51);
             this.btnCerrarSesion.TabIndex = 6;
-            this.btnCerrarSesion.Text = "              CERRAR SESION";
+            this.btnCerrarSesion.Text = "         CERRAR SESION";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.Textcolor = System.Drawing.Color.Silver;
             this.btnCerrarSesion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,9 +182,9 @@
             this.menuLeftAnimator.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageActive = null;
-            this.btnMenu.Location = new System.Drawing.Point(192, 16);
+            this.btnMenu.Location = new System.Drawing.Point(190, 14);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(25, 25);
+            this.btnMenu.Size = new System.Drawing.Size(30, 30);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
@@ -198,7 +236,7 @@
             this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVentas.BorderRadius = 0;
-            this.btnVentas.ButtonText = "              VENTAS";
+            this.btnVentas.ButtonText = "         VENTAS";
             this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelesAnimator.SetDecoration(this.btnVentas, BunifuAnimatorNS.DecorationType.None);
             this.menuLeftAnimator.SetDecoration(this.btnVentas, BunifuAnimatorNS.DecorationType.None);
@@ -209,12 +247,12 @@
             this.btnVentas.Iconimage_right = null;
             this.btnVentas.Iconimage_right_Selected = null;
             this.btnVentas.Iconimage_Selected = null;
-            this.btnVentas.IconMarginLeft = 0;
+            this.btnVentas.IconMarginLeft = 10;
             this.btnVentas.IconMarginRight = 0;
             this.btnVentas.IconRightVisible = true;
             this.btnVentas.IconRightZoom = 0D;
             this.btnVentas.IconVisible = true;
-            this.btnVentas.IconZoom = 60D;
+            this.btnVentas.IconZoom = 90D;
             this.btnVentas.IsTab = true;
             this.btnVentas.Location = new System.Drawing.Point(0, 172);
             this.btnVentas.Name = "btnVentas";
@@ -224,7 +262,7 @@
             this.btnVentas.selected = false;
             this.btnVentas.Size = new System.Drawing.Size(240, 51);
             this.btnVentas.TabIndex = 3;
-            this.btnVentas.Text = "              VENTAS";
+            this.btnVentas.Text = "         VENTAS";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.Textcolor = System.Drawing.Color.Silver;
             this.btnVentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,7 +274,7 @@
             this.btnFondos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnFondos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFondos.BorderRadius = 0;
-            this.btnFondos.ButtonText = "              FONDOS";
+            this.btnFondos.ButtonText = "         FONDOS";
             this.btnFondos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelesAnimator.SetDecoration(this.btnFondos, BunifuAnimatorNS.DecorationType.None);
             this.menuLeftAnimator.SetDecoration(this.btnFondos, BunifuAnimatorNS.DecorationType.None);
@@ -247,12 +285,12 @@
             this.btnFondos.Iconimage_right = null;
             this.btnFondos.Iconimage_right_Selected = null;
             this.btnFondos.Iconimage_Selected = null;
-            this.btnFondos.IconMarginLeft = 0;
+            this.btnFondos.IconMarginLeft = 10;
             this.btnFondos.IconMarginRight = 0;
             this.btnFondos.IconRightVisible = true;
             this.btnFondos.IconRightZoom = 0D;
             this.btnFondos.IconVisible = true;
-            this.btnFondos.IconZoom = 60D;
+            this.btnFondos.IconZoom = 90D;
             this.btnFondos.IsTab = true;
             this.btnFondos.Location = new System.Drawing.Point(0, 115);
             this.btnFondos.Name = "btnFondos";
@@ -262,7 +300,7 @@
             this.btnFondos.selected = false;
             this.btnFondos.Size = new System.Drawing.Size(240, 51);
             this.btnFondos.TabIndex = 2;
-            this.btnFondos.Text = "              FONDOS";
+            this.btnFondos.Text = "         FONDOS";
             this.btnFondos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFondos.Textcolor = System.Drawing.Color.Silver;
             this.btnFondos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,7 +312,7 @@
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClientes.BorderRadius = 0;
-            this.btnClientes.ButtonText = "              CLIENTES";
+            this.btnClientes.ButtonText = "         CLIENTES";
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelesAnimator.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
             this.menuLeftAnimator.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
@@ -285,12 +323,12 @@
             this.btnClientes.Iconimage_right = null;
             this.btnClientes.Iconimage_right_Selected = null;
             this.btnClientes.Iconimage_Selected = null;
-            this.btnClientes.IconMarginLeft = 0;
+            this.btnClientes.IconMarginLeft = 10;
             this.btnClientes.IconMarginRight = 0;
             this.btnClientes.IconRightVisible = true;
             this.btnClientes.IconRightZoom = 0D;
             this.btnClientes.IconVisible = true;
-            this.btnClientes.IconZoom = 60D;
+            this.btnClientes.IconZoom = 90D;
             this.btnClientes.IsTab = true;
             this.btnClientes.Location = new System.Drawing.Point(0, 60);
             this.btnClientes.Name = "btnClientes";
@@ -300,7 +338,7 @@
             this.btnClientes.selected = false;
             this.btnClientes.Size = new System.Drawing.Size(240, 51);
             this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "              CLIENTES";
+            this.btnClientes.Text = "         CLIENTES";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Textcolor = System.Drawing.Color.Silver;
             this.btnClientes.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,7 +381,7 @@
             this.btnExit.ImageActive = null;
             this.btnExit.Location = new System.Drawing.Point(9, 13);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 1;
             this.btnExit.TabStop = false;
@@ -364,130 +402,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(466, 60);
             this.panel1.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnMin);
-            this.panelesAnimator.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
-            this.menuLeftAnimator.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(378, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(44, 60);
-            this.panel3.TabIndex = 4;
-            // 
-            // btnMin
-            // 
-            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.panelesAnimator.SetDecoration(this.btnMin, BunifuAnimatorNS.DecorationType.None);
-            this.menuLeftAnimator.SetDecoration(this.btnMin, BunifuAnimatorNS.DecorationType.None);
-            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.ImageActive = null;
-            this.btnMin.Location = new System.Drawing.Point(13, 13);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(25, 25);
-            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMin.TabIndex = 2;
-            this.btnMin.TabStop = false;
-            this.btnMin.Zoom = 10;
-            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnExit);
-            this.panelesAnimator.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.menuLeftAnimator.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(422, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(44, 60);
-            this.panel2.TabIndex = 3;
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
-            this.panelesAnimator.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
-            this.menuLeftAnimator.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenu.Location = new System.Drawing.Point(234, 60);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(466, 356);
-            this.panelMenu.TabIndex = 4;
-            this.panelMenu.Visible = false;
-            // 
-            // panelesAnimator
-            // 
-            this.panelesAnimator.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
-            this.panelesAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 1F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.panelesAnimator.DefaultAnimation = animation1;
-            this.panelesAnimator.Interval = 0;
-            this.panelesAnimator.TimeStep = 0.1F;
-            // 
-            // btnHVentas
-            // 
-            this.btnHVentas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnHVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnHVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHVentas.BorderRadius = 0;
-            this.btnHVentas.ButtonText = "              HISTORIAL VENTAS";
-            this.btnHVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelesAnimator.SetDecoration(this.btnHVentas, BunifuAnimatorNS.DecorationType.None);
-            this.menuLeftAnimator.SetDecoration(this.btnHVentas, BunifuAnimatorNS.DecorationType.None);
-            this.btnHVentas.DisabledColor = System.Drawing.Color.Gray;
-            this.btnHVentas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHVentas.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnHVentas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnHVentas.Iconimage")));
-            this.btnHVentas.Iconimage_right = null;
-            this.btnHVentas.Iconimage_right_Selected = null;
-            this.btnHVentas.Iconimage_Selected = null;
-            this.btnHVentas.IconMarginLeft = 0;
-            this.btnHVentas.IconMarginRight = 0;
-            this.btnHVentas.IconRightVisible = true;
-            this.btnHVentas.IconRightZoom = 0D;
-            this.btnHVentas.IconVisible = true;
-            this.btnHVentas.IconZoom = 60D;
-            this.btnHVentas.IsTab = true;
-            this.btnHVentas.Location = new System.Drawing.Point(0, 286);
-            this.btnHVentas.Name = "btnHVentas";
-            this.btnHVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnHVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.btnHVentas.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnHVentas.selected = false;
-            this.btnHVentas.Size = new System.Drawing.Size(240, 51);
-            this.btnHVentas.TabIndex = 7;
-            this.btnHVentas.Text = "              HISTORIAL VENTAS";
-            this.btnHVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHVentas.Textcolor = System.Drawing.Color.Silver;
-            this.btnHVentas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHVentas.Click += new System.EventHandler(this.btnHVentas_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.menuLeftAnimator.SetDecoration(this.lblTitulo, BunifuAnimatorNS.DecorationType.None);
-            this.panelesAnimator.SetDecoration(this.lblTitulo, BunifuAnimatorNS.DecorationType.None);
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTitulo.Location = new System.Drawing.Point(65, 7);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(343, 47);
-            this.lblTitulo.TabIndex = 74;
-            this.lblTitulo.Text = " Construcciones NEA";
             // 
             // btnTitulo
             // 
@@ -525,6 +439,93 @@
             this.btnTitulo.Textcolor = System.Drawing.Color.Silver;
             this.btnTitulo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTitulo.Click += new System.EventHandler(this.btnTitulo_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.menuLeftAnimator.SetDecoration(this.lblTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.panelesAnimator.SetDecoration(this.lblTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblTitulo.Location = new System.Drawing.Point(59, 7);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(343, 47);
+            this.lblTitulo.TabIndex = 74;
+            this.lblTitulo.Text = " Construcciones NEA";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnMin);
+            this.panelesAnimator.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(350, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(58, 60);
+            this.panel3.TabIndex = 4;
+            // 
+            // btnMin
+            // 
+            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.panelesAnimator.SetDecoration(this.btnMin, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.btnMin, BunifuAnimatorNS.DecorationType.None);
+            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
+            this.btnMin.ImageActive = null;
+            this.btnMin.Location = new System.Drawing.Point(13, 13);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(30, 30);
+            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMin.TabIndex = 2;
+            this.btnMin.TabStop = false;
+            this.btnMin.Zoom = 10;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnExit);
+            this.panelesAnimator.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(408, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(58, 60);
+            this.panel2.TabIndex = 3;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
+            this.panelesAnimator.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
+            this.menuLeftAnimator.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMenu.Location = new System.Drawing.Point(234, 60);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(466, 356);
+            this.panelMenu.TabIndex = 4;
+            this.panelMenu.Visible = false;
+            // 
+            // panelesAnimator
+            // 
+            this.panelesAnimator.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
+            this.panelesAnimator.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 1F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.panelesAnimator.DefaultAnimation = animation1;
+            this.panelesAnimator.Interval = 0;
+            this.panelesAnimator.TimeStep = 0.1F;
             // 
             // MenuPrincipal
             // 

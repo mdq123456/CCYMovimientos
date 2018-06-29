@@ -72,7 +72,7 @@
             this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnCerrarCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCerrarCaja.BorderRadius = 5;
-            this.btnCerrarCaja.ButtonText = "              CERRAR CAJA";
+            this.btnCerrarCaja.ButtonText = "         CERRAR CAJA";
             this.btnCerrarCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarCaja.DisabledColor = System.Drawing.Color.Gray;
             this.btnCerrarCaja.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,12 +81,12 @@
             this.btnCerrarCaja.Iconimage_right = null;
             this.btnCerrarCaja.Iconimage_right_Selected = null;
             this.btnCerrarCaja.Iconimage_Selected = null;
-            this.btnCerrarCaja.IconMarginLeft = 0;
+            this.btnCerrarCaja.IconMarginLeft = 5;
             this.btnCerrarCaja.IconMarginRight = 0;
             this.btnCerrarCaja.IconRightVisible = true;
             this.btnCerrarCaja.IconRightZoom = 0D;
             this.btnCerrarCaja.IconVisible = true;
-            this.btnCerrarCaja.IconZoom = 80D;
+            this.btnCerrarCaja.IconZoom = 90D;
             this.btnCerrarCaja.IsTab = true;
             this.btnCerrarCaja.Location = new System.Drawing.Point(664, 81);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
@@ -96,7 +96,7 @@
             this.btnCerrarCaja.selected = false;
             this.btnCerrarCaja.Size = new System.Drawing.Size(200, 51);
             this.btnCerrarCaja.TabIndex = 20;
-            this.btnCerrarCaja.Text = "              CERRAR CAJA";
+            this.btnCerrarCaja.Text = "         CERRAR CAJA";
             this.btnCerrarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarCaja.Textcolor = System.Drawing.Color.Silver;
             this.btnCerrarCaja.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,7 +109,7 @@
             this.btnAbrirCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnAbrirCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAbrirCaja.BorderRadius = 5;
-            this.btnAbrirCaja.ButtonText = "              ABRIR CAJA";
+            this.btnAbrirCaja.ButtonText = "         ABRIR CAJA";
             this.btnAbrirCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAbrirCaja.DisabledColor = System.Drawing.Color.Gray;
             this.btnAbrirCaja.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,12 +118,12 @@
             this.btnAbrirCaja.Iconimage_right = null;
             this.btnAbrirCaja.Iconimage_right_Selected = null;
             this.btnAbrirCaja.Iconimage_Selected = null;
-            this.btnAbrirCaja.IconMarginLeft = 0;
+            this.btnAbrirCaja.IconMarginLeft = 5;
             this.btnAbrirCaja.IconMarginRight = 0;
             this.btnAbrirCaja.IconRightVisible = true;
             this.btnAbrirCaja.IconRightZoom = 0D;
             this.btnAbrirCaja.IconVisible = true;
-            this.btnAbrirCaja.IconZoom = 80D;
+            this.btnAbrirCaja.IconZoom = 90D;
             this.btnAbrirCaja.IsTab = true;
             this.btnAbrirCaja.Location = new System.Drawing.Point(664, 24);
             this.btnAbrirCaja.Name = "btnAbrirCaja";
@@ -133,7 +133,7 @@
             this.btnAbrirCaja.selected = false;
             this.btnAbrirCaja.Size = new System.Drawing.Size(200, 51);
             this.btnAbrirCaja.TabIndex = 19;
-            this.btnAbrirCaja.Text = "              ABRIR CAJA";
+            this.btnAbrirCaja.Text = "         ABRIR CAJA";
             this.btnAbrirCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbrirCaja.Textcolor = System.Drawing.Color.Silver;
             this.btnAbrirCaja.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,7 +145,7 @@
             this.btnEgresos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnEgresos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEgresos.BorderRadius = 5;
-            this.btnEgresos.ButtonText = "              EGRESOS";
+            this.btnEgresos.ButtonText = "         EGRESOS";
             this.btnEgresos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEgresos.DisabledColor = System.Drawing.Color.Gray;
             this.btnEgresos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,12 +154,12 @@
             this.btnEgresos.Iconimage_right = null;
             this.btnEgresos.Iconimage_right_Selected = null;
             this.btnEgresos.Iconimage_Selected = null;
-            this.btnEgresos.IconMarginLeft = 0;
+            this.btnEgresos.IconMarginLeft = 5;
             this.btnEgresos.IconMarginRight = 0;
             this.btnEgresos.IconRightVisible = true;
             this.btnEgresos.IconRightZoom = 0D;
             this.btnEgresos.IconVisible = true;
-            this.btnEgresos.IconZoom = 80D;
+            this.btnEgresos.IconZoom = 90D;
             this.btnEgresos.IsTab = true;
             this.btnEgresos.Location = new System.Drawing.Point(27, 248);
             this.btnEgresos.Name = "btnEgresos";
@@ -169,7 +169,7 @@
             this.btnEgresos.selected = false;
             this.btnEgresos.Size = new System.Drawing.Size(175, 51);
             this.btnEgresos.TabIndex = 17;
-            this.btnEgresos.Text = "              EGRESOS";
+            this.btnEgresos.Text = "         EGRESOS";
             this.btnEgresos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEgresos.Textcolor = System.Drawing.Color.Silver;
             this.btnEgresos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,7 +181,7 @@
             this.btnIngresos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.btnIngresos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIngresos.BorderRadius = 5;
-            this.btnIngresos.ButtonText = "              INGRESOS";
+            this.btnIngresos.ButtonText = "         INGRESOS";
             this.btnIngresos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresos.DisabledColor = System.Drawing.Color.Gray;
             this.btnIngresos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,12 +190,12 @@
             this.btnIngresos.Iconimage_right = null;
             this.btnIngresos.Iconimage_right_Selected = null;
             this.btnIngresos.Iconimage_Selected = null;
-            this.btnIngresos.IconMarginLeft = 0;
+            this.btnIngresos.IconMarginLeft = 5;
             this.btnIngresos.IconMarginRight = 0;
             this.btnIngresos.IconRightVisible = true;
             this.btnIngresos.IconRightZoom = 0D;
             this.btnIngresos.IconVisible = true;
-            this.btnIngresos.IconZoom = 80D;
+            this.btnIngresos.IconZoom = 90D;
             this.btnIngresos.IsTab = true;
             this.btnIngresos.Location = new System.Drawing.Point(27, 183);
             this.btnIngresos.Name = "btnIngresos";
@@ -205,7 +205,7 @@
             this.btnIngresos.selected = false;
             this.btnIngresos.Size = new System.Drawing.Size(175, 51);
             this.btnIngresos.TabIndex = 16;
-            this.btnIngresos.Text = "              INGRESOS";
+            this.btnIngresos.Text = "         INGRESOS";
             this.btnIngresos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIngresos.Textcolor = System.Drawing.Color.Silver;
             this.btnIngresos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -272,6 +272,7 @@
             this.DGMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGMovimientos.Size = new System.Drawing.Size(837, 275);
             this.DGMovimientos.TabIndex = 30;
+            this.DGMovimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMovimientos_CellContentClick);
             this.DGMovimientos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMovimientos_CellDoubleClick);
             // 
             // btnIzq

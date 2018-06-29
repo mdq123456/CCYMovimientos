@@ -209,7 +209,7 @@
             this.btnExit.ImageActive = null;
             this.btnExit.Location = new System.Drawing.Point(336, 13);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 1;
             this.btnExit.TabStop = false;

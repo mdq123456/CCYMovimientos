@@ -18,6 +18,7 @@ namespace CCYMovimientos.Vistas.Ventas
 {
     public partial class VentasABM : Form
     {
+       
         Point posicion;
         Size dimension;
 
@@ -91,7 +92,7 @@ namespace CCYMovimientos.Vistas.Ventas
             Alertas alert;
 
             string msj = objFondo.AbrirCaja();
-            
+
             if (msj != "La operación se completó con éxito !" &&
                 msj != "La caja ya se encuentra abierta.")
             {
@@ -123,6 +124,7 @@ namespace CCYMovimientos.Vistas.Ventas
             LimpiarDatos();
 
         }
+
 
         private void TxtCuotas_OnValueChanged(object sender, EventArgs e)
         {
@@ -254,5 +256,6 @@ namespace CCYMovimientos.Vistas.Ventas
         {
             CalcularSaldo();
         }
+
     }
 }
