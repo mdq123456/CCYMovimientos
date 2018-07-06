@@ -100,27 +100,40 @@ namespace CCYMovimientos.Vistas.Ventas
 
         private void DGHVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            return;
             //si se pulsa e el header el RowIndex sera menos a menos
-            //if (!(e.RowIndex > -1))
-            //{
-            //    TraerPago("");
-            //    return;
-            //}
-            //DGPagos.CurrentCell = null;
-            //foreach (DataGridViewRow row in DGPagos.Rows)
-            //{
-            //    if (row.Index == e.RowIndex)
-            //    {
-            //        btnReImprimir.Enabled = true;
-            //        codRecibo = row.Cells["NroRecibo"].Value.ToString();
+            if (!(e.RowIndex > -1))
+            {
+                return;
+            }
 
-            //        row.Selected = true;
+            DGHVentas.CurrentCell = null;
+            foreach (DataGridViewRow row in DGHVentas.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
 
-            //        TraerFormasPago(row.Cells["CodPago"].Value.ToString());
+                    row.Selected = true;
 
-            //        break;
-            //    }
-            //}
+                    TraerPagos(row.Cells["CodPago"].Value.ToString());
+
+                    break;
+                }
+            }
+
         }
+
+        private void TraerPagos(string pCodPago)
+        {
+            if (pCodPago == "")
+            {
+                //DGPago.DataSource = new DataTable();
+                return;
+            }
+
+           // DBCreditos objCredito = new DBCreditos(codCliente);
+            //DGFormas.DataSource = objCredito.TraerFormasPago(pCodPago);
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using CCYMovimientos.Modelos.Creditos;
+﻿using CCYMovimientos.Modelos.Configuracion;
+using CCYMovimientos.Modelos.Creditos;
 using CCYMovimientos.Modelos.Sessiones;
 using CCYMovimientos.Modelos.Ventas;
 using CCYMovimientos.Vistas.Notificaciones;
@@ -20,6 +21,7 @@ namespace CCYMovimientos.Vistas.Creditos
         public string Msj;
         public string NroRecibo;
         private string strCodCuota;
+        private bool bloquearCuota;
         decimal valorSena = 0;
 
         public PagosClientesCreditos(string pCodCliente, string Nombre)
@@ -33,8 +35,22 @@ namespace CCYMovimientos.Vistas.Creditos
 
         private void PagosClientesCreditos_Load(object sender, EventArgs e)
         {
+            SetearConfiguracion();
             CargarCreditos();
             CargarFormasPago();
+        }
+
+        private void SetearConfiguracion()
+        {
+            bloquearCuota = false;
+
+            DBConfiguracion objConfig = new DBConfiguracion("Bloquear_Cuotas");
+
+            if (objConfig.TraerConfig() == "1")
+            {
+                bloquearCuota = true;
+            }
+            
         }
 
         private void CargarFormasPago()
@@ -114,7 +130,8 @@ namespace CCYMovimientos.Vistas.Creditos
                     pcodCredito = row.Cells["CodCredito"].Value.ToString();
                     row.ReadOnly = false;
                 }
-                else if (pcodCredito == row.Cells["CodCredito"].Value.ToString())
+                else if (pcodCredito == row.Cells["CodCredito"].Value.ToString() &&
+                         bloquearCuota)
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.Gray;
                     row.ReadOnly = true;
@@ -580,16 +597,16 @@ namespace CCYMovimientos.Vistas.Creditos
                     break;
                 //Cheque
                 case 5:
-                    if (DGPagos.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in DGPagos.Rows)
-                        {
-                            if (row.Cells["CodFormaPago"].Value.ToString() == cboFormaPago.SelectedValue.ToString())
-                            {
-                                DGPagos.Rows.RemoveAt(row.Index);
-                            }
-                        }
-                    }
+                    //if (DGPagos.Rows.Count > 0)
+                    //{
+                    //    foreach (DataGridViewRow row in DGPagos.Rows)
+                    //    {
+                    //        if (row.Cells["CodFormaPago"].Value.ToString() == cboFormaPago.SelectedValue.ToString())
+                    //        {
+                    //            DGPagos.Rows.RemoveAt(row.Index);
+                    //        }
+                    //    }
+                    //}
 
                     DGPagos.Rows.Add("1", cboFormaPago.SelectedValue.ToString(), "Cheque", TxtImporte.Text.Trim(), Txt1.Text.Trim(), Txt4.Text.Trim(), cboFecha1.Value, cboFecha2.Value, "", TxtNroCheque.Text.Trim());
                     
@@ -600,16 +617,16 @@ namespace CCYMovimientos.Vistas.Creditos
                     break;
                 //Transferencia Bancaria
                 case 7:
-                    if (DGPagos.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in DGPagos.Rows)
-                        {
-                            if (row.Cells["CodFormaPago"].Value.ToString() == cboFormaPago.SelectedValue.ToString())
-                            {
-                                DGPagos.Rows.RemoveAt(row.Index);
-                            }
-                        }
-                    }
+                    //if (DGPagos.Rows.Count > 0)
+                    //{
+                    //    foreach (DataGridViewRow row in DGPagos.Rows)
+                    //    {
+                    //        if (row.Cells["CodFormaPago"].Value.ToString() == cboFormaPago.SelectedValue.ToString())
+                    //        {
+                    //            DGPagos.Rows.RemoveAt(row.Index);
+                    //        }
+                    //    }
+                    //}
 
                     DGPagos.Rows.Add("1", cboFormaPago.SelectedValue.ToString(), "Transferencia Bancaria", TxtImporte.Text.Trim(), Txt1.Text.Trim(), "", "", "", Txt2.Text.Trim(), "");
                     break;

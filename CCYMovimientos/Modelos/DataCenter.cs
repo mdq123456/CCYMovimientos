@@ -21,6 +21,8 @@ namespace CCYMovimientos.Modelos
             this.con = new SqlConnection(ConfigurationManager.ConnectionStrings["CadenaConexion"].ToString());
         }
 
+        
+
         public  void abrirConexion()
         {
             try
@@ -894,6 +896,28 @@ namespace CCYMovimientos.Modelos
             }
         }
         //Registros**********************************************
+
+        //Configuracion**********************************************
+        public SqlDataReader TraerConfig(string pconfig)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_CONFIGURACION_Traer_Valor", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@config", SqlDbType.VarChar, 100).Value = pconfig;
+                
+                unDataReader = cmd.ExecuteReader();
+                return unDataReader;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+        //Configuracion**********************************************
 
     }
 }
