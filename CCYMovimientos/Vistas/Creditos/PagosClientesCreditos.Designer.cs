@@ -28,15 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagosClientesCreditos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbPagos = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DGPagos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CodFormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImportePago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Beneficiario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroCheque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -86,16 +96,7 @@
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CodFormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImportePago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Beneficiario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroCheque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardarCotizacion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGCreditos)).BeginInit();
@@ -183,21 +184,21 @@
             // DGPagos
             // 
             this.DGPagos.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DGPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DGPagos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.DGPagos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DGPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGPagos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.DGPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,
@@ -224,6 +225,78 @@
             this.DGPagos.TabIndex = 127;
             this.DGPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGPagos_CellContentClick);
             this.DGPagos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DGPagos_RowsRemoved);
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Visible = false;
+            this.dataGridViewCheckBoxColumn1.Width = 5;
+            // 
+            // CodFormaPago
+            // 
+            this.CodFormaPago.HeaderText = "CodFormaPago";
+            this.CodFormaPago.Name = "CodFormaPago";
+            this.CodFormaPago.ReadOnly = true;
+            this.CodFormaPago.Visible = false;
+            this.CodFormaPago.Width = 117;
+            // 
+            // FormaPago
+            // 
+            this.FormaPago.HeaderText = "Forma de Pago";
+            this.FormaPago.Name = "FormaPago";
+            this.FormaPago.ReadOnly = true;
+            this.FormaPago.Width = 79;
+            // 
+            // ImportePago
+            // 
+            this.ImportePago.HeaderText = "Importe";
+            this.ImportePago.Name = "ImportePago";
+            this.ImportePago.ReadOnly = true;
+            this.ImportePago.Width = 72;
+            // 
+            // Banco
+            // 
+            this.Banco.HeaderText = "Banco";
+            this.Banco.Name = "Banco";
+            this.Banco.ReadOnly = true;
+            this.Banco.Width = 65;
+            // 
+            // Beneficiario
+            // 
+            this.Beneficiario.HeaderText = "Beneficiario";
+            this.Beneficiario.Name = "Beneficiario";
+            this.Beneficiario.ReadOnly = true;
+            this.Beneficiario.Width = 95;
+            // 
+            // FechaEmision
+            // 
+            this.FechaEmision.HeaderText = "FechaEmision";
+            this.FechaEmision.Name = "FechaEmision";
+            this.FechaEmision.ReadOnly = true;
+            this.FechaEmision.Width = 109;
+            // 
+            // FechaCobro
+            // 
+            this.FechaCobro.HeaderText = "FechaCobro";
+            this.FechaCobro.Name = "FechaCobro";
+            this.FechaCobro.ReadOnly = true;
+            this.FechaCobro.Width = 97;
+            // 
+            // NroCuenta
+            // 
+            this.NroCuenta.HeaderText = "NroCuenta";
+            this.NroCuenta.Name = "NroCuenta";
+            this.NroCuenta.ReadOnly = true;
+            this.NroCuenta.Width = 89;
+            // 
+            // NroCheque
+            // 
+            this.NroCheque.HeaderText = "NroCheque";
+            this.NroCheque.Name = "NroCheque";
+            this.NroCheque.ReadOnly = true;
+            this.NroCheque.Width = 93;
             // 
             // bunifuCustomLabel1
             // 
@@ -670,20 +743,20 @@
             // 
             this.DGCreditos.AllowUserToAddRows = false;
             this.DGCreditos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DGCreditos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DGCreditos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.DGCreditos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGCreditos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DGCreditos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGCreditos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGCreditos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGCreditos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DGCreditos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGCreditos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Chk});
@@ -767,6 +840,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnGuardarCotizacion);
             this.panel5.Controls.Add(this.lblValorSena);
             this.panel5.Controls.Add(this.lblSena);
             this.panel5.Controls.Add(this.btnAgregarPago);
@@ -963,77 +1037,41 @@
             this.bunifuCustomLabel12.TabIndex = 76;
             this.bunifuCustomLabel12.Text = "Pagos de Créditos";
             // 
-            // dataGridViewCheckBoxColumn1
+            // btnGuardarCotizacion
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Visible = false;
-            this.dataGridViewCheckBoxColumn1.Width = 5;
-            // 
-            // CodFormaPago
-            // 
-            this.CodFormaPago.HeaderText = "CodFormaPago";
-            this.CodFormaPago.Name = "CodFormaPago";
-            this.CodFormaPago.ReadOnly = true;
-            this.CodFormaPago.Visible = false;
-            this.CodFormaPago.Width = 117;
-            // 
-            // FormaPago
-            // 
-            this.FormaPago.HeaderText = "Forma de Pago";
-            this.FormaPago.Name = "FormaPago";
-            this.FormaPago.ReadOnly = true;
-            this.FormaPago.Width = 79;
-            // 
-            // ImportePago
-            // 
-            this.ImportePago.HeaderText = "Importe";
-            this.ImportePago.Name = "ImportePago";
-            this.ImportePago.ReadOnly = true;
-            this.ImportePago.Width = 72;
-            // 
-            // Banco
-            // 
-            this.Banco.HeaderText = "Banco";
-            this.Banco.Name = "Banco";
-            this.Banco.ReadOnly = true;
-            this.Banco.Width = 65;
-            // 
-            // Beneficiario
-            // 
-            this.Beneficiario.HeaderText = "Beneficiario";
-            this.Beneficiario.Name = "Beneficiario";
-            this.Beneficiario.ReadOnly = true;
-            this.Beneficiario.Width = 95;
-            // 
-            // FechaEmision
-            // 
-            this.FechaEmision.HeaderText = "FechaEmision";
-            this.FechaEmision.Name = "FechaEmision";
-            this.FechaEmision.ReadOnly = true;
-            this.FechaEmision.Width = 109;
-            // 
-            // FechaCobro
-            // 
-            this.FechaCobro.HeaderText = "FechaCobro";
-            this.FechaCobro.Name = "FechaCobro";
-            this.FechaCobro.ReadOnly = true;
-            this.FechaCobro.Width = 97;
-            // 
-            // NroCuenta
-            // 
-            this.NroCuenta.HeaderText = "NroCuenta";
-            this.NroCuenta.Name = "NroCuenta";
-            this.NroCuenta.ReadOnly = true;
-            this.NroCuenta.Width = 89;
-            // 
-            // NroCheque
-            // 
-            this.NroCheque.HeaderText = "NroCheque";
-            this.NroCheque.Name = "NroCheque";
-            this.NroCheque.ReadOnly = true;
-            this.NroCheque.Width = 93;
+            this.btnGuardarCotizacion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardarCotizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarCotizacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardarCotizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardarCotizacion.BorderRadius = 5;
+            this.btnGuardarCotizacion.ButtonText = "Guardar Cotizacion";
+            this.btnGuardarCotizacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarCotizacion.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGuardarCotizacion.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGuardarCotizacion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGuardarCotizacion.Iconimage")));
+            this.btnGuardarCotizacion.Iconimage_right = null;
+            this.btnGuardarCotizacion.Iconimage_right_Selected = null;
+            this.btnGuardarCotizacion.Iconimage_Selected = null;
+            this.btnGuardarCotizacion.IconMarginLeft = 0;
+            this.btnGuardarCotizacion.IconMarginRight = 0;
+            this.btnGuardarCotizacion.IconRightVisible = true;
+            this.btnGuardarCotizacion.IconRightZoom = 0D;
+            this.btnGuardarCotizacion.IconVisible = true;
+            this.btnGuardarCotizacion.IconZoom = 90D;
+            this.btnGuardarCotizacion.IsTab = false;
+            this.btnGuardarCotizacion.Location = new System.Drawing.Point(400, 142);
+            this.btnGuardarCotizacion.Name = "btnGuardarCotizacion";
+            this.btnGuardarCotizacion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnGuardarCotizacion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(27)))), ((int)(((byte)(57)))));
+            this.btnGuardarCotizacion.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGuardarCotizacion.selected = false;
+            this.btnGuardarCotizacion.Size = new System.Drawing.Size(135, 48);
+            this.btnGuardarCotizacion.TabIndex = 132;
+            this.btnGuardarCotizacion.Text = "Guardar Cotizacion";
+            this.btnGuardarCotizacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardarCotizacion.Textcolor = System.Drawing.Color.White;
+            this.btnGuardarCotizacion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCotizacion.Click += new System.EventHandler(this.btnGuardarCotizacion_Click);
             // 
             // PagosClientesCreditos
             // 
@@ -1130,5 +1168,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCobro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroCheque;
+        private Bunifu.Framework.UI.BunifuFlatButton btnGuardarCotizacion;
     }
 }

@@ -22,6 +22,7 @@ namespace CCYMovimientos.Vistas.Creditos
         public string NroRecibo;
         private string strCodCuota;
         private bool bloquearCuota;
+        private string cotizacionDolar = "0";
         decimal valorSena = 0;
 
         public PagosClientesCreditos(string pCodCliente, string Nombre)
@@ -50,7 +51,14 @@ namespace CCYMovimientos.Vistas.Creditos
             {
                 bloquearCuota = true;
             }
-            
+
+            objConfig = new DBConfiguracion("CotizacionDolar");
+
+            if (objConfig.TraerConfig() != "")
+            {
+                cotizacionDolar = objConfig.TraerConfig();
+            }
+
         }
 
         private void CargarFormasPago()
@@ -318,6 +326,21 @@ namespace CCYMovimientos.Vistas.Creditos
                         return false;
                     }
                     break;
+                //Dolares
+                case 11:
+                    if (Convert.ToDecimal(TxtImporte.Text.Trim()) <= 0)
+                    {
+                        alert = new Alertas("Ingrese un importe mayor a 0.", "");
+                        alert.Show();
+                        return false;
+                    }
+                    else if (0 > Convert.ToDecimal(Txt2.Text.Trim()))
+                    {
+                        alert = new Alertas("Ingrese la cotizacion para continuar.", "");
+                        alert.Show();
+                        return false;
+                    }
+                        break;
                 default:
                     break;
             }
@@ -383,6 +406,15 @@ namespace CCYMovimientos.Vistas.Creditos
                         //Bonificacion
                         OcultarControles();
                         break;
+                    case 11:
+                        //Dolares
+                        OcultarControles();
+                        lbl2.Text = "Cotizacion :";
+                        lbl2.Visible = true;
+                        Txt2.Visible = true;
+                        Txt2.Text = cotizacionDolar;
+                        btnGuardarCotizacion.Visible = true;
+                        break;
                     default:
                         break;
                 }
@@ -403,6 +435,8 @@ namespace CCYMovimientos.Vistas.Creditos
 
             cboFecha1.Visible = false;
             cboFecha2.Visible = false;
+
+            btnGuardarCotizacion.Visible = false;
         }
 
         private void DGCreditos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -458,7 +492,7 @@ namespace CCYMovimientos.Vistas.Creditos
             DGCreditos.CurrentCell = null;
             foreach (DataGridViewRow row in DGCreditos.Rows)
             {
-                if (row.Cells[0].Value.ToString() == "1")
+                if (Convert.ToBoolean(row.Cells[0].Value))
                 {
                     totalAPagar = totalAPagar + Convert.ToDecimal(row.Cells["Saldo_Cuota"].Value.ToString());
                 }
@@ -572,6 +606,8 @@ namespace CCYMovimientos.Vistas.Creditos
 
         private void AgregarPago()
         {
+            decimal importePesos = 0;
+
             switch (Convert.ToInt32(cboFormaPago.SelectedValue))
             {
                 //Efectivo
@@ -661,6 +697,21 @@ namespace CCYMovimientos.Vistas.Creditos
 
                     DGPagos.Rows.Add("1", cboFormaPago.SelectedValue.ToString(), "Bonificacion", TxtImporte.Text.Trim(), "", "", "", "", "", "");
                     break;
+                //Dolares
+                case 11:
+                    if (DGPagos.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in DGPagos.Rows)
+                        {
+                            if (row.Cells["CodFormaPago"].Value.ToString() == cboFormaPago.SelectedValue.ToString())
+                            {
+                                DGPagos.Rows.RemoveAt(row.Index);
+                            }
+                        }
+                    }
+                    importePesos = Convert.ToDecimal(TxtImporte.Text.Trim())*Convert.ToDecimal(Txt2.Text.Trim());
+                    DGPagos.Rows.Add("1", cboFormaPago.SelectedValue.ToString(), "Dolares", Convert.ToString(importePesos), TxtImporte.Text.Trim(), Txt2.Text.Trim(), "", "", "", "");
+                    break;
                 default:
                     break;
             }
@@ -671,6 +722,7 @@ namespace CCYMovimientos.Vistas.Creditos
 
         private void MostrarTipoPago()
         {
+
             lbPagos.Visible = true;
 
             if (Convert.ToDecimal(TxtSaldoTotal.Text) == Convert.ToDecimal(txtPagos.Text))
@@ -681,10 +733,11 @@ namespace CCYMovimientos.Vistas.Creditos
             {
                 lbPagos.Text = "Pago Parcial";
             }
-            else
+            else if (Convert.ToDecimal(TxtSaldoTotal.Text) < Convert.ToDecimal(txtPagos.Text))
             {
-                lbPagos.Text = "";
+                lbPagos.Text = "Pago excedido";
             }
+
         }
 
         private void TxtSaldoTotal_OnValueChanged(object sender, EventArgs e)
@@ -704,6 +757,11 @@ namespace CCYMovimientos.Vistas.Creditos
         }
 
         private void DGPagos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnGuardarCotizacion_Click(object sender, EventArgs e)
         {
 
         }

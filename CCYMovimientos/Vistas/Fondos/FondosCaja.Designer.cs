@@ -59,6 +59,8 @@
             this.lblApertura = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnReImprimir = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGMovimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDer)).BeginInit();
@@ -272,6 +274,7 @@
             this.DGMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGMovimientos.Size = new System.Drawing.Size(837, 275);
             this.DGMovimientos.TabIndex = 30;
+            this.DGMovimientos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMovimientos_CellClick);
             this.DGMovimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMovimientos_CellContentClick);
             this.DGMovimientos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGMovimientos_CellDoubleClick);
             // 
@@ -505,6 +508,54 @@
             this.TxtBuscar.Click += new System.EventHandler(this.TxtBuscar_Click);
             this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(713, 149);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(104, 21);
+            this.bunifuCustomLabel10.TabIndex = 107;
+            this.bunifuCustomLabel10.Text = "Re-Impresion";
+            // 
+            // btnReImprimir
+            // 
+            this.btnReImprimir.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReImprimir.BorderRadius = 5;
+            this.btnReImprimir.ButtonText = "";
+            this.btnReImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReImprimir.DisabledColor = System.Drawing.Color.Gray;
+            this.btnReImprimir.Enabled = false;
+            this.btnReImprimir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReImprimir.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnReImprimir.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnReImprimir.Iconimage")));
+            this.btnReImprimir.Iconimage_right = null;
+            this.btnReImprimir.Iconimage_right_Selected = null;
+            this.btnReImprimir.Iconimage_Selected = null;
+            this.btnReImprimir.IconMarginLeft = 0;
+            this.btnReImprimir.IconMarginRight = 0;
+            this.btnReImprimir.IconRightVisible = true;
+            this.btnReImprimir.IconRightZoom = 0D;
+            this.btnReImprimir.IconVisible = true;
+            this.btnReImprimir.IconZoom = 70D;
+            this.btnReImprimir.IsTab = true;
+            this.btnReImprimir.Location = new System.Drawing.Point(823, 138);
+            this.btnReImprimir.Name = "btnReImprimir";
+            this.btnReImprimir.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(67)))));
+            this.btnReImprimir.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnReImprimir.selected = false;
+            this.btnReImprimir.Size = new System.Drawing.Size(41, 38);
+            this.btnReImprimir.TabIndex = 106;
+            this.btnReImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReImprimir.Textcolor = System.Drawing.Color.Silver;
+            this.btnReImprimir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReImprimir.Click += new System.EventHandler(this.btnReImprimir_Click);
+            // 
             // FondosCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,6 +563,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(189)))), ((int)(((byte)(204)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(890, 680);
+            this.Controls.Add(this.bunifuCustomLabel10);
+            this.Controls.Add(this.btnReImprimir);
             this.Controls.Add(this.bunifuCustomLabel9);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.lblApertura);
@@ -579,5 +632,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblApertura;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private System.Windows.Forms.TextBox TxtBuscar;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
+        private Bunifu.Framework.UI.BunifuFlatButton btnReImprimir;
     }
 }

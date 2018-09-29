@@ -101,6 +101,28 @@ namespace CCYMovimientos.Modelos
             
         }
 
+        public DataTable TraerCheques()
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_FONDOS_TraerCheques", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Cheques");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public DataTable TraerSena(string pCodCliente)
         {
             try
@@ -169,7 +191,6 @@ namespace CCYMovimientos.Modelos
                 throw;
             }
         }
-
 
 
         //Clientes***********************************************
@@ -433,6 +454,28 @@ namespace CCYMovimientos.Modelos
 
         }
 
+        public SqlDataReader CerrarCajaMontos(string strCierre)
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_FONDOS_Cerrar_Caja_Montos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@strCierre", SqlDbType.VarChar).Value = strCierre;
+                cmd.Parameters.Add("@codLogin", SqlDbType.Int).Value = Sesion.codUsuario;
+
+                SqlDataReader unDataReader = cmd.ExecuteReader();
+
+                return unDataReader;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public SqlDataReader CerrarCaja(decimal pImporte)
         {
             try
@@ -508,11 +551,33 @@ namespace CCYMovimientos.Modelos
             
         }
 
+        public DataTable TraerFondosCierre()
+        {
+            try
+            {
+                abrirConexion();
+                cmd = new SqlCommand("SP_FONDOS_Traer_Fondos_Cierre", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("FondosCierre");
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
         public SqlDataReader InsertarMov(string pConcepto, string ptipoMov, string pimporte,
                         DateTime pfechaEmision, DateTime pfechaCobro,
                         string pnroCheque, string pbanco, string pcuenta,
                         int pcodVenta, int pcodAnticipo, string pbeneficiario, string psena,
-                        int pCodCliente)
+                        int pCodCliente, string pstrCodCheques = "")
         {
             try
             {
@@ -522,7 +587,15 @@ namespace CCYMovimientos.Modelos
 
                 cmd.Parameters.Add("@concepto", SqlDbType.VarChar, 300).Value = pConcepto;
                 cmd.Parameters.Add("@codTipoMov", SqlDbType.Int).Value = Convert.ToInt32(ptipoMov);
-                cmd.Parameters.Add("@importe", SqlDbType.Decimal).Value = Convert.ToDecimal(pimporte);
+                if (pimporte == "")
+                {
+                    cmd.Parameters.Add("@importe", SqlDbType.Decimal).Value = 0;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@importe", SqlDbType.Decimal).Value = Convert.ToDecimal(pimporte);
+                }
+                
                 cmd.Parameters.Add("@fechaEmision", SqlDbType.SmallDateTime).Value = pfechaEmision;
                 cmd.Parameters.Add("@fechaCobro", SqlDbType.SmallDateTime).Value = pfechaCobro;
                 cmd.Parameters.Add("@nroCheque", SqlDbType.VarChar, 30).Value = pnroCheque;
@@ -546,7 +619,7 @@ namespace CCYMovimientos.Modelos
                 {
                     cmd.Parameters.Add("@codCliente", SqlDbType.Int).Value = pCodCliente;
                 }
-
+                cmd.Parameters.Add("@strCodCheques", SqlDbType.VarChar, 2000).Value = pstrCodCheques;
                 cmd.Parameters.Add("@codLogin", SqlDbType.Int).Value = Sesion.codUsuario;
 
                 SqlDataReader unDataReader = cmd.ExecuteReader();

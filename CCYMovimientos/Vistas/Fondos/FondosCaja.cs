@@ -92,17 +92,17 @@ namespace CCYMovimientos.Vistas.Fondos
 
         private void btnCerrarCaja_Click(object sender, EventArgs e)
         {
-            IngresoDatos objMsj = new IngresoDatos("Cierre de Caja", "Importe Cierre");
-            objMsj.ShowDialog();
+            CierreCaja objCierre = new CierreCaja();
+            objCierre.ShowDialog();
 
-            if (objMsj.getTexto1() != "")
+            if (objCierre.getStrCierre().Trim() != "")
             {
                 DBFondos objFondo = new DBFondos();
-                Alertas alert = new Alertas(objFondo.CerrarCaja(Convert.ToDecimal(objMsj.getTexto1().Trim())), "");
+                Alertas alert = new Alertas(objFondo.CerrarCajaMontos(objCierre.getStrCierre().Trim()), "");
                 alert.Show();
                 CargarMovimientos();
             }
-            
+
         }
 
         private void btnIngresos_Click(object sender, EventArgs e)
@@ -236,6 +236,40 @@ namespace CCYMovimientos.Vistas.Fondos
         private void DGMovimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnReImprimir_Click(object sender, EventArgs e)
+        {
+            if (codFondosMov != "")
+            {
+                PrevisualizarReportes ViewReport = new PrevisualizarReportes();
+                ViewReport.Codigo = codFondosMov;
+                ViewReport.Reporte = "ReporteMovCaja";
+                ViewReport.Show();
+            }
+        }
+
+        private void DGMovimientos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //si se pulsa e el header el RowIndex sera menos a menos
+            if (!(e.RowIndex > -1))
+            {
+                btnReImprimir.Enabled = false;
+                codFondosMov = "";
+                return;
+            }
+            DGMovimientos.CurrentCell = null;
+            foreach (DataGridViewRow row in DGMovimientos.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
+                    btnReImprimir.Enabled = true;
+                    codFondosMov = row.Cells["Codigo"].Value.ToString();
+                    row.Selected = true;
+
+                    break;
+                }
+            }
         }
     }
 }

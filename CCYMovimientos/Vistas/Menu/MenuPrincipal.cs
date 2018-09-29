@@ -80,8 +80,8 @@ namespace CCYMovimientos.Vistas.Menu
             if (this.menuLeft.Width == 234)
             {
                 this.menuLeft.Visible = false;
-                this.menuLeft.Width = 54;
-                this.btnMenu.Location = new Point(16, 16);
+                this.menuLeft.Width = 80;
+                this.btnMenu.Location = new Point(-8, 5);
                 this.menuLeftAnimator.ShowSync(menuLeft);
                 
             }
@@ -89,7 +89,7 @@ namespace CCYMovimientos.Vistas.Menu
             {
                 this.menuLeft.Visible = false;
                 this.menuLeft.Width = 234;
-                this.btnMenu.Location = new Point(192, 16);
+                this.btnMenu.Location = new Point(150, 5);
                 this.menuLeftAnimator.ShowSync(menuLeft);
             }
         }
@@ -230,6 +230,11 @@ namespace CCYMovimientos.Vistas.Menu
         }
 
         private void btnTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

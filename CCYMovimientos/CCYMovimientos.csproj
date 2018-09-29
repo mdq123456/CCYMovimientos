@@ -178,6 +178,12 @@
     <Compile Include="Vistas\Fondos\AltaMovimientos.Designer.cs">
       <DependentUpon>AltaMovimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Fondos\CierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Fondos\CierreCaja.Designer.cs">
+      <DependentUpon>CierreCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Fondos\FondosCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Fondos\AltaMovimientos.resx">
       <DependentUpon>AltaMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Fondos\CierreCaja.resx">
+      <DependentUpon>CierreCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Fondos\FondosCaja.resx">
       <DependentUpon>FondosCaja.cs</DependentUpon>

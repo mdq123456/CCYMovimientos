@@ -18,6 +18,7 @@ namespace CCYMovimientos.Modelos.Fondos
         private string nroCheque { set; get; }
         private string banco { set; get; }
         private string cuenta { set; get; }
+
         private int codVenta { set; get; }
         private int codAnticipo { set; get; }
         private string beneficiario { set; get; }
@@ -55,6 +56,22 @@ namespace CCYMovimientos.Modelos.Fondos
         {
             sena = psena;
             codCliente = pCodCliente;
+        }
+
+        public DataTable TraerCheques()
+        {
+            DataCenter objDC = new DataCenter();
+            DataTable tabla = objDC.TraerCheques();
+            objDC.cerrarConexion();
+            return tabla;
+        }
+
+        public DataTable TraerFondosCierre()
+        {
+            DataCenter objDC = new DataCenter();
+            DataTable tabla = objDC.TraerFondosCierre();
+            objDC.cerrarConexion();
+            return tabla;
         }
 
         public string AbrirCaja()
@@ -97,7 +114,7 @@ namespace CCYMovimientos.Modelos.Fondos
             objDC.cerrarConexion();
             return tabla;
         }
-        public string InsertarMov()
+        public string InsertarMov(string pstrCodCheques)
         {
             string retorno;
             CodMovimiento = "";
@@ -114,7 +131,8 @@ namespace CCYMovimientos.Modelos.Fondos
                                                      this.codAnticipo,
                                                      this.beneficiario,
                                                      sena,
-                                                     codCliente);
+                                                     codCliente,
+                                                     pstrCodCheques);
             retorno = "No se pudo realizar la operacion, comuniquese con su administrador.";
             if (unDato != null)
             {
@@ -134,6 +152,27 @@ namespace CCYMovimientos.Modelos.Fondos
             objDC.cerrarConexion();
             return retorno;
 
+        }
+
+        public string CerrarCajaMontos(string strCierre)
+        {
+            string retorno = "";
+
+            DataCenter objDC = new DataCenter();
+            SqlDataReader unDato = objDC.CerrarCajaMontos(strCierre);
+            if (unDato.HasRows)
+            {
+                unDato.Read();
+
+                retorno = unDato["Msj"].ToString();
+
+            }
+            else
+            {
+                retorno = "No se pudo realizar la operacion, comuniquese con su administrador.";
+            }
+            objDC.cerrarConexion();
+            return retorno;
         }
 
         public string CerrarCaja(decimal pImporte)
